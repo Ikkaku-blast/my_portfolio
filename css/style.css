@@ -458,8 +458,8 @@ ul {
   background: var(--work-bg, #a8c4e0);
   display: flex;
   align-items: center;
-  padding: 40px 48px;
-  gap: 40px;
+  padding: 60px 64px;
+  gap: 60px;
   transition: filter var(--transition);
 }
 
@@ -469,8 +469,8 @@ ul {
 
 .work-item__image-wrapper {
   flex-shrink: 0;
-  width: 220px;
-  height: 180px;
+  width: 440px;
+  height: 360px;
   background: var(--color-white);
   border: 2px solid #999;
   display: flex;
@@ -494,11 +494,11 @@ ul {
    --work-title-weight   : タイトルの太さ (デフォルト: 700)
 */
 .work-item__title {
-  font-size: var(--work-title-size, 1.3rem);
+  font-size: var(--work-title-size, 2.2rem);
   font-weight: var(--work-title-weight, 700);
   color: var(--work-title-color, var(--color-text));
   font-family: var(--work-title-font, var(--font-main));
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 /* ------ 作品説明文のカスタマイズ用CSS変数 ------
@@ -509,7 +509,7 @@ ul {
    --work-desc-line-height: 行間 (デフォルト: 1.8)
 */
 .work-item__desc {
-  font-size: var(--work-desc-size, 0.95rem);
+  font-size: var(--work-desc-size, 1.4rem);
   color: var(--work-desc-color, var(--color-text));
   font-family: var(--work-desc-font, var(--font-main));
   font-weight: var(--work-desc-weight, 400);
