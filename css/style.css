@@ -352,10 +352,7 @@ ul {
   font-weight: 800;
   text-align: center;
   margin-bottom: 8px;
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
 }
 
 .section__title::after {
