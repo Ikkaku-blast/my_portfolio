@@ -103,9 +103,17 @@ ul {
 }
 
 /* staggered delay */
-.animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
-.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
-.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.animate-on-scroll:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.animate-on-scroll:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.animate-on-scroll:nth-child(4) {
+  transition-delay: 0.3s;
+}
 
 /* ============================================================
    HEADER / NAV
@@ -271,9 +279,19 @@ ul {
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(24px, -18px) scale(1.04); }
-  66% { transform: translate(-16px, 12px) scale(0.96); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(24px, -18px) scale(1.04);
+  }
+
+  66% {
+    transform: translate(-16px, 12px) scale(0.96);
+  }
 }
 
 .hero__content {
@@ -432,104 +450,73 @@ ul {
 /* ============================================================
    WORKS
    ============================================================ */
-.works__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--gap);
+.works__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.work-card {
+.work-item {
+  /* 背景色は各作品の style="--work-bg: #色コード;" で個別に変更可能 */
+  background: var(--work-bg, #a8c4e0);
+  display: flex;
+  align-items: center;
+  padding: 40px 48px;
+  gap: 40px;
+  transition: filter var(--transition);
+}
+
+.work-item:hover {
+  filter: brightness(1.05);
+}
+
+.work-item__image-wrapper {
+  flex-shrink: 0;
+  width: 220px;
+  height: 180px;
   background: var(--color-white);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.work-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.work-card__image {
-  position: relative;
-  height: 200px;
-  background: var(--card-accent, var(--gradient-1));
+  border: 2px solid #999;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.work-card__placeholder-icon {
-  font-size: 3.5rem;
-  transition: transform var(--transition);
+.work-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.work-card:hover .work-card__placeholder-icon {
-  transform: scale(1.15);
+/* ------ 作品タイトルのカスタマイズ用CSS変数 ------
+   以下の変数をインラインstyleまたは:rootで上書きすることで
+   各作品のタイトルを自由にカスタマイズできます:
+   --work-title-size     : タイトルのフォントサイズ (デフォルト: 1.3rem)
+   --work-title-color    : タイトルの文字色 (デフォルト: var(--color-text))
+   --work-title-font     : タイトルのフォント (デフォルト: var(--font-main))
+   --work-title-weight   : タイトルの太さ (デフォルト: 700)
+*/
+.work-item__title {
+  font-size: var(--work-title-size, 1.3rem);
+  font-weight: var(--work-title-weight, 700);
+  color: var(--work-title-color, var(--color-text));
+  font-family: var(--work-title-font, var(--font-main));
+  margin-bottom: 12px;
 }
 
-.work-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.work-card:hover .work-card__overlay {
-  opacity: 1;
-}
-
-.work-card__view {
-  padding: 10px 24px;
-  background: var(--color-white);
-  color: var(--color-text);
-  font-weight: 700;
-  font-size: 0.85rem;
-  border-radius: 50px;
-  transform: translateY(8px);
-  transition: transform var(--transition);
-}
-
-.work-card:hover .work-card__view {
-  transform: translateY(0);
-}
-
-.work-card__body {
-  padding: 24px;
-}
-
-.work-card__title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.work-card__desc {
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-.work-card__tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.work-card__tags span {
-  padding: 4px 12px;
-  background: var(--color-bg-alt);
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-accent);
+/* ------ 作品説明文のカスタマイズ用CSS変数 ------
+   --work-desc-size      : 説明文のフォントサイズ (デフォルト: 0.95rem)
+   --work-desc-color     : 説明文の文字色 (デフォルト: var(--color-text))
+   --work-desc-font      : 説明文のフォント (デフォルト: var(--font-main))
+   --work-desc-weight    : 説明文の太さ (デフォルト: 400)
+   --work-desc-line-height: 行間 (デフォルト: 1.8)
+*/
+.work-item__desc {
+  font-size: var(--work-desc-size, 0.95rem);
+  color: var(--work-desc-color, var(--color-text));
+  font-family: var(--work-desc-font, var(--font-main));
+  font-weight: var(--work-desc-weight, 400);
+  line-height: var(--work-desc-line-height, 1.8);
 }
 
 /* ============================================================
@@ -711,8 +698,17 @@ ul {
     justify-content: center;
   }
 
-  .works__grid {
-    grid-template-columns: 1fr;
+  .work-item {
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .work-item__image-wrapper {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
   }
 
   .hero__shape--1 {
