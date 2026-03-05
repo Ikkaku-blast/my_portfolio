@@ -451,13 +451,15 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .work-item {
   /* 背景色は各作品の style="--work-bg: #色コード;" で個別に変更可能 */
   background: var(--work-bg, #a8c4e0);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 60px 64px;
   gap: 60px;
   transition: filter var(--transition);
