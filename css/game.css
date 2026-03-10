@@ -376,3 +376,204 @@
         font-size: 2rem;
     }
 }
+
+/* ============================================================
+   WELCOME MODAL
+   ============================================================ */
+.welcome-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: welcome-fade-in 0.6s ease;
+}
+
+.welcome-modal.is-hidden {
+    animation: welcome-fade-out 0.5s ease forwards;
+    pointer-events: none;
+}
+
+.welcome-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 26, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.welcome-modal__card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 48px 44px 40px;
+    max-width: 480px;
+    width: 90%;
+    box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: welcome-card-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.welcome-modal__icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    animation: welcome-icon-bounce 1.5s ease-in-out infinite;
+}
+
+.welcome-modal__title {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6c5ce7, #a855f7, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+}
+
+.welcome-modal__desc {
+    color: #4a4a5a;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.welcome-modal__desc strong {
+    color: #6c5ce7;
+    font-weight: 700;
+}
+
+.welcome-modal__note {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2d2d3a;
+    margin-bottom: 28px;
+}
+
+.welcome-modal__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.welcome-modal__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+}
+
+.welcome-modal__btn--play {
+    background: linear-gradient(135deg, #6c5ce7, #a855f7);
+    color: #fff;
+    box-shadow: 0 6px 25px rgba(108, 92, 231, 0.4);
+}
+
+.welcome-modal__btn--play:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(108, 92, 231, 0.6);
+}
+
+.welcome-modal__btn--normal {
+    background: transparent;
+    color: #6b6b80;
+    border: 2px solid #e0dce8;
+    padding: 12px 36px;
+}
+
+.welcome-modal__btn--normal:hover {
+    border-color: #a855f7;
+    color: #a855f7;
+    transform: translateY(-2px);
+}
+
+.welcome-modal__btn-icon {
+    font-size: 1.2rem;
+}
+
+.welcome-modal__hint {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    color: #9b9baa;
+}
+
+/* Animations */
+@keyframes welcome-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes welcome-fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes welcome-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes welcome-icon-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Welcome Modal Responsive */
+@media (max-width: 768px) {
+    .welcome-modal__card {
+        padding: 36px 24px 32px;
+    }
+
+    .welcome-modal__title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-modal__desc {
+        font-size: 0.88rem;
+    }
+
+    .welcome-modal__btn {
+        font-size: 0.88rem;
+        padding: 12px 28px;
+    }
+}

@@ -3,12 +3,55 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  /* ==========================================================
+     0. Welcome Modal — 遊びモード選択
+     ========================================================== */
+  const welcomeModal = document.getElementById('welcome-modal');
+  const welcomePlayBtn = document.getElementById('welcome-play-btn');
+  const welcomeNormalBtn = document.getElementById('welcome-normal-btn');
+
+  function closeWelcomeModal(callback) {
+    if (!welcomeModal) return;
+    welcomeModal.classList.add('is-hidden');
+    sessionStorage.setItem('welcomeShown', 'true');
+    welcomeModal.addEventListener('animationend', function handler() {
+      welcomeModal.removeEventListener('animationend', handler);
+      welcomeModal.style.display = 'none';
+      if (callback) callback();
+    });
+  }
+
+  if (welcomeModal) {
+    // 同一セッション中は再表示しない
+    if (sessionStorage.getItem('welcomeShown')) {
+      welcomeModal.style.display = 'none';
+    } else {
+      welcomeModal.style.display = 'flex';
+    }
+  }
+
+  if (welcomePlayBtn) {
+    welcomePlayBtn.addEventListener('click', () => {
+      closeWelcomeModal(() => {
+        // game.js の openGame を呼ぶため、遊びモードボタンをクリック
+        const playModeBtn = document.getElementById('play-mode-btn');
+        if (playModeBtn) playModeBtn.click();
+      });
+    });
+  }
+
+  if (welcomeNormalBtn) {
+    welcomeNormalBtn.addEventListener('click', () => {
+      closeWelcomeModal();
+    });
+  }
+
   /* ---------- Elements ---------- */
-  const header      = document.getElementById('header');
-  const hamburger   = document.getElementById('hamburger');
-  const nav         = document.getElementById('nav');
-  const navLinks    = document.querySelectorAll('.header__nav-link');
-  const sections    = document.querySelectorAll('.section, .hero');
+  const header = document.getElementById('header');
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('.header__nav-link');
+  const sections = document.querySelectorAll('.section, .hero');
   const animTargets = document.querySelectorAll('.animate-on-scroll');
 
   /* ==========================================================

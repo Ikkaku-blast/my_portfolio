@@ -16,6 +16,30 @@
 </head>
 
 <body>
+  <!-- ========== ウェルカムモーダル ========== -->
+  <div class="welcome-modal" id="welcome-modal">
+    <div class="welcome-modal__backdrop"></div>
+    <div class="welcome-modal__card">
+      <div class="welcome-modal__icon">🎮</div>
+      <h2 class="welcome-modal__title">ようこそ！</h2>
+      <p class="welcome-modal__desc">
+        このポートフォリオは<strong>遊びながら</strong>作品を見ることができます。<br>
+        インベーダー × ブロック崩しのゲームで、敵を倒すと作品の詳細が見られます！
+      </p>
+      <p class="welcome-modal__note">遊びモードをオンにしますか？</p>
+      <div class="welcome-modal__actions">
+        <button class="welcome-modal__btn welcome-modal__btn--play" id="welcome-play-btn">
+          <span class="welcome-modal__btn-icon">🕹️</span>
+          遊びモードをオンにする
+        </button>
+        <button class="welcome-modal__btn welcome-modal__btn--normal" id="welcome-normal-btn">
+          通常モードで見る
+        </button>
+      </div>
+      <p class="welcome-modal__hint">※ いつでもヘッダーの「遊びモード」ボタンから切り替えられます</p>
+    </div>
+  </div>
+
   <!-- ========== ナビゲーション ========== -->
   <header class="header" id="header">
     <div class="header__inner">
