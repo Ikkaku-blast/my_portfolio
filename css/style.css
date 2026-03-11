@@ -459,9 +459,10 @@ ul {
   /* 背景色は各作品の style="--work-bg: #色コード;" で個別に変更可能 */
   background: var(--work-bg, #a8c4e0);
   display: flex;
-  align-items: flex-start;
-  padding: 60px 64px;
-  gap: 60px;
+  flex-direction: column;
+  padding: 56px max(80px, calc((100% - 760px) / 2));
+  gap: 24px;
+  width: 100%;
   transition: filter var(--transition);
 }
 
@@ -469,10 +470,41 @@ ul {
   filter: brightness(1.05);
 }
 
+/* --- タイトル --- */
+.work-item__title {
+  font-size: var(--work-title-size, 2.6rem);
+  font-weight: var(--work-title-weight, 800);
+  color: var(--work-title-color, var(--color-text));
+  font-family: var(--work-title-font, var(--font-main));
+  text-align: center;
+}
+
+/* --- メタ情報（制作期間, 使用ツール等） --- */
+.work-item__meta {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.3px;
+}
+
+/* --- 作品概要 --- */
+.work-item__summary {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.9;
+}
+
+/* --- 画像 + キャプション (figure) --- */
+.work-item__figure {
+  margin: 16px auto;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
 .work-item__image-wrapper {
-  flex-shrink: 0;
-  width: 440px;
-  height: 360px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   background: var(--color-white);
   border: 2px solid #999;
   display: flex;
@@ -487,35 +519,56 @@ ul {
   object-fit: cover;
 }
 
-/* ------ 作品タイトルのカスタマイズ用CSS変数 ------
-   以下の変数をインラインstyleまたは:rootで上書きすることで
-   各作品のタイトルを自由にカスタマイズできます:
-   --work-title-size     : タイトルのフォントサイズ (デフォルト: 1.3rem)
-   --work-title-color    : タイトルの文字色 (デフォルト: var(--color-text))
-   --work-title-font     : タイトルのフォント (デフォルト: var(--font-main))
-   --work-title-weight   : タイトルの太さ (デフォルト: 700)
-*/
-.work-item__title {
-  font-size: var(--work-title-size, 2.2rem);
-  font-weight: var(--work-title-weight, 700);
-  color: var(--work-title-color, var(--color-text));
-  font-family: var(--work-title-font, var(--font-main));
-  margin-bottom: 16px;
+.work-item__caption {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-top: 8px;
 }
 
-/* ------ 作品説明文のカスタマイズ用CSS変数 ------
-   --work-desc-size      : 説明文のフォントサイズ (デフォルト: 0.95rem)
-   --work-desc-color     : 説明文の文字色 (デフォルト: var(--color-text))
-   --work-desc-font      : 説明文のフォント (デフォルト: var(--font-main))
-   --work-desc-weight    : 説明文の太さ (デフォルト: 400)
-   --work-desc-line-height: 行間 (デフォルト: 1.8)
-*/
-.work-item__desc {
-  font-size: var(--work-desc-size, 1.4rem);
-  color: var(--work-desc-color, var(--color-text));
-  font-family: var(--work-desc-font, var(--font-main));
-  font-weight: var(--work-desc-weight, 400);
-  line-height: var(--work-desc-line-height, 1.8);
+/* --- セクション見出し（左ボーダー付き） --- */
+.work-item__section-heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text);
+  border-left: 5px solid var(--color-text);
+  padding-left: 16px;
+  margin-top: 16px;
+}
+
+/* --- 詳細テキスト --- */
+.work-item__detail-text {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.9;
+}
+
+/* --- サブ見出し（中央寄せ） --- */
+.work-item__sub-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* --- サブ画像 --- */
+.work-item__sub-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 2px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-white);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.work-item__sub-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ============================================================
@@ -698,16 +751,20 @@ ul {
   }
 
   .work-item {
-    flex-direction: column;
-    padding: 24px;
-    gap: 20px;
-    text-align: center;
+    padding: 24px 20px;
+    gap: 18px;
   }
 
-  .work-item__image-wrapper {
-    width: 100%;
+  .work-item__section-heading {
+    font-size: 1.3rem;
+  }
+
+  .work-item__sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .work-item__sub-image-wrapper {
     max-width: 280px;
-    height: 200px;
   }
 
   .hero__shape--1 {

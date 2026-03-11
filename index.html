@@ -87,11 +87,14 @@
           </div>
         </div>
         <div class="about__text animate-on-scroll">
-          <h3 class="about__name">あなたの名前</h3>
+          <h3 class="about__name">黒沼　慎太郎</h3>
           <p class="about__role">クリエイティブデベロッパー / デザイナー</p>
           <p class="about__description">
-            ここに自己紹介文を記載してください。これまでの経歴やスキル、興味・関心のある分野についてなど、
-            あなた自身のことを伝えるテキストを入れましょう。
+            大阪大学基礎工学院システム創成専攻所属。大学ではゲーム制作を開始し、ゲームの「ルール」「面白さ」を考えることが楽しくプランナー志望になりました。
+            ゲーム企画に関することはもちろん、色彩デザインやプログラミングなど幅広く手を出しています。
+            視野を広げるためにゲームにこだわりすぎず政治経済・教育・テクノロジー・スポーツなど様々な情報を新聞より収集したり、
+            新しい趣味を見つけることに日々奮闘しています。
+
           </p>
           <div class="about__skills">
             <span class="skill-tag">HTML / CSS</span>
@@ -115,41 +118,90 @@
 
         <!-- 作品A -->
         <article class="work-item animate-on-scroll" style="--work-bg: #ff9f9f36;">
-          <div class="work-item__image-wrapper">
-            <img src="image/temporary.png" alt="作品Aの画像" class="work-item__image">
-          </div>
-          <div class="work-item__body">
-            <h3 class="work-item__title">ハムハム絵合わせ</h3>
-            <p class="work-item__desc">・技術も経験も素材もない初めての個人制作でプレイヤーをどのように楽しませるかが企画の中心<br>
-              ・手作り感満載になってしまうので、むしろその粗さをユーモアとしてとらえプレイヤーに笑ってもらえるような設計にした<br>
-              ・ゲームの雰囲気をユーモア中心に決めたため、ハムスターまみれにしたり、音楽を異常に厳かする工夫などを凝らした<br>
-              ・ルールはゲームの雰囲気に合わせて分かりやすさ、シンプルさ重視<br>
-              ・誰でもわかるルールが必要ということで神経衰弱と落ちものを避けるゲームを融合<br>
-              ・
-            </p>
-          </div>
+          <!-- タイトル -->
+          <h3 class="work-item__title">ハムハム絵合わせ</h3>
+          <!-- メタ情報 -->
+          <p class="work-item__meta">制作期間2022/02/10~2022/04/15, 使用ツール Python, 個人制作</p>
+
+          <!-- 作品概要 -->
+          <p class="work-item__summary">
+            作品概要：このゲームは上から降ってくるハムスターを避けながら神経衰弱を行うゲームです。カードの暗記と避け、いずれに集中するかの駆け引きが生まれる可愛い雰囲気と固められたゲーム性を両立したゲームです。</p>
+
+          <!-- メイン画像 + キャプション -->
+          <figure class="work-item__figure">
+            <div class="work-item__image-wrapper">
+              <img src="image/temporary.png" alt="作品Aの画像" class="work-item__image">
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
+
+          <!-- セクション見出し（左ボーダー付き） -->
+          <h4 class="work-item__section-heading">技術・知識・経験が無い中どう面白くするか</h4>
+          <!-- 詳細テキスト -->
+          <p class="work-item__detail-text">
+            当時私はゲーム制作どころか、プログラミングやデザインなどあらゆるゲームを構成する要素で初心者でした。初心者の私ではどうしても作品に粗が出てしまう、であればその粗をユーモアに変えてしまおうと考えました。また、ゲームのルール設計に関しても自分が実装できるレベルでないと意味がないと考え、プログラミングの教科書にお手本が掲載されていた神経衰弱をアレンジすることにしました。このような思考過程を踏まえゲーム設計の柱を「ユーモア」と「神経衰弱」に設定しました。
+          </p>
+
+          <!-- サブ見出し -->
+          <h4 class="work-item__sub-heading">神経衰弱はそもそも面白いのか</h4>
+          <!-- 詳細テキスト -->
+          <p class="work-item__detail-text">
+            神経衰弱をどのようにアレンジすればいいか、アイデア集めの一環としてまずは普通の神経衰弱をプレイしてみました。するとこのゲームはあまり差異のない地味なトランプを暗記するだけの単調なゲームであることに気づきました。また、記憶力しか介在しないためプレイヤーの才能でしかスコアが決まらないのもよろしくないと感じました。そこで私は現状の神経衰弱の「単調」「記憶力でしか決まらない」「トランプが地味」という課題を解決する「ハムスターを避けながらハムスターの絵柄をそろえる」というアイデアを思いつき実行しました。結果ハムスターが絵柄の派手さとユーモアを両立してくれる存在になり、避けるか覚えるかという新たな駆け引きを生んだ面白い神経衰弱が完成しました。
+          </p>
+
+          <!-- サブ画像 + キャプション -->
+          <figure class="work-item__figure">
+            <div class="work-item__sub-image-wrapper">
+              <img src="image/temporary.png" alt="課題・解決を示す画像" class="work-item__sub-image">
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
         </article>
 
         <!-- 作品B -->
         <article class="work-item animate-on-scroll" style="--work-bg: #eaefa055;">
-          <div class="work-item__image-wrapper">
-            <img src="image/temporary.png" alt="作品Bの画像" class="work-item__image">
-          </div>
-          <div class="work-item__body">
-            <h3 class="work-item__title">作品タイトル B</h3>
-            <p class="work-item__desc">作品の概要をここに記載します。使用した技術やこだわったポイントなど、詳細な説明を自由に記述できます。</p>
-          </div>
+          <h3 class="work-item__title">作品タイトル B</h3>
+          <p class="work-item__meta">制作期間20XX/XX/XX~20XX/XX/XX, 使用ツール XXXX, 個人制作</p>
+          <p class="work-item__summary">作品概要：ここに作品Bの概要を記載します。</p>
+          <figure class="work-item__figure">
+            <div class="work-item__image-wrapper">
+              <img src="image/temporary.png" alt="作品Bの画像" class="work-item__image">
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
+          <h4 class="work-item__section-heading">セクション見出し</h4>
+          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
+          <h4 class="work-item__sub-heading">サブ見出し</h4>
+          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
+          <figure class="work-item__figure">
+            <div class="work-item__sub-image-wrapper">
+              <img src="image/temporary.png" alt="課題・解決を示す画像" class="work-item__sub-image">
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
         </article>
 
         <!-- 作品C -->
         <article class="work-item animate-on-scroll" style="--work-bg: #9ff4b93b;">
-          <div class="work-item__image-wrapper">
-            <img src="image/temporary.png" alt="作品の画像" class="work-item__image">
-          </div>
-          <div class="work-item__body">
-            <h3 class="work-item__title">作品タイトル C</h3>
-            <p class="work-item__desc">作品の概要をここに記載します。使用した技術やこだわったポイントなど、詳細な説明を自由に記述できます。</p>
-          </div>
+          <h3 class="work-item__title">作品タイトル C</h3>
+          <p class="work-item__meta">制作期間20XX/XX/XX~20XX/XX/XX, 使用ツール XXXX, 個人制作</p>
+          <p class="work-item__summary">作品概要：ここに作品Cの概要を記載します。</p>
+          <figure class="work-item__figure">
+            <div class="work-item__image-wrapper">
+              <img src="image/temporary.png" alt="作品Cの画像" class="work-item__image">
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
+          <h4 class="work-item__section-heading">セクション見出し</h4>
+          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
+          <h4 class="work-item__sub-heading">サブ見出し</h4>
+          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
+          <figure class="work-item__figure">
+            <div class="work-item__sub-image-wrapper">
+              <img src="image/temporary.png" alt="課題・解決を示す画像" class="work-item__sub-image">
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
         </article>
 
       </div>
