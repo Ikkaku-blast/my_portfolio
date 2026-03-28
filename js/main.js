@@ -33,9 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (welcomePlayBtn) {
     welcomePlayBtn.addEventListener('click', () => {
       closeWelcomeModal(() => {
-        // game.js の openGame を呼ぶため、遊びモードボタンをクリック
-        const playModeBtn = document.getElementById('play-mode-btn');
-        if (playModeBtn) playModeBtn.click();
+        // テキスト隠しモードを起動
+        if (window.PlayMode) window.PlayMode.activate();
       });
     });
   }

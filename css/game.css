@@ -1,5 +1,5 @@
 /* ============================================================
-   GAME MODE STYLES
+   PLAY MODE STYLES — テキスト隠しモード
    ============================================================ */
 
 /* ---------- Play Mode Toggle Button ---------- */
@@ -46,310 +46,47 @@
     font-size: 1.1rem;
 }
 
-/* ---------- Game Overlay ---------- */
-.game-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: #0a0a1a;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.game-overlay.is-visible {
-    display: flex;
-    opacity: 1;
-}
-
-/* ---------- Game Canvas ---------- */
-.game-canvas {
-    display: block;
-    border-radius: 8px;
-    box-shadow:
-        0 0 30px rgba(108, 92, 231, 0.3),
-        0 0 60px rgba(108, 92, 231, 0.1);
-}
-
-/* ---------- Game HUD ---------- */
-.game-hud {
+/* ---------- テキスト隠しブロック ---------- */
+.play-hide-container {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 40px;
-    z-index: 2100;
+    pointer-events: none;
+    z-index: 10;
+    overflow: visible;
 }
 
-.game-hud__item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.game-hud__label {
-    opacity: 0.6;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-}
-
-.game-hud__value {
-    font-size: 1.3rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #ff6b6b, #ffa751);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* ---------- Close Button ---------- */
-.game-close-btn {
+.play-hide-block {
     position: absolute;
-    top: 20px;
-    right: 24px;
-    z-index: 2200;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.4rem;
+    background: #111;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    animation: block-shake 0.15s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+    z-index: 11;
 }
 
-.game-close-btn:hover {
-    background: rgba(255, 107, 107, 0.2);
-    border-color: rgba(255, 107, 107, 0.5);
-    color: #ff6b6b;
-    transform: rotate(90deg);
-}
+/* 震えアニメーション */
+@keyframes block-shake {
+    0% {
+        transform: translate(0, 0);
+    }
 
-/* ---------- Game Screens (Start / Game Over / Clear) ---------- */
-.game-screen {
-    position: absolute;
-    inset: 0;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2150;
-    background: rgba(10, 10, 26, 0.92);
-    backdrop-filter: blur(8px);
-}
-
-.game-screen.is-visible {
-    display: flex;
-}
-
-.game-screen__title {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 16px;
-    line-height: 1.2;
-}
-
-.game-screen__title--gradient {
-    background: linear-gradient(135deg, #ff6b6b, #ffa751, #ffce56);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.game-screen__title--gameover {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.game-screen__title--clear {
-    background: linear-gradient(135deg, #00d2ff, #3a7bd5, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: rainbow-shift 3s ease infinite;
-}
-
-@keyframes rainbow-shift {
-
-    0%,
-    100% {
-        filter: hue-rotate(0deg);
+    25% {
+        transform: translate(-1.5px, 0.8px);
     }
 
     50% {
-        filter: hue-rotate(30deg);
-    }
-}
-
-.game-screen__subtitle {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1rem;
-    margin-bottom: 12px;
-}
-
-.game-screen__instruction {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.85rem;
-    margin-bottom: 32px;
-    max-width: 400px;
-    text-align: center;
-    line-height: 1.6;
-}
-
-.game-screen__btn {
-    padding: 14px 40px;
-    border: none;
-    border-radius: 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.game-screen__btn--start {
-    background: linear-gradient(135deg, #6c5ce7, #a855f7);
-    color: #fff;
-    box-shadow: 0 6px 25px rgba(108, 92, 231, 0.5);
-}
-
-.game-screen__btn--start:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(108, 92, 231, 0.6);
-}
-
-.game-screen__btn--retry {
-    background: linear-gradient(135deg, #ff6b6b, #ffa751);
-    color: #fff;
-    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
-}
-
-.game-screen__btn--retry:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(255, 107, 107, 0.5);
-}
-
-.game-screen__btn--portfolio {
-    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
-    color: #fff;
-    box-shadow: 0 6px 25px rgba(0, 210, 255, 0.4);
-    margin-top: 12px;
-}
-
-.game-screen__btn--portfolio:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(0, 210, 255, 0.5);
-}
-
-/* ---------- Work Detail Modal ---------- */
-.game-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(10, 10, 26, 0.85);
-    backdrop-filter: blur(12px);
-}
-
-.game-modal.is-visible {
-    display: flex;
-    animation: modal-fade-in 0.4s ease;
-}
-
-@keyframes modal-fade-in {
-    from {
-        opacity: 0;
+        transform: translate(1px, -1.2px);
     }
 
-    to {
-        opacity: 1;
-    }
-}
-
-.game-modal__content {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 560px;
-    width: 90%;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    animation: modal-slide-up 0.4s ease;
-    text-align: center;
-}
-
-@keyframes modal-slide-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
+    75% {
+        transform: translate(-0.8px, -0.5px);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+    100% {
+        transform: translate(1.2px, 1px);
     }
-}
-
-.game-modal__image {
-    width: 100%;
-    max-height: 280px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.game-modal__title {
-    font-family: 'Inter', 'Noto Sans JP', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 12px;
-}
-
-.game-modal__desc {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.92rem;
-    line-height: 1.8;
-    margin-bottom: 24px;
-}
-
-.game-modal__close {
-    padding: 10px 32px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.game-modal__close:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ---------- Responsive ---------- */
@@ -357,23 +94,6 @@
     .play-mode-btn {
         padding: 6px 14px;
         font-size: 0.78rem;
-    }
-
-    .game-hud {
-        gap: 20px;
-        top: 12px;
-    }
-
-    .game-hud__value {
-        font-size: 1.1rem;
-    }
-
-    .game-modal__content {
-        padding: 28px 20px;
-    }
-
-    .game-screen__title {
-        font-size: 2rem;
     }
 }
 

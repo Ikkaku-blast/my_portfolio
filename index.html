@@ -20,11 +20,11 @@
   <div class="welcome-modal" id="welcome-modal">
     <div class="welcome-modal__backdrop"></div>
     <div class="welcome-modal__card">
-      <div class="welcome-modal__icon">🎮</div>
+      <div class="welcome-modal__icon">🧹</div>
       <h2 class="welcome-modal__title">ようこそ！</h2>
       <p class="welcome-modal__desc">
         このポートフォリオは<strong>遊びながら</strong>作品を見ることができます。<br>
-        インベーダー × ブロック崩しのゲームで、敵を倒すと作品の詳細が見られます！
+        テキストの上に散らばったブロックをクリックして掃除しながら読んでみましょう！
       </p>
       <p class="welcome-modal__note">遊びモードをオンにしますか？</p>
       <div class="welcome-modal__actions">
@@ -110,6 +110,7 @@
   </section>
 
   <!-- ========== 作品紹介 ========== -->
+  <!-- 右のようにspanで囲えば文字を隠せる<span data-play-hide>そもそも面白いのか</span>　-->
   <section class="works section" id="works">
     <div class="container">
       <h2 class="section__title animate-on-scroll">Works</h2>
@@ -125,83 +126,185 @@
 
           <!-- 作品概要 -->
           <p class="work-item__summary">
-            作品概要：このゲームは上から降ってくるハムスターを避けながら神経衰弱を行うゲームです。カードの暗記と避け、いずれに集中するかの駆け引きが生まれる可愛い雰囲気と固められたゲーム性を両立したゲームです。</p>
+            作品概要：このゲームは上から降ってくるハムスターを避けながら神経衰弱を行うゲームです。カードの暗記と避け、いずれに集中するかの駆け引きが生まれる可愛い雰囲気と固められたゲーム性が両立したゲームです。</p>
 
           <!-- メイン画像 + キャプション -->
           <figure class="work-item__figure">
             <div class="work-item__image-wrapper">
-              <img src="image/temporary.png" alt="作品Aの画像" class="work-item__image">
+              <img src="image/hamhamA.png" alt="作品Aの画像" class="work-item__image">
             </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
+            <figcaption class="work-item__caption">ハムスターに当たらないようにプレイヤー（ヒマワリの種）はカードをめくる</figcaption>
           </figure>
 
           <!-- セクション見出し（左ボーダー付き） -->
           <h4 class="work-item__section-heading">技術・知識・経験が無い中どう面白くするか</h4>
           <!-- 詳細テキスト -->
           <p class="work-item__detail-text">
-            当時私はゲーム制作どころか、プログラミングやデザインなどあらゆるゲームを構成する要素で初心者でした。初心者の私ではどうしても作品に粗が出てしまう、であればその粗をユーモアに変えてしまおうと考えました。また、ゲームのルール設計に関しても自分が実装できるレベルでないと意味がないと考え、プログラミングの教科書にお手本が掲載されていた神経衰弱をアレンジすることにしました。このような思考過程を踏まえゲーム設計の柱を「ユーモア」と「神経衰弱」に設定しました。
+            当時私はゲーム制作どころか、プログラミングやデザインなどあらゆるゲームを構成する要素で初心者でした。初心者の私ではどうしても作品に粗が出てしまう、であれば<span
+              data-play-hide>その粗をユーモアに変えてしまおう</span>と考えました。また、ゲームのルール設計に関しても自分が実装できるレベルでないと意味がないと考え、プログラミングの教科書にお手本が掲載されていた神経衰弱をアレンジすることにしました。このような思考過程を踏まえゲーム設計の柱を<span
+              data-play-hide>「ユーモア」と「神経衰弱」</span>に設定しました。
           </p>
 
           <!-- サブ見出し -->
-          <h4 class="work-item__sub-heading">神経衰弱はそもそも面白いのか</h4>
+          <h4 class="work-item__sub-heading">神経衰弱は<span data-play-hide>どこが面白くない？</span></h4>
           <!-- 詳細テキスト -->
           <p class="work-item__detail-text">
-            神経衰弱をどのようにアレンジすればいいか、アイデア集めの一環としてまずは普通の神経衰弱をプレイしてみました。するとこのゲームはあまり差異のない地味なトランプを暗記するだけの単調なゲームであることに気づきました。また、記憶力しか介在しないためプレイヤーの才能でしかスコアが決まらないのもよろしくないと感じました。そこで私は現状の神経衰弱の「単調」「記憶力でしか決まらない」「トランプが地味」という課題を解決する「ハムスターを避けながらハムスターの絵柄をそろえる」というアイデアを思いつき実行しました。結果ハムスターが絵柄の派手さとユーモアを両立してくれる存在になり、避けるか覚えるかという新たな駆け引きを生んだ面白い神経衰弱が完成しました。
+            神経衰弱をどのようにアレンジすればいいか、アイデア集めの一環としてまずは普通の神経衰弱をプレイしてみました。するとこのゲームはあまり差異のない地味なトランプを暗記するだけの単調なゲームであることに気づきました。
+            また、記憶力でしかスコアが決まらず、プレイヤーが戦術を考えたり工夫する余地がないという問題にも気づきました。そこで私は神経衰弱の課題を<span
+              data-play-hide>「単調」「記憶力でしか決まらない」「トランプが地味」</span>と設定し解決する方向でアレンジすることにしました。
+            誰にでもなじみがある神経衰弱をアレンジするため、誰でも気軽に遊べるようにあまり複雑すぎるルールにしてはいけないと考えました。そこで<span
+              data-play-hide>落ちものを避けながら神経衰弱をする</span>という方向に決めました。
+            落ちものを避けるゲームには「単調」「記憶力でしか決まらない」という課題を解決する「不規則性」と「アクション性」を併せ持つうえに、実装も容易と考えたからです。
+            では落ちものを何にするべきか、ここは上記で示したもう一つのこの企画の柱「ユーモア」とセットで考えました。画面上部から降ってきたら面白いモノとは？こんな大喜利めいたことを考え続けてこのゲームの顔<span
+              data-play-hide>「ハムスター」</span>が決まりました。
+            絵柄もハムスターにして「トランプが地味」という課題もついでに解決できました。
           </p>
 
-          <!-- サブ画像 + キャプション -->
-          <figure class="work-item__figure">
-            <div class="work-item__sub-image-wrapper">
-              <img src="image/temporary.png" alt="課題・解決を示す画像" class="work-item__sub-image">
-            </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
-          </figure>
+          <!-- サブ画像（横並び） -->
+          <div class="work-item__sub-gallery">
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション1</figcaption>
+            </figure>
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">ハムスターの絵柄とトランプの比較</figcaption>
+            </figure>
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像3" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション3</figcaption>
+            </figure>
+          </div>
+
+          <!-- サブ見出し -->
+          <h4 class="work-item__sub-heading">「何か」が足りない
+          </h4>
+          <!-- 詳細テキスト -->
+          <p class="work-item__detail-text">ハムスターが降ってくる、自分はそれを避ける、
+            そして神経衰弱をする。完璧に実装することができました。しかし、どこか面白みに欠けていることに気づきました。
+            ここからはゲームの違和感や不足しているモノを感じては言語化し解決するの繰り返しでした。見た目のインパクトに欠けるという課題には、落ちてくるハムスターの密度を大きくし速度を落とすことで難易度を変えずに解決。
+            自分のHPがわかりづらく、いつの間にかゲームオーバーになってしまうのであれば、HP表示を見やすい色合いにして残りに応じた警告音を鳴らして解決しました。他にもゲーム後半は
+            カードが減って簡単すぎてしまったり、音が少なく盛り上がりに欠けていたり、そもそも上から降ってくるハムスターを避ける理由など、課題の発見と解決には最初のバージョンが完成するまでより時間を要しました。
+            しかしこの課題を見つけるプロセスのおかげでプレイヤーからは大変な好評をいただきました。
+          </p>
         </article>
+
 
         <!-- 作品B -->
         <article class="work-item animate-on-scroll" style="--work-bg: #eaefa055;">
-          <h3 class="work-item__title">作品タイトル B</h3>
-          <p class="work-item__meta">制作期間20XX/XX/XX~20XX/XX/XX, 使用ツール XXXX, 個人制作</p>
-          <p class="work-item__summary">作品概要：ここに作品Bの概要を記載します。</p>
+          <h3 class="work-item__title">ドン引け！告白大失敗大作戦</h3>
+          <p class="work-item__meta">制作期間2025/08/03~2025/08/10, 使用ツール Unity,C#, 個人制作</p>
+          <p class="work-item__summary">
+            作品概要：このゲームは告白のセリフに合わせて適切なヤジを飛ばしながら多くの生卵をぶつけて、告白シーンを台無しにして女性に振られるように仕向けるゲームです。プレイヤーは神聖な告白シーンを台無しにする快感を体験することができます。
+          </p>
           <figure class="work-item__figure">
             <div class="work-item__image-wrapper">
               <img src="image/temporary.png" alt="作品Bの画像" class="work-item__image">
             </div>
             <figcaption class="work-item__caption">画像キャプション</figcaption>
           </figure>
-          <h4 class="work-item__section-heading">セクション見出し</h4>
-          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
-          <h4 class="work-item__sub-heading">サブ見出し</h4>
-          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
-          <figure class="work-item__figure">
-            <div class="work-item__sub-image-wrapper">
-              <img src="image/temporary.png" alt="課題・解決を示す画像" class="work-item__sub-image">
-            </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
-          </figure>
+          <h4 class="work-item__section-heading">面白い題材を考えるのではなく、<span data-play-hide>題材から面白くしよう</span></h4>
+          <p class="work-item__detail-text">
+            この作品は大会テーマに沿ったゲームを一週間で制作し評価しあう「Unity1week」というゲームジャム用に制作しました。制作猶予が一週間しかないため、なるべく最初の設計図で完成形にし、かつスピーディーに作る必要がありました。そこで今回はゲームの題材を吟味せずに決めて、決めた題材をどう面白くするかという方向にシフトしました。
+            この大会のテーマは「ひく」でした。真っ先に脳内で出てきた単語がドン引き、ドン引きさせることができたら面白いものは何かと思いついたのが愛の告白でした。こうして具体像は何も考えずに告白を邪魔して失敗させるというゲームの大枠を決めました。
+          </p>
+          <h4 class="work-item__sub-heading">プレイヤーが何をしたいのかを探す</h4>
+          <p class="work-item__detail-text">告白を邪魔して失敗させるという大枠か決まったところで、具体的にプレイヤーは何をしたいのかを考えることになりました。
+            ただ考えてもアイデアが湧くわけもないので一度恋愛ゲームなどの告白シーンを見てみることにしました。すると、告白のセリフにヤジを飛ばしたくてたまらない
+            自分に気づきました。フィクションの世界の告白なので仕方ないことなのですが、セリフが詩的すぎるのです。スラングで言い換えるならば<span data-play-hide>「痛い」</span>あるいは<span
+              data-play-hide>「臭い」</span>のです。
+            そんな痛い告白シーンにヤジを飛ばしたい衝動こそプレイヤーが求める体験なのではないか、そう考え告白にヤジを入れて失敗させるというより具体的なルールを決めることが
+            できました。
+          </p>
+          <div class="work-item__sub-gallery">
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション1</figcaption>
+            </figure>
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション2</figcaption>
+            </figure>
+
+          </div>
+          <h4 class="work-item__sub-heading">ヤジにゲーム性を見出す</h4>
+          <p class="work-item__detail-text">ではヤジを飛ばす行為にゲーム性をどのように介在させるべきだろうか。ヤジを連打で飛ばすようでは駆け引きがなくゲームとは言えないと考えました。
+            そこでヤジとはそもそも何かを振り返ってみました。思わず聞いてるこっちが恥ずかしくなってしまうようなセリフに「何言ってるんだ」と思わずツッコミを入れたくなるのがヤジの
+            正体でした。つまり、ヤジとは<span data-play-hide>ツッコミ</span>。
+            そう解釈し告白の文に対して正しいツッコミという名のヤジを飛ばし、スコアを伸ばすゲームに設計しました。
+            この設計ではゲームの面白さを<span
+              data-play-hide>クイズ</span>という形式で担保することができるため方向性が正しい確信がありました。また、ヤジを飛ばすだけではプレイヤーが手を動かす時間が短く、
+            退屈に感じられる問題があったため告白の隙間時間で卵を投げる妨害も設定しました。卵を投げることと正しいヤジを考えることを同時に行うことでプレイヤーにストレスを感じる設計にして、
+            プレイヤーがクリアしたとき強い達成感を得られるようにしました。
+          </p>
         </article>
 
         <!-- 作品C -->
         <article class="work-item animate-on-scroll" style="--work-bg: #9ff4b93b;">
-          <h3 class="work-item__title">作品タイトル C</h3>
-          <p class="work-item__meta">制作期間20XX/XX/XX~20XX/XX/XX, 使用ツール XXXX, 個人制作</p>
-          <p class="work-item__summary">作品概要：ここに作品Cの概要を記載します。</p>
+          <h3 class="work-item__title">恋するインサイト</h3>
+          <p class="work-item__meta">制作期間2025/12/21~2025/12/28, 使用ツール Unity,C# 個人制作</p>
+          <p class="work-item__summary">
+            作品概要：このゲームは女の子とデートしながら、能力を使って心の中を覗き本音を探るゲームです。女の子が本音を隠していそうな場面を感じ、少しずつ歩み寄って理解者になれる喜びをプレイヤーは体験できます。
+          </p>
           <figure class="work-item__figure">
             <div class="work-item__image-wrapper">
               <img src="image/temporary.png" alt="作品Cの画像" class="work-item__image">
             </div>
             <figcaption class="work-item__caption">画像キャプション</figcaption>
           </figure>
-          <h4 class="work-item__section-heading">セクション見出し</h4>
-          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
-          <h4 class="work-item__sub-heading">サブ見出し</h4>
-          <p class="work-item__detail-text">詳細な説明をここに記載します。</p>
-          <figure class="work-item__figure">
-            <div class="work-item__sub-image-wrapper">
-              <img src="image/temporary.png" alt="課題・解決を示す画像" class="work-item__sub-image">
-            </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
-          </figure>
+          <h4 class="work-item__section-heading"><span data-play-hide>邪魔しない</span>デザイン</h4>
+          <p class="work-item__detail-text">今まで手掛けてきたゲームはギャグ調のミニゲームだったため、イラストにはあまり力を入れずともむしろ雑味のあるイラストがギャグテイストとマッチしていました。
+            しかし真剣な恋愛ゲームを作るにあたり、今までのようなふざけた・不調和なデザインではプレイヤーが感情移入できないと考えため、プレイヤーを<span
+              data-play-hide>邪魔しないデザイン</span>になるよう注力しました。<br>
+
+            自身にデザイン技術がは皆無であったためAIに任せました。プレイヤーがAIイラストと認識すると違和感が引っ掛かって物語に没入できないと考え、課題を<span
+              data-play-hide>「AIっぽさからどう脱するか」</span>と設定しました。AIっぽさとは<span
+              data-play-hide>画一的で見たことあるもの</span>だと私は考えました。そこでAIっぽさを消すために世にあふれたイラストの平均から大きく離れたビットの画風にし、
+            キャラクターには片側の髪だけ異常に長いという大きな個性を持たせました。これら工夫はAIっぽさを消すだけでなく、ビット風の画風はノスタルジックな演出の補助、キャラクターの個性はプレイヤーを魅了するパーツとして働くと考えました。<br>
+
+            また、背景やキャラに原色を多く用いると背景とキャラで独立しているように見えたため、背景の彩度を抑えキャラクターの色味と被らないようにして自然に見えるような調整も行いました。UIもわずかに透過させることでゲーム画面から浮かないようにしました。
+            反対に、能力使用時にはプレイヤーにインパクトを与えたかったためあえて強い彩度のエフェクトを使用して画面から浮かせるような調整をしました。まとめるとキャラクター・UI・背景それぞれの要素でバランスを取り、<span
+              data-play-hide>ゲーム画面で浮かない・紛れない</span>ようデザインを調整しました。これら調整はAIが自動で行ってくれるものではないため、自身で色調の調整を勉強したり、既存のゲームを参考にしました。<br>
+
+          </p>
+          <h4 class="work-item__section-heading">シナリオに必要なのは<span data-play-hide>関心</span>・<span
+              data-play-hide>納得感</span>・<span data-play-hide>驚き</span></h4>
+          <p class="work-item__detail-text">
+            この作品も先ほどの作品と同じく制作猶予が一週間しかなかったため、先に題材だけ決めました。題材は「能力を使用し女の子の心の中を覗く恋愛ゲーム」としました。一週間しか制作猶予がないので短いシナリオしか作れません。つまり5分程度でプレイヤーを魅了させるシナリオが必要でした。ここでシナリオの課題をより具体的にすると「短い物語でどうやってプレイヤーに関心を持たせるか」「短い物語でプレイヤーが恋愛成就に納得できるか」「短い物語でプレイヤーをどう驚かせるか」の3点と考えました。
+            そこで物語の導入を<span data-play-hide>コメディチックにしてプレイヤーの関心を寄せ</span>、進んだところでシリアスにする緩急をつけた展開にしてプレイヤーが関心を持つようにしました。次の課題の「短時間で恋愛を成就させる展開にプレイヤーをどう納得させるか」については、プレイヤーから積極的にアプローチする展開にすることで解決を図りました。この展開に加え、女の子の心の中を能力で覗いて望まれる言動をとるというゲームシステムがあるので短時間で恋愛成就してもプレイヤーが納得できると考えました。
+              そして、実は<span data-play-hide>「プレイヤーの心の中は女の子に覗かれていた」</span>というエンドにしました。<span
+                data-play-hide>「自分の真剣な気持ちが初めから伝わっていた」</span>という要素が短いアプローチで付き合える納得感の補強にも、プレイヤーを驚かす要素にもなると考えシナリオに組み込みました。
+          </p>
+          <div class="work-item__sub-gallery">
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション1</figcaption>
+            </figure>
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション2</figcaption>
+            </figure>
+            <figure class="work-item__figure work-item__figure--sub">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/temporary.png" alt="サブ画像3" class="work-item__sub-image">
+              </div>
+              <figcaption class="work-item__caption">画像キャプション3</figcaption>
+            </figure>
+          </div>
         </article>
 
       </div>
@@ -283,63 +386,7 @@
     </div>
   </footer>
 
-  <!-- ========== ゲームオーバーレイ ========== -->
-  <div class="game-overlay" id="game-overlay">
-    <!-- Close -->
-    <button class="game-close-btn" id="game-close-btn" aria-label="ゲームを閉じる">✕</button>
 
-    <!-- HUD -->
-    <div class="game-hud">
-      <div class="game-hud__item">
-        <span class="game-hud__label">Score</span>
-        <span class="game-hud__value" id="game-score">0</span>
-      </div>
-      <div class="game-hud__item">
-        <span class="game-hud__label">Lives</span>
-        <span class="game-hud__value" id="game-lives">❤️❤️❤️</span>
-      </div>
-    </div>
-
-    <!-- Canvas -->
-    <canvas class="game-canvas" id="game-canvas"></canvas>
-
-    <!-- Start Screen -->
-    <div class="game-screen" id="game-start-screen">
-      <p class="game-screen__title game-screen__title--gradient">🎮 遊びモード</p>
-      <p class="game-screen__subtitle">インベーダー × ブロック崩し</p>
-      <p class="game-screen__instruction">
-        パドルを操作してボールを跳ね返し、<br>
-        敵（制作物）にぶつけよう！<br>
-        敵を倒すと作品の詳細を見られるよ。
-      </p>
-      <button class="game-screen__btn game-screen__btn--start" id="game-start-btn">ゲームスタート</button>
-    </div>
-
-    <!-- Game Over Screen -->
-    <div class="game-screen" id="game-over-screen">
-      <p class="game-screen__title game-screen__title--gameover">GAME OVER</p>
-      <p class="game-screen__subtitle">ボールを落としてしまった…</p>
-      <button class="game-screen__btn game-screen__btn--retry" id="game-retry-btn">もう一度</button>
-    </div>
-
-    <!-- Clear Screen -->
-    <div class="game-screen" id="game-clear-screen">
-      <p class="game-screen__title game-screen__title--clear">🎉 ALL CLEAR!</p>
-      <p class="game-screen__subtitle">全ての作品を見つけた！おめでとう！</p>
-      <button class="game-screen__btn game-screen__btn--retry" id="game-clear-retry-btn">もう一度遊ぶ</button>
-      <button class="game-screen__btn game-screen__btn--portfolio" id="game-portfolio-btn">ポートフォリオに戻る</button>
-    </div>
-  </div>
-
-  <!-- ========== 作品詳細モーダル ========== -->
-  <div class="game-modal" id="game-modal">
-    <div class="game-modal__content">
-      <img class="game-modal__image" id="game-modal-image" src="" alt="">
-      <h3 class="game-modal__title" id="game-modal-title"></h3>
-      <p class="game-modal__desc" id="game-modal-desc"></p>
-      <button class="game-modal__close" id="game-modal-close">閉じてゲームに戻る</button>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
   <script src="js/game.js"></script>
