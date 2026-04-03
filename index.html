@@ -131,7 +131,7 @@
           <!-- メイン画像 + キャプション -->
           <figure class="work-item__figure">
             <div class="work-item__image-wrapper">
-              <img src="image/hamhamA.png" alt="作品Aの画像" class="work-item__image">
+              <img src="image/hamhamA.png" alt="作品Aの画像" class="work-item__image" style="width: 600px;">
             </div>
             <figcaption class="work-item__caption">ハムスターに当たらないようにプレイヤー（ヒマワリの種）はカードをめくる</figcaption>
           </figure>
@@ -157,42 +157,46 @@
             落ちものを避けるゲームには「単調」「記憶力でしか決まらない」という課題を解決する「不規則性」と「アクション性」を併せ持つうえに、実装も容易と考えたからです。
             では落ちものを何にするべきか、ここは上記で示したもう一つのこの企画の柱「ユーモア」とセットで考えました。画面上部から降ってきたら面白いモノとは？こんな大喜利めいたことを考え続けてこのゲームの顔<span
               data-play-hide>「ハムスター」</span>が決まりました。
-            絵柄もハムスターにして「トランプが地味」という課題もついでに解決できました。
+            また、絵札もハムスターにして「トランプが地味」という課題も解決しました。ここで、絵札のハムスターをあえて一部類似した写真を複数利用し、プレイヤーを惑わすことで神経衰弱としての面白さも担保しました。
+            全ての絵札が簡単に見分けがついてしまう場合、プレイヤーは自然とカードの位置を覚えてしまい、<span
+              data-play-hide>「自身の記憶が正しかった」</span>という神経衰弱本来の面白さが失われると懸念しました。
+            しかしすべて紛らわしいとトランプで行う神経衰弱と変わらないため、区別がつきやすい写真も採用しました。プレイヤーは分かりやすい絵札を先にそろえるという戦術を組み立てる体験に楽しさを感じることができます。
           </p>
 
           <!-- サブ画像（横並び） -->
-          <div class="work-item__sub-gallery">
-            <figure class="work-item__figure work-item__figure--sub">
+          <figure class="work-item__figure">
+            <div class="work-item__sub-gallery">
               <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
+                <img src="image/hamham_pic.png" alt="サブ画像1" class="work-item__sub-image" style="width: 800px;">
               </div>
-              <figcaption class="work-item__caption">画像キャプション1</figcaption>
-            </figure>
-            <figure class="work-item__figure work-item__figure--sub">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
-              </div>
-              <figcaption class="work-item__caption">ハムスターの絵柄とトランプの比較</figcaption>
-            </figure>
-            <figure class="work-item__figure work-item__figure--sub">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像3" class="work-item__sub-image">
-              </div>
-              <figcaption class="work-item__caption">画像キャプション3</figcaption>
-            </figure>
-          </div>
+            </div>
+            <figcaption class="work-item__caption">ハムスターの絵札一覧</figcaption>
+          </figure>
 
           <!-- サブ見出し -->
-          <h4 class="work-item__sub-heading">「何か」が足りない
+          <h4 class="work-item__sub-heading">課題を見つける
           </h4>
           <!-- 詳細テキスト -->
           <p class="work-item__detail-text">ハムスターが降ってくる、自分はそれを避ける、
-            そして神経衰弱をする。完璧に実装することができました。しかし、どこか面白みに欠けていることに気づきました。
+            そして神経衰弱をする。完璧に実装することができました。しかし、テストプレイをすると少し面白さと遊びやすさが欠けているのを感じました。
             ここからはゲームの違和感や不足しているモノを感じては言語化し解決するの繰り返しでした。見た目のインパクトに欠けるという課題には、落ちてくるハムスターの密度を大きくし速度を落とすことで難易度を変えずに解決。
-            自分のHPがわかりづらく、いつの間にかゲームオーバーになってしまうのであれば、HP表示を見やすい色合いにして残りに応じた警告音を鳴らして解決しました。他にもゲーム後半は
-            カードが減って簡単すぎてしまったり、音が少なく盛り上がりに欠けていたり、そもそも上から降ってくるハムスターを避ける理由など、課題の発見と解決には最初のバージョンが完成するまでより時間を要しました。
-            しかしこの課題を見つけるプロセスのおかげでプレイヤーからは大変な好評をいただきました。
+            自分のHPを見ている余裕がなく、いつの間にかゲームオーバーになってしまう問題には、HP表示を見やすい色合いにして残りに応じた警告音を鳴らして解決。他にもゲーム後半は
+            カードが減って簡単すぎてしまう問題には後半落ちてくるハムスターを加速させ最後まで油断できないように、音が少なく盛り上がりに欠けているのであれば厳かなクラシックと大げさなリアクションの声を採用など、課題の発見と解決には最初のバージョンが完成するまでより多くの時間を費やしました。
+            この課題を見つけ解決を繰り返すプロセスでゲームはより完璧に近づき、プレイヤーからは好評をいただきました。
           </p>
+
+          <figure class="work-item__figure">
+            <div class="work-item__sub-gallery">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/hamhamD.png" alt="サブ画像1" class="work-item__sub-image" style="width: 450px;">
+              </div>
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/hamhamE.png" alt="サブ画像2" class="work-item__sub-image" style="width: 450px;">
+              </div>
+            </div>
+            <figcaption class="work-item__caption">カード枚数が多い場合（左）と少ない場合（右）の比較</figcaption>
+          </figure>
+
         </article>
 
 
@@ -201,13 +205,13 @@
           <h3 class="work-item__title">ドン引け！告白大失敗大作戦</h3>
           <p class="work-item__meta">制作期間2025/08/03~2025/08/10, 使用ツール Unity,C#, 個人制作</p>
           <p class="work-item__summary">
-            作品概要：このゲームは告白のセリフに合わせて適切なヤジを飛ばしながら多くの生卵をぶつけて、告白シーンを台無しにして女性に振られるように仕向けるゲームです。プレイヤーは神聖な告白シーンを台無しにする快感を体験することができます。
+            作品概要：このゲームは告白のセリフに合わせて6個の中から適切なヤジを選びつつ、生卵をぶつけて告白シーンを台無しにして女性に振られるように仕向けるゲームです。プレイヤーは神聖な告白シーンを台無しにする快感を体験することができます。
           </p>
           <figure class="work-item__figure">
             <div class="work-item__image-wrapper">
-              <img src="image/temporary.png" alt="作品Bの画像" class="work-item__image">
+              <img src="image/donbike_gamescene.png" alt="作品Bの画像" class="work-item__image" style="width: 800px;">
             </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
+            <figcaption class="work-item__caption">ゲーム画面</figcaption>
           </figure>
           <h4 class="work-item__section-heading">面白い題材を考えるのではなく、<span data-play-hide>題材から面白くしよう</span></h4>
           <p class="work-item__detail-text">
@@ -222,21 +226,19 @@
             そんな痛い告白シーンにヤジを飛ばしたい衝動こそプレイヤーが求める体験なのではないか、そう考え告白にヤジを入れて失敗させるというより具体的なルールを決めることが
             できました。
           </p>
-          <div class="work-item__sub-gallery">
-            <figure class="work-item__figure work-item__figure--sub">
+          <!-- 一旦使う画像が思いつかないからコメントアウト
+          <figure class="work-item__figure">
+            <div class="work-item__sub-gallery">
               <div class="work-item__sub-image-wrapper">
                 <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
               </div>
-              <figcaption class="work-item__caption">画像キャプション1</figcaption>
-            </figure>
-            <figure class="work-item__figure work-item__figure--sub">
               <div class="work-item__sub-image-wrapper">
                 <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
               </div>
-              <figcaption class="work-item__caption">画像キャプション2</figcaption>
-            </figure>
-
-          </div>
+            </div>
+            <figcaption class="work-item__caption">画像キャプション</figcaption>
+          </figure>
+        -->
           <h4 class="work-item__sub-heading">ヤジにゲーム性を見出す</h4>
           <p class="work-item__detail-text">ではヤジを飛ばす行為にゲーム性をどのように介在させるべきだろうか。ヤジを連打で飛ばすようでは駆け引きがなくゲームとは言えないと考えました。
             そこでヤジとはそもそも何かを振り返ってみました。思わず聞いてるこっちが恥ずかしくなってしまうようなセリフに「何言ってるんだ」と思わずツッコミを入れたくなるのがヤジの
@@ -254,13 +256,18 @@
           <h3 class="work-item__title">恋するインサイト</h3>
           <p class="work-item__meta">制作期間2025/12/21~2025/12/28, 使用ツール Unity,C# 個人制作</p>
           <p class="work-item__summary">
-            作品概要：このゲームは女の子とデートしながら、能力を使って心の中を覗き本音を探るゲームです。女の子が本音を隠していそうな場面を感じ、少しずつ歩み寄って理解者になれる喜びをプレイヤーは体験できます。
+            作品概要：このゲームは女の子とデートしながら、インサイトという特殊能力を使って心の中を覗き本音を探るゲームです。女の子が本音を隠していそうな場面を察し、本音を覗き、求められる言動をとって女の子と仲良くなれるゲームです。
           </p>
           <figure class="work-item__figure">
-            <div class="work-item__image-wrapper">
-              <img src="image/temporary.png" alt="作品Cの画像" class="work-item__image">
+            <div class="work-item__sub-gallery">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/insightB.png" alt="サブ画像1" class="work-item__sub-image" style="width: 450px;">
+              </div>
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/insightD.png" alt="サブ画像2" class="work-item__sub-image" style="width: 450px;">
+              </div>
             </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
+            <figcaption class="work-item__caption">ゲーム画面（左：能力を使用し女の子の本音を見ている場面　右：覗いた情報から選択肢を選ぶ場面）</figcaption>
           </figure>
           <h4 class="work-item__section-heading"><span data-play-hide>邪魔しない</span>デザイン</h4>
           <p class="work-item__detail-text">今まで手掛けてきたゲームはギャグ調のミニゲームだったため、イラストにはあまり力を入れずともむしろ雑味のあるイラストがギャグテイストとマッチしていました。
@@ -275,36 +282,31 @@
             また、背景やキャラに原色を多く用いると背景とキャラで独立しているように見えたため、背景の彩度を抑えキャラクターの色味と被らないようにして自然に見えるような調整も行いました。UIもわずかに透過させることでゲーム画面から浮かないようにしました。
             反対に、能力使用時にはプレイヤーにインパクトを与えたかったためあえて強い彩度のエフェクトを使用して画面から浮かせるような調整をしました。まとめるとキャラクター・UI・背景それぞれの要素でバランスを取り、<span
               data-play-hide>ゲーム画面で浮かない・紛れない</span>ようデザインを調整しました。これら調整はAIが自動で行ってくれるものではないため、自身で色調の調整を勉強したり、既存のゲームを参考にしました。<br>
-
+          <figure class="work-item__figure">
+            <div class="work-item__sub-gallery">
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/insightG.png" alt="サブ画像1" class="work-item__sub-image" style="width: 450px;">
+              </div>
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/insightE.png" alt="サブ画像2" class="work-item__sub-image" style="width: 450px;">
+              </div>
+              <div class="work-item__sub-image-wrapper">
+                <img src="image/insightF.png" alt="サブ画像3" class="work-item__sub-image" style="width: 450px;">
+              </div>
+            </div>
+            <figcaption class="work-item__caption">プレイ画面 </figcaption>
+          </figure>
           </p>
           <h4 class="work-item__section-heading">シナリオに必要なのは<span data-play-hide>関心</span>・<span
               data-play-hide>納得感</span>・<span data-play-hide>驚き</span></h4>
           <p class="work-item__detail-text">
-            この作品も先ほどの作品と同じく制作猶予が一週間しかなかったため、先に題材だけ決めました。題材は「能力を使用し女の子の心の中を覗く恋愛ゲーム」としました。一週間しか制作猶予がないので短いシナリオしか作れません。つまり5分程度でプレイヤーを魅了させるシナリオが必要でした。ここでシナリオの課題をより具体的にすると「短い物語でどうやってプレイヤーに関心を持たせるか」「短い物語でプレイヤーが恋愛成就に納得できるか」「短い物語でプレイヤーをどう驚かせるか」の3点と考えました。
-            そこで物語の導入を<span data-play-hide>コメディチックにしてプレイヤーの関心を寄せ</span>、進んだところでシリアスにする緩急をつけた展開にしてプレイヤーが関心を持つようにしました。次の課題の「短時間で恋愛を成就させる展開にプレイヤーをどう納得させるか」については、プレイヤーから積極的にアプローチする展開にすることで解決を図りました。この展開に加え、女の子の心の中を能力で覗いて望まれる言動をとるというゲームシステムがあるので短時間で恋愛成就してもプレイヤーが納得できると考えました。
-              そして、実は<span data-play-hide>「プレイヤーの心の中は女の子に覗かれていた」</span>というエンドにしました。<span
-                data-play-hide>「自分の真剣な気持ちが初めから伝わっていた」</span>という要素が短いアプローチで付き合える納得感の補強にも、プレイヤーを驚かす要素にもなると考えシナリオに組み込みました。
+            この作品も先ほどの作品と同じく制作猶予が一週間しかなかったため、先に題材だけ決めました。題材は「能力を使用し女の子の心の中を覗く恋愛ゲーム」としました。一週間しか制作猶予がないので短いシナリオしか作れません。つまり5分程度でプレイヤーを魅了させるシナリオが必要でした。そこでまずはシナリオの課題を「短い物語でどうやってプレイヤーに関心を持たせるか」「短い物語でプレイヤーが恋愛成就に納得できるか」「短い物語でプレイヤーをどう驚かせるか」の具体的な3点と考えました。
+            一つ目の課題より、物語の導入を<span
+              data-play-hide>コメディチックにしてプレイヤーの関心を寄せ</span>、進んだところでシリアスにする緩急をつけた展開にしました。次の課題の「短時間で恋愛を成就させる展開にプレイヤーをどう納得させるか」については、プレイヤーから積極的にアプローチする展開にすることで解決を図りました。この展開に加え、女の子の心の中を能力で覗いて望まれる言動をとるというゲームシステムがあるので短時間で恋愛成就してもプレイヤーが納得できると考えました。
+            そして、実は<span data-play-hide>「プレイヤーの心の中は女の子に覗かれていた」</span>というエンドにしました。<span
+              data-play-hide>「自分の真剣な気持ちが初めから伝わっていた」</span>という要素が短いアプローチで付き合える納得感の補強にも、プレイヤーを驚かす要素にもなると考えシナリオに組み込みました。
           </p>
-          <div class="work-item__sub-gallery">
-            <figure class="work-item__figure work-item__figure--sub">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
-              </div>
-              <figcaption class="work-item__caption">画像キャプション1</figcaption>
-            </figure>
-            <figure class="work-item__figure work-item__figure--sub">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
-              </div>
-              <figcaption class="work-item__caption">画像キャプション2</figcaption>
-            </figure>
-            <figure class="work-item__figure work-item__figure--sub">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像3" class="work-item__sub-image">
-              </div>
-              <figcaption class="work-item__caption">画像キャプション3</figcaption>
-            </figure>
-          </div>
+
         </article>
 
       </div>
