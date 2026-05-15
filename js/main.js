@@ -142,4 +142,42 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  /* ==========================================================
+     5. My Ability — カードクリックで中央にコンテンツ表示
+     ========================================================== */
+  const abilityStage   = document.getElementById('ability-stage');
+  const abilityCenter  = document.getElementById('ability-center');
+  const abilityButtons = document.querySelectorAll('.ability__card');
+
+  if (abilityStage && abilityCenter) {
+    let activeIndex = null;
+
+    abilityButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.index, 10);
+
+        // 同じボタン再クリックで閉じる
+        if (activeIndex === idx) {
+          // 閉じる
+          abilityStage.classList.remove('is-open');
+          abilityButtons.forEach(b => b.classList.remove('is-active'));
+          activeIndex = null;
+          return;
+        }
+
+        // コンテンツを切り替える
+        document.querySelectorAll('.ability__content').forEach(c => {
+          c.classList.add('ability__content--hidden');
+        });
+        const target = document.getElementById(`ability-content-${idx}`);
+        if (target) target.classList.remove('ability__content--hidden');
+
+        // ステージを開く & アクティブボタン
+        abilityStage.classList.add('is-open');
+        abilityButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeIndex = idx;
+      });
+    });
+  }
 });

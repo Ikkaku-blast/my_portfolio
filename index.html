@@ -109,6 +109,94 @@
     </div>
   </section>
 
+  <!-- ========== メインビジュアル & My Ability ========== -->
+  <section class="visual-ability section" id="visual-ability">
+    <div class="visual-ability__inner">
+
+      <!-- メインビジュアル -->
+      <div class="main-visual animate-on-scroll">
+        <div class="main-visual__placeholder">
+          <!-- ここに画像を挿入: <img src="image/your_image.jpg" alt="メインビジュアル" class="main-visual__img"> -->
+          <span class="main-visual__label">メインビジュアル</span>
+          <p class="main-visual__hint">画像を挿入するには src を変更してください</p>
+        </div>
+      </div>
+
+      <!-- My Ability -->
+      <div class="ability animate-on-scroll">
+        <h2 class="ability__title">My Ability</h2>
+
+        <div class="ability__stage" id="ability-stage">
+          <!-- 上行ボタン -->
+          <div class="ability__row ability__row--top" id="ability-row-top">
+            <button class="ability__card" id="ability-btn-0" data-index="0">
+              <span class="ability__card-icon">🎨</span>
+              <span class="ability__card-label">体験を設計する</span>
+            </button>
+            <button class="ability__card" id="ability-btn-1" data-index="1">
+              <span class="ability__card-icon">🤝</span>
+              <span class="ability__card-label">チームワーク</span>
+            </button>
+          </div>
+
+          <!-- 中央コンテンツエリア（クリックで展開） -->
+          <div class="ability__center" id="ability-center">
+
+            <!-- ▼ コンテンツ0: 画像【右寄せ・中サイズ】+ テキスト左 -->
+            <div class="ability__content ability__content--side" id="ability-content-0" data-content="0">
+              <div class="ability__body">
+                <h3 class="ability__content-title">体験を設計する</h3>
+                <p class="ability__content-text">プレイヤーが「何を感じたいか」を起点にゲームルールを逆算して設計します。技術的な制約の中でも面白さを損なわない工夫を積み重ね、体験そのものをデザインすることを得意としています。</p>
+              </div>
+              <!-- 画像: src・width・classで位置とサイズを調整 -->
+              <img src="image/temporary.png" alt="体験を設計する" class="ability__img ability__img--right" style="width: 38%;">
+            </div>
+
+            <!-- ▼ コンテンツ1: 画像【上部・大サイズ・中央】+ テキスト下 -->
+            <div class="ability__content ability__content--hidden" id="ability-content-1" data-content="1">
+              <!-- 画像: 上に配置、width で幅を指定 -->
+              <img src="image/temporary.png" alt="チームワーク" class="ability__img ability__img--center" style="width: 70%;">
+              <h3 class="ability__content-title">チームワーク</h3>
+              <p class="ability__content-text">共同制作の経験から、メンバーの強みを活かした役割分担と密なコミュニケーションを心がけています。意見の相違を丁寧にすり合わせ、チームの目標に向かって推進する力を持っています。</p>
+            </div>
+
+            <!-- ▼ コンテンツ2: 画像【左フロート・小サイズ】+ テキスト回り込み -->
+            <div class="ability__content ability__content--hidden" id="ability-content-2" data-content="2">
+              <h3 class="ability__content-title">課題の発見</h3>
+              <!-- 画像: float-left で小さめに配置、テキストが右に回り込む -->
+              <div class="ability__body--float">
+                <img src="image/temporary.png" alt="課題の発見" class="ability__img ability__img--float-left" style="width: 28%;">
+                <p class="ability__content-text">テストプレイや観察を通じてゲームの違和感・不足点を言語化し、解決策を導く繰り返しのプロセスを得意としています。問題を見つける目と、それを改善し続ける粘り強さが強みです。</p>
+              </div>
+            </div>
+
+            <!-- ▼ コンテンツ3: 画像【フルワイド】+ テキスト下 -->
+            <div class="ability__content ability__content--hidden" id="ability-content-3" data-content="3">
+              <!-- 画像: width:100% でコンテナいっぱいに -->
+              <img src="image/temporary.png" alt="独創性" class="ability__img ability__img--full">
+              <h3 class="ability__content-title">独創性</h3>
+              <p class="ability__content-text">「告白を邪魔するゲーム」「ハムスターが降ってくる神経衰弱」など、既存のジャンルに独自の視点を掛け合わせることで新しい面白さを生み出してきました。普段の情報収集や多様な経験がアイデアの源泉です。</p>
+            </div>
+
+          </div>
+
+          <!-- 下行ボタン -->
+          <div class="ability__row ability__row--bottom" id="ability-row-bottom">
+            <button class="ability__card" id="ability-btn-2" data-index="2">
+              <span class="ability__card-icon">🔍</span>
+              <span class="ability__card-label">課題の発見</span>
+            </button>
+            <button class="ability__card" id="ability-btn-3" data-index="3">
+              <span class="ability__card-icon">💡</span>
+              <span class="ability__card-label">独創性</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /.ability -->
+    </div><!-- /.visual-ability__inner -->
+  </section>
+
   <!-- ========== 作品紹介 ========== -->
   <!-- 右のようにspanで囲えば文字を隠せる<span data-play-hide>そもそも面白いのか</span>　-->
   <section class="works section" id="works">
