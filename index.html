@@ -12,34 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/game.css">
 </head>
 
 <body>
-  <!-- ========== ウェルカムモーダル ========== -->
-  <div class="welcome-modal" id="welcome-modal">
-    <div class="welcome-modal__backdrop"></div>
-    <div class="welcome-modal__card">
-      <div class="welcome-modal__icon">🧹</div>
-      <h2 class="welcome-modal__title">ようこそ！</h2>
-      <p class="welcome-modal__desc">
-        このポートフォリオは<strong>遊びながら</strong>作品を見ることができます。<br>
-        テキストの上に散らばったブロックをクリックして掃除しながら読んでみましょう！
-      </p>
-      <p class="welcome-modal__note">遊びモードをオンにしますか？</p>
-      <div class="welcome-modal__actions">
-        <button class="welcome-modal__btn welcome-modal__btn--play" id="welcome-play-btn">
-          <span class="welcome-modal__btn-icon">🕹️</span>
-          遊びモードをオンにする
-        </button>
-        <button class="welcome-modal__btn welcome-modal__btn--normal" id="welcome-normal-btn">
-          通常モードで見る
-        </button>
-      </div>
-      <p class="welcome-modal__hint">※ いつでもヘッダーの「遊びモード」ボタンから切り替えられます</p>
-    </div>
-  </div>
-
   <!-- ========== ナビゲーション ========== -->
   <header class="header" id="header">
     <div class="header__inner">
@@ -51,10 +26,6 @@
           <li><a href="#activities" class="header__nav-link">Activities</a></li>
         </ul>
       </nav>
-      <button class="play-mode-btn" id="play-mode-btn" aria-label="遊びモードを切替">
-        <span class="play-mode-btn__icon">🎮</span>
-        <span>遊びモード</span>
-      </button>
       <button class="header__hamburger" id="hamburger" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
@@ -63,16 +34,29 @@
 
   <!-- ========== ヒーローセクション ========== -->
   <section class="hero" id="hero">
-    <div class="hero__bg-shapes">
-      <div class="hero__shape hero__shape--1"></div>
-      <div class="hero__shape hero__shape--2"></div>
-      <div class="hero__shape hero__shape--3"></div>
-    </div>
+    <ul class="hero__interests" aria-hidden="true">
+      <li class="hero__interest hero__interest--01" data-hero-interest>電磁気</li>
+      <li class="hero__interest hero__interest--02" data-hero-interest>タロット</li>
+      <li class="hero__interest hero__interest--03" data-hero-interest>麻雀</li>
+      <li class="hero__interest hero__interest--04" data-hero-interest>2.5次元ミュージカル</li>
+      <li class="hero__interest hero__interest--05" data-hero-interest>非線形光学</li>
+      <li class="hero__interest hero__interest--06" data-hero-interest>レーザー顕微鏡</li>
+      <li class="hero__interest hero__interest--07" data-hero-interest>仕掛学</li>
+      <li class="hero__interest hero__interest--08" data-hero-interest>コーヒー</li>
+      <li class="hero__interest hero__interest--09" data-hero-interest>教育</li>
+      <li class="hero__interest hero__interest--10" data-hero-interest>バレーボール</li>
+      <li class="hero__interest hero__interest--11" data-hero-interest>登山</li>
+      <li class="hero__interest hero__interest--12" data-hero-interest>ヘルスケア</li>
+      <li class="hero__interest hero__interest--13" data-hero-interest>少年漫画</li>
+      <li class="hero__interest hero__interest--14" data-hero-interest>時事ニュース</li>
+      <li class="hero__interest hero__interest--15" data-hero-interest>塾講師</li>
+      <li class="hero__interest hero__interest--16" data-hero-interest>お笑い</li>
+    </ul>
     <div class="hero__content">
-      <p class="hero__greeting animate-on-scroll">Hello, I'm</p>
-      <h1 class="hero__name animate-on-scroll">黒沼 慎太郎</h1>
-      <p class="hero__tagline animate-on-scroll">Game Planner / Creative Developer</p>
-      <a href="#about" class="hero__cta animate-on-scroll">もっと見る ↓</a>
+      <p class="hero__greeting"></p>
+      <h1 class="hero__name" id="hero-name" data-font-step="0">黒沼 慎太郎</h1>
+      <p class="hero__tagline"></p>
+      <a href="#about" class="hero__cta">もっと知る ↓</a>
     </div>
   </section>
 
@@ -88,20 +72,19 @@
         </div>
         <div class="about__text animate-on-scroll">
           <h3 class="about__name">黒沼　慎太郎</h3>
-          <p class="about__role">ゲームプランナー志望 / クリエイティブデベロッパー</p>
+          <p class="about__role"></p>
           <p class="about__description">
-            大阪大学基礎工学院システム創成専攻に所属しています。大学でゲーム制作を始め、ゲームの「ルール」と「面白さ」を考えることに魅力を感じ、ゲームプランナーを志望するようになりました。
-            企画だけでなく、色彩デザインやプログラミングにも取り組み、作品の体験を自分の手で形にする力を磨いています。
-            視野を広げるため、ゲーム分野に限らず、政治経済・教育・テクノロジー・スポーツなどの情報を新聞から収集し、
-            新しい趣味や関心を見つけることにも日々取り組んでいます。
+            大阪大学大学院 基礎工学研究科 システム創成専攻に所属しています。
+大学でゲーム制作を始め、ルール設計によってプレイヤーの体験や感情が変化する点に魅力を感じ、ゲームプランナーを志望するようになりました。
+
+企画だけでなく、UI制作やプログラミングにも取り組み、考えた体験を自分の手で形にする力を磨いています。
+また、新聞を通じて政治経済・教育・テクノロジー・スポーツなど幅広い分野の情報に触れ、企画の引き出しを増やすことを意識しています。
 
           </p>
           <div class="about__skills">
             <span class="skill-tag">HTML / CSS</span>
             <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">Figma</span>
             <span class="skill-tag">Unity</span>
           </div>
         </div>
@@ -109,362 +92,479 @@
     </div>
   </section>
 
-  <!-- ========== メインビジュアル & My Ability ========== -->
+  <!-- ========== My Ability ========== -->
   <section class="visual-ability section" id="visual-ability">
-    <div class="visual-ability__inner">
-
-      <!-- メインビジュアル -->
-      <div class="main-visual animate-on-scroll">
-        <div class="main-visual__placeholder">
-          <!-- ここに画像を挿入: <img src="image/your_image.jpg" alt="メインビジュアル" class="main-visual__img"> -->
-          <span class="main-visual__label">メインビジュアル</span>
-          <p class="main-visual__hint">画像を挿入するには src を変更してください</p>
-        </div>
+    <div class="ability" data-ability-sequence>
+      <div class="ability__track" aria-hidden="true">
+        <span class="ability__rail ability__rail--left"></span>
+        <span class="ability__rail ability__rail--right"></span>
       </div>
 
-      <!-- My Ability -->
-      <div class="ability animate-on-scroll">
+      <header class="ability__banner">
         <h2 class="ability__title">My Ability</h2>
+      </header>
 
-        <div class="ability__stage" id="ability-stage">
-          <!-- 上行ボタン -->
-          <div class="ability__row ability__row--top" id="ability-row-top">
-            <button class="ability__card" id="ability-btn-0" data-index="0">
-              <span class="ability__card-icon">🎨</span>
-              <span class="ability__card-label">体験を設計する</span>
-            </button>
-            <button class="ability__card" id="ability-btn-1" data-index="1">
-              <span class="ability__card-icon">🤝</span>
-              <span class="ability__card-label">チームワーク</span>
-            </button>
+      <div class="ability__panels" aria-label="My Ability">
+        <article class="ability__content ability__content--article ability-panel">
+          <div class="ability-article__text">
+            <h3 class="ability__content-title">体験を設計する</h3>
+            <p class="ability__content-text">
+              ゲーム制作では、まず「プレイヤーにどんな体験を届けるか」「どこに面白さを感じてもらうか」を定義します。
+              その体験が成立するように、ルール・UI・演出を設計し、制作全体の軸がぶれないようにしています。
+            </p>
+            <p class="ability__content-text">
+              図は、実際に作成したゲームの仕様書です。
+              このゲームでは「直感的に理解できること」と「ギリギリ感を楽しめること」を方針に設定しました。
+              この方針に基づき、客の注文に対して正しいドーナツを渡すというルールを設計しました。
+              たとえば、注文内容は吹き出しUIで表示し、制限時間が近づくにつれ赤くなるようデザインしました。
+              プレイヤーが状況を瞬時に理解し、短時間で判断を迫られる状態を作りました。
+              これにより、分かりやすさを保ちながら、短時間で判断する緊張感を視覚的に演出しました。
+            </p>
           </div>
+          <div class="ability-article__figures" aria-label="体験設計の仕様書">
+            <figure class="ability-doc-image ability-doc-image--policy">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image1.png"
+                data-lightbox-caption="体験設計の方針をまとめた仕様書(抜粋)">
+                <img src="image/experiment_image1.png" alt="体験設計の方針をまとめた仕様書(抜粋)" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>体験設計の方針をまとめた仕様書(抜粋)</figcaption>
+            </figure>
 
-          <!-- 中央コンテンツエリア（クリックで展開） -->
-          <div class="ability__center" id="ability-center">
-
-            <!-- ▼ コンテンツ0: 記事レイアウト（本文左 / 資料右） -->
-            <div class="ability__content ability__content--article" id="ability-content-0" data-content="0">
-              <div class="ability-article__text">
-                <h3 class="ability__content-title">体験を設計する</h3>
-                <p class="ability__content-text">
-                  ゲームを制作する際に、「プレイヤーはどんな体験をしてどこに面白さを感じるか」を設定します。
-                  そしてその条件を達成できるような雰囲気やルールを考えます。これにより制作の軸が定まり一貫性のあるゲームを制作できます。
-                </p>
-                <p class="ability__content-text">
-                  右図は、実際に作成したゲームの仕様書です。
-                  このゲームでは「直感的に理解できること」と「ギリギリ感を楽しめること」を方針に設定しました。
-                  この方針に基づき、客の注文に対して正しいドーナツを渡すというルールを設計しました。
-                  たとえば、注文内容は吹き出しUIで表示し、制限時間が近づくにつれ赤くなるようデザインしました。
-                  プレイヤーが瞬時に状況を理解し、急いで正しい判断をしなければならない状況を作っています。
-                  これにより、分かりやすさを保ちながら、短時間で判断する緊張感を視覚的に演出しました。
-                </p>
-              </div>
-              <div class="ability-article__figures" aria-label="体験設計の仕様書">
-                <figure class="ability-doc-image ability-doc-image--policy">
-                  <img src="image/experiment_image1.png" alt="体験設計の方針をまとめた仕様書" class="ability-doc-image__img">
-                </figure>
-
-                <figure class="ability-doc-image ability-doc-image--policy">
-                  <img src="image/experiment_image4.png" alt="体験設計のルールをまとめた仕様書" class="ability-doc-image__img">
-                </figure>
-              </div>
-            </div>
-
-            <!-- ▼ コンテンツ1: 記事レイアウト（本文左 / 資料右） -->
-            <div class="ability__content ability__content--article ability__content--teamwork ability__content--hidden" id="ability-content-1" data-content="1">
-              <div class="ability-article__text">
-                <h3 class="ability__content-title">チームワーク</h3>
-                <p class="ability__content-text">
-                  チーム開発では、各メンバーが自分の役割とチーム全体のゴールを把握できる状態を重視しました。
-                  Notionでタスクボードを作成し、担当者・進行状況・優先度を共有することで、誰が何を進めているのかを明確にしました。
-                </p>
-                <p class="ability__content-text">
-                  また、匿名で気軽にアイデアやネタを追加できる掲示板もNotion上に用意しました。
-                  会議だけに頼らず、思いついた案を後から共有できるようにすることで、チーム内の発想を集めやすくしました。
-                  さらに、仕様書を使ってゲーム全体の方向性を共有し、世界観・ルール・面白さの認識がずれないようにしました。
-                </p>
-              </div>
-              <div class="ability-article__figures" aria-label="チームワークの資料">
-                <article class="ability-note-card">
-                  <h4>チーム開発での工夫点</h4>
-                  <p><strong>役割の明確化：</strong>Notionのタスクボードで担当者と進行状況を共有しました。</p>
-                  <p><strong>アイデア共有：</strong>匿名で書き込める掲示板を作り、気軽に案を追加できるようにしました。</p>
-                  <p><strong>ゴール共有：</strong>仕様書を使い、世界観・ルール・面白さの方向性をそろえました。</p>
-                </article>
-                <div class="ability-note-gallery">
-                  <figure class="ability-doc-image ability-doc-image--compact">
-                    <img src="image/teamwork_image1.png" alt="Notionで役割と進行状況を共有したタスクボード" class="ability-doc-image__img">
-                    <figcaption>役割と進行状況を共有したNotionタスクボード</figcaption>
-                  </figure>
-                  <figure class="ability-doc-image ability-doc-image--compact">
-                    <img src="image/teamwork_image2.png" alt="匿名でアイデアやネタを追加するためのNotion掲示板" class="ability-doc-image__img">
-                    <figcaption>匿名で案を追加できるアイデア掲示板</figcaption>
-                  </figure>
-                </div>
-                <figure class="ability-doc-image ability-doc-image--policy">
-                  <img src="image/experiment_image1.png" alt="チームのゴール共有に使用したゲーム仕様書" class="ability-doc-image__img">
-                  <figcaption>ゴール共有に使用した仕様書</figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <!-- ▼ コンテンツ2: 記事レイアウト（本文左 / 資料右） -->
-            <div class="ability__content ability__content--article ability__content--hidden" id="ability-content-2" data-content="2">
-              <div class="ability-article__text">
-                <h3 class="ability__content-title">課題の発見</h3>
-                <p class="ability__content-text">
-                  テストプレイや観察を通じて、プレイヤーがどこで迷い、どこで面白さを感じにくくなっているかを確認します。
-                  感覚的な違和感をそのままにせず、原因を言語化して改善方針に落とし込みます。
-                </p>
-                <p class="ability__content-text">
-                  右図には、改善前後の比較画像やテストプレイ時のメモを掲載する想定です。
-                  課題を見つけ、仮説を立て、調整後にもう一度確認する流れを示すことで、改善のプロセスを伝えます。
-                </p>
-              </div>
-              <div class="ability-article__figures" aria-label="課題発見の資料">
-                <figure class="ability-doc-placeholder ability-doc-placeholder--wide">
-                  <span>改善前後の比較画像</span>
-                </figure>
-                <figure class="ability-doc-placeholder ability-doc-placeholder--wide">
-                  <span>テストプレイメモ・改善案</span>
-                </figure>
-              </div>
-            </div>
-
-            <!-- ▼ コンテンツ3: 記事レイアウト（本文左 / 資料右） -->
-            <div class="ability__content ability__content--article ability__content--hidden" id="ability-content-3" data-content="3">
-              <div class="ability-article__text">
-                <h3 class="ability__content-title">独創性</h3>
-                <p class="ability__content-text">
-                  既存のジャンルやルールをそのまま使うのではなく、別の視点や違和感を掛け合わせて新しい面白さを探します。
-                  日常で見つけた発想や、他分野から得た情報を企画の切り口に変換することを意識しています。
-                </p>
-                <p class="ability__content-text">
-                  右図には、アイデアメモや企画初期案、既存作品との差分を示す資料を掲載する想定です。
-                  思いつきで終わらせず、どの要素を組み合わせると独自性になるのかを整理した過程を示します。
-                </p>
-              </div>
-              <div class="ability-article__figures" aria-label="独創性の資料">
-                <figure class="ability-doc-placeholder ability-doc-placeholder--wide">
-                  <span>アイデアメモ・企画初期案</span>
-                </figure>
-                <figure class="ability-doc-placeholder ability-doc-placeholder--wide">
-                  <span>既存作品との差分・独自性の整理</span>
-                </figure>
-              </div>
-            </div>
-
+            <figure class="ability-doc-image ability-doc-image--policy">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image4.png"
+                data-lightbox-caption="体験設計のルールとUIをまとめた仕様書(抜粋)">
+                <img src="image/experiment_image4.png" alt="体験設計のルールとUIをまとめた仕様書(抜粋)" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>ルールとUIをまとめた仕様書</figcaption>
+            </figure>
           </div>
+        </article>
 
-          <!-- 下行ボタン -->
-          <div class="ability__row ability__row--bottom" id="ability-row-bottom">
-            <button class="ability__card" id="ability-btn-2" data-index="2">
-              <span class="ability__card-icon">🔍</span>
-              <span class="ability__card-label">課題の発見</span>
-            </button>
-            <button class="ability__card" id="ability-btn-3" data-index="3">
-              <span class="ability__card-icon">💡</span>
-              <span class="ability__card-label">独創性</span>
-            </button>
+        <article class="ability__content ability__content--article ability__content--teamwork ability-panel">
+          <div class="ability-article__text">
+            <h3 class="ability__content-title">システムでチームワークを強める</h3>
+            <p class="ability__content-text">
+              チーム開発では、各メンバーが自分の役割とチーム全体のゴールを把握できる状態を重視しました。
+              タスクの担当者・進行状況・優先度をタスク管理サイトNotionを用いて可視化することで、各メンバーが次に取り組むべき作業を判断しやすくしました。
+              また、遅れている作業を早期に把握できたため、手の空いたメンバーが支援に回りやすくなり、チーム全体の作業停滞を防ぐことにつながりました。
+            </p>
+            <p class="ability__content-text">
+              チーム制作では、アイデアの量を増やすだけでなく、作品の方向性から外れないことも重視しました。
+              仕様書で世界観・ルール・面白さの認識を共有したうえで、Notion上に匿名のアイデア掲示板を用意し、会議中に出しにくい案や後から思いついたネタも投稿できるようにしました。
+              その結果、作品の方向性を保ちながら多くの案を集めることができ、ゲーム内の称号は100個以上考案されました。
+            </p>
           </div>
-        </div>
+          <div class="ability-article__figures ability-article__figures--three" aria-label="チームワークの資料">
+            <figure class="ability-doc-image ability-doc-image--compact">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/teamwork_image1.png"
+                data-lightbox-caption="役割と進行状況を共有したNotionタスクボード">
+                <img src="image/teamwork_image1.png" alt="Notionで役割と進行状況を共有したタスクボード" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>役割と進行状況を共有したNotionタスクボード</figcaption>
+            </figure>
+            <figure class="ability-doc-image ability-doc-image--compact">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/teamwork_image2.png"
+                data-lightbox-caption="匿名で案を追加できるアイデア掲示板">
+                <img src="image/teamwork_image2.png" alt="匿名でアイデアやネタを追加するためのNotion掲示板" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>匿名で案を追加できるアイデア掲示板</figcaption>
+            </figure>
+            <figure class="ability-doc-image ability-doc-image--policy">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image1.png"
+                data-lightbox-caption="ゴール共有に使用した仕様書">
+                <img src="image/experiment_image1.png" alt="チームのゴール共有に使用したゲーム仕様書" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>ゴール共有に使用した仕様書</figcaption>
+            </figure>
+          </div>
+        </article>
 
-      </div><!-- /.ability -->
-    </div><!-- /.visual-ability__inner -->
+        <article class="ability__content ability__content--article ability-panel">
+          <div class="ability-article__text">
+            <h3 class="ability__content-title">課題の分解、体験の調整</h3>
+            <p class="ability__content-text">
+              基本ルールを実装した後でも、テストプレイを通じて面白さや遊びやすさに不足がないかを確認します。
+              「なんとなく物足りない」という感覚をそのままにせず、プレイ中の違和感を言語化し、具体的な改善に落とし込むことを重視しています。
+            </p>
+            <p class="ability__content-text">
+              「ハムハム絵合わせ」という上から落ちてくるハムスターを避けながら神経衰弱を行うゲームをテストプレイした際、達成感の薄さという課題を発見しました。
+              単純に難易度を上げれば緊張感は増しますが、それではゲームに不慣れなプレイヤーがついていけない可能性があります。
+              そこで、達成感の薄さを複数の観点から分析しました。その結果、「達成感の薄さ」からより具体的に「視覚的な迫力不足」と「ゲーム後半の失速」という課題に分解できました。
+              視覚的な迫力不足に対しては、落下するハムスターの密度を上げ、特大サイズのハムスターを追加しました。
+              一方で、難易度が上がりすぎないよう全体の落下速度を下げ、見た目の緊迫感と遊びやすさを両立させました。
+            </p>
+            <p class="ability__content-text">
+              もう一つの課題として、後半にカードが減って簡単になりゲームが盛り下がる問題がありました。
+              後半でも緊張感が続くよう、カードが減るほどハムスターが加速するようにしました。カードが減り、プレイヤーは残りの配置を覚えやすくなる一方で、ハムスターを避けることに集中しなければならない最後まで油断できない展開にしました。
+            </p>
+          </div>
+          <div class="ability-article__figures" aria-label="課題発見の資料">
+            <figure class="ability-doc-image">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/hamhamD.png"
+                data-lightbox-caption="カード枚数が多い場面">
+                <img src="image/hamhamD.png" alt="カード枚数が多い場面" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>カード枚数が多い場面</figcaption>
+            </figure>
+            <figure class="ability-doc-image">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/hamhamE.png"
+                data-lightbox-caption="カード枚数が少ない後半の場面">
+                <img src="image/hamhamE.png" alt="カード枚数が少ない後半の場面" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>カード枚数が少ない後半の場面</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ========== 作品紹介 ========== -->
   <!-- 右のようにspanで囲えば文字を隠せる<span data-play-hide>そもそも面白いのか</span>　-->
   <section class="works section" id="works">
     <div class="container">
-      <h2 class="section__title animate-on-scroll">Works</h2>
-      <p class="section__subtitle animate-on-scroll">これまでの制作物</p>
-      <div class="works__list">
+      <h2 class="section__title">Works</h2>
+      <p class="section__subtitle">制作順にたどる作品紹介</p>
 
-        <!-- 作品A -->
-        <article class="work-item animate-on-scroll" style="--work-bg: #ff9f9f36;">
-          <!-- タイトル -->
-          <h3 class="work-item__title">ハムハム絵合わせ</h3>
-          <!-- メタ情報 -->
-          <p class="work-item__meta">制作期間2022/02/10~2022/04/15, 使用ツール Python, 個人制作</p>
+      <div class="works-toolbar">
+        <button class="works-preview-toggle" type="button" id="works-preview-toggle" aria-pressed="false">
+          <span class="works-preview-toggle__icon" aria-hidden="true"></span>
+          <span class="works-preview-toggle__label">プレビュー停止</span>
+        </button>
+      </div>
 
-          <!-- 作品概要 -->
-          <p class="work-item__summary">
-            作品概要：上から降ってくるハムスターを避けながら神経衰弱を行うゲームです。カードの記憶と回避行動のどちらに集中するかという駆け引きを生み、かわいらしい雰囲気と手応えのあるゲーム性の両立を目指しました。</p>
+      <div class="works-map" role="tablist" aria-label="制作順の作品一覧">
+        <button class="works-node works-node--hamham is-active" type="button" id="work-tab-hamham"
+          role="tab" aria-selected="true" aria-controls="work-panel-hamham" data-work-target="hamham">
+          <span class="works-node__date">2022.02</span>
+          <span class="works-node__image-wrap">
+            <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/hamhamA.png" aria-hidden="true">
+              <source src="videos/humhum_kirinuki.mp4" type="video/mp4">
+            </video>
+          </span>
+          <span class="works-node__title">ハムハム絵合わせ</span>
+          <span class="works-node__hint">詳細を見る</span>
+        </button>
 
-          <!-- メイン画像 + キャプション -->
-          <figure class="work-item__figure">
-            <div class="work-item__image-wrapper">
-              <img src="image/hamhamA.png" alt="作品Aの画像" class="work-item__image" style="width: 600px;">
-            </div>
-            <figcaption class="work-item__caption">ハムスターに当たらないようにプレイヤー（ヒマワリの種）はカードをめくる</figcaption>
-          </figure>
+        <button class="works-node works-node--warai" type="button" id="work-tab-warai"
+          role="tab" aria-selected="false" aria-controls="work-panel-warai" data-work-target="warai">
+          <span class="works-node__date">2024.03</span>
+          <span class="works-node__image-wrap">
+            <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/burewara_image1.png" aria-hidden="true">
+              <source src="videos/omoro_kirinuki.mp4" type="video/mp4">
+            </video>
+          </span>
+          <span class="works-node__title">ブレイブ<br>オブワライ</span>
+          <span class="works-node__hint">詳細を見る</span>
+        </button>
 
-          <!-- セクション見出し（左ボーダー付き） -->
-          <h4 class="work-item__section-heading">技術・知識・経験が少ない中でどう面白くするか</h4>
-          <!-- 詳細テキスト -->
-          <p class="work-item__detail-text">
-            当時はゲーム制作だけでなく、プログラミングやデザインなど、ゲームを構成する多くの要素が未経験でした。完成度に粗が出る可能性があるなら、むしろ<span
-              data-play-hide>その粗をユーモアに変えてしまおう</span>と考えました。また、ルール設計も自分が実装できる範囲で成立させる必要があったため、プログラミングの教科書に題材として掲載されていた神経衰弱をアレンジすることにしました。このような思考過程を踏まえ、ゲーム設計の柱を<span
-              data-play-hide>「ユーモア」と「神経衰弱」</span>に設定しました。
+        <button class="works-node works-node--doughnut" type="button" id="work-tab-doughnut"
+          role="tab" aria-selected="false" aria-controls="work-panel-doughnut" data-work-target="doughnut">
+          <span class="works-node__date">2024.12</span>
+          <span class="works-node__image-wrap">
+            <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/miss_image1.png" aria-hidden="true">
+              <source src="videos/miss_dounut_kirinuki.mp4" type="video/mp4">
+            </video>
+          </span>
+          <span class="works-node__title">ミスった、<br>ドーナツ</span>
+          <span class="works-node__hint">詳細を見る</span>
+        </button>
+
+        <button class="works-node works-node--donbike" type="button" id="work-tab-donbike"
+          role="tab" aria-selected="false" aria-controls="work-panel-donbike" data-work-target="donbike">
+          <span class="works-node__date">2025.08</span>
+          <span class="works-node__image-wrap">
+            <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/donbike_gamescene.png" aria-hidden="true">
+              <source src="videos/donbike_kirinuki.mp4" type="video/mp4">
+            </video>
+          </span>
+          <span class="works-node__title">ドン引け！告白<br>大失敗大作戦</span>
+          <span class="works-node__hint">詳細を見る</span>
+        </button>
+
+        <button class="works-node works-node--insight" type="button" id="work-tab-insight"
+          role="tab" aria-selected="false" aria-controls="work-panel-insight" data-work-target="insight">
+          <span class="works-node__date">2025.12</span>
+          <span class="works-node__image-wrap">
+            <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/insightB.png" aria-hidden="true">
+              <source src="videos/Insight_kirinuki.mp4" type="video/mp4">
+            </video>
+          </span>
+          <span class="works-node__title">恋するインサイト</span>
+          <span class="works-node__hint">詳細を見る</span>
+        </button>
+      </div>
+
+      <div class="works-details animate-on-scroll">
+        <article class="work-detail is-active" id="work-panel-hamham" role="tabpanel" aria-labelledby="work-tab-hamham">
+          <h3 class="work-detail__title">ハムハム絵合わせ</h3>
+          <p class="work-detail__meta">制作期間 2022/02/10~2022/04/15 / 使用ツール Python / 個人制作</p>
+          <p class="work-detail__summary">
+            上から落ちてくるハムスターを避けながら、同じ絵柄のカードを探すアクション神経衰弱です。
+            プレイヤーはカードの位置を覚えつつハムスターをかわし、かわいらしい見た目とは裏腹の緊張感と、そろえた瞬間の達成感を楽しめます。
+            カードが減るほどハムスターが加速し、最後まで油断できない展開にしました。
           </p>
-
-          <!-- サブ見出し -->
-          <h4 class="work-item__sub-heading">神経衰弱は<span data-play-hide>どこが面白くない？</span></h4>
-          <!-- 詳細テキスト -->
-          <p class="work-item__detail-text">
-            神経衰弱をどのようにアレンジするか考えるため、まずは通常の神経衰弱をプレイしました。すると、見た目の差異が少ないトランプを記憶するだけでは展開が単調になりやすいことに気づきました。
-            また、スコアが記憶力に大きく左右され、プレイヤーが戦術を考えたり工夫したりする余地が少ないことも課題だと感じました。そこで神経衰弱の課題を<span
-              data-play-hide>「単調」「記憶力でしか決まらない」「トランプが地味」</span>と設定し、それらを解決する方向でアレンジしました。
-            誰にでもなじみがある神経衰弱をベースにするため、気軽に遊べるよう、ルールは複雑にしすぎないことを意識しました。そこで<span
-              data-play-hide>落ちものを避けながら神経衰弱をする</span>という方向に決めました。
-            落ちものを避ける要素には、「単調」「記憶力でしか決まらない」という課題を解決できる「不規則性」と「アクション性」があり、当時の技術でも実装しやすいと考えたからです。
-            では、落ちものを何にするべきか。ここはもう一つの柱である「ユーモア」とセットで考えました。画面上部から降ってきたら面白いものは何か。大喜利のように考え続けた結果、このゲームの顔となる<span
-              data-play-hide>「ハムスター」</span>が決まりました。
-            さらに、絵札もハムスターにすることで「トランプが地味」という課題を解決しました。絵札にはあえて似た写真を一部採用し、プレイヤーを迷わせることで神経衰弱としての面白さも残しました。
-            すべての絵札が簡単に見分けられると、プレイヤーは自然にカードの位置を覚えられてしまい、<span
-              data-play-hide>「自分の記憶が正しかった」</span>という神経衰弱本来の快感が弱まると考えました。
-            一方で、すべてが紛らわしいと通常の神経衰弱と変わらなくなるため、区別しやすい写真も混ぜています。これにより、プレイヤーは分かりやすい絵札を先にそろえるといった戦術を組み立てられるようになりました。
-          </p>
-
-          <!-- サブ画像（横並び） -->
-          <figure class="work-item__figure">
-            <div class="work-item__sub-gallery">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/hamham_pic.png" alt="サブ画像1" class="work-item__sub-image" style="width: 800px;">
+          <div class="work-slides" data-work-slider aria-label="ハムハム絵合わせの紹介スライド">
+            <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="work-slides__viewport">
+              <div class="work-slides__track">
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/humhum1.PNG"
+                data-lightbox-caption="ハムハム絵合わせの紹介スライド1">
+                <img src="Mygame_slide_ALL/humhum1.PNG" alt="ハムハム絵合わせの紹介スライド1" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド1</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/humhum2.PNG"
+                data-lightbox-caption="ハムハム絵合わせの紹介スライド2">
+                <img src="Mygame_slide_ALL/humhum2.PNG" alt="ハムハム絵合わせの紹介スライド2" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド2</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/humhum3.PNG"
+                data-lightbox-caption="ハムハム絵合わせの紹介スライド3">
+                <img src="Mygame_slide_ALL/humhum3.PNG" alt="ハムハム絵合わせの紹介スライド3" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド3</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/humhum4.PNG"
+                data-lightbox-caption="ハムハム絵合わせの紹介スライド4">
+                <img src="Mygame_slide_ALL/humhum4.PNG" alt="ハムハム絵合わせの紹介スライド4" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド4</figcaption>
+            </figure>
               </div>
             </div>
-            <figcaption class="work-item__caption">ハムスターの絵札一覧</figcaption>
-          </figure>
-
-          <!-- サブ見出し -->
-          <h4 class="work-item__sub-heading">課題を見つける
-          </h4>
-          <!-- 詳細テキスト -->
-          <p class="work-item__detail-text">ハムスターが降ってくる。それを避けながら神経衰弱をする。基本ルールは実装できましたが、テストプレイをすると面白さと遊びやすさにまだ不足を感じました。
-            そこからは、プレイ中の違和感や不足している要素を見つけ、言語化し、改善することを繰り返しました。見た目のインパクトが弱いという課題には、落ちてくるハムスターの密度を上げ、速度を落とすことで難易度を変えずに解決しました。
-            HPを見る余裕がなく、いつの間にかゲームオーバーになってしまう問題には、HP表示を見やすい色に変更し、残りHPに応じた警告音を追加しました。ゲーム後半にカードが減って簡単になりすぎる問題には、後半ほどハムスターを加速させることで最後まで油断できない展開にしました。
-            さらに、音が少なく盛り上がりに欠けていたため、厳かなクラシック音楽と大げさなリアクション音声を採用しました。課題を発見して解決を重ねることでゲームの完成度が高まり、プレイヤーからも好評をいただきました。
-          </p>
-
-          <figure class="work-item__figure">
-            <div class="work-item__sub-gallery">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/hamhamD.png" alt="サブ画像1" class="work-item__sub-image" style="width: 450px;">
-              </div>
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/hamhamE.png" alt="サブ画像2" class="work-item__sub-image" style="width: 450px;">
-              </div>
-            </div>
-            <figcaption class="work-item__caption">カード枚数が多い場合（左）と少ない場合（右）の比較</figcaption>
-          </figure>
-
+            <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>4</span></p>
+          </div>
+          <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
-
-        <!-- 作品B -->
-        <article class="work-item animate-on-scroll" style="--work-bg: #eaefa055;">
-          <h3 class="work-item__title">ドン引け！告白大失敗大作戦</h3>
-          <p class="work-item__meta">制作期間2025/08/03~2025/08/10, 使用ツール Unity,C#, 個人制作</p>
-          <p class="work-item__summary">
-            作品概要：告白のセリフに合わせて6つの選択肢から適切なヤジを選び、生卵をぶつけながら告白シーンを台無しにするゲームです。プレイヤーは、神聖な告白シーンをあえて崩していく背徳感と爽快感を体験できます。
+        <article class="work-detail" id="work-panel-warai" role="tabpanel" aria-labelledby="work-tab-warai" hidden>
+          <h3 class="work-detail__title">ブレイブオブワライ</h3>
+          <p class="work-detail__meta">制作時期 2024.03頃 / 使用ツール Unity / 団体制作 / 担当 一部作画・一部脚本</p>
+          <p class="work-detail__summary">
+            日常生活のあらゆる場面で、勇気を出してボケるリアルコミュニケーションゲームです。
+            プレイヤーはボケるタイミングと内容を選び、ウケるかすべるか分からない緊張感の中で笑いを取りにいきます。
+            真剣な場面に不条理な選択肢を混ぜ、失敗してもどこか笑える体験を目指しました。
           </p>
-          <figure class="work-item__figure">
-            <div class="work-item__image-wrapper">
-              <img src="image/donbike_gamescene.png" alt="作品Bの画像" class="work-item__image" style="width: 800px;">
-            </div>
-            <figcaption class="work-item__caption">ゲーム画面</figcaption>
-          </figure>
-          <h4 class="work-item__section-heading">面白い題材を考えるのではなく、<span data-play-hide>題材から面白くしよう</span></h4>
-          <p class="work-item__detail-text">
-            この作品は、大会テーマに沿ったゲームを一週間で制作し評価し合う「Unity1week」というゲームジャム用に制作しました。制作期間が一週間しかないため、最初の設計段階で完成形を明確にし、スピーディーに作る必要がありました。そこで今回は、題材を長く吟味するのではなく、決めた題材をどう面白くするかに集中しました。
-            大会のテーマは「ひく」でした。最初に思い浮かんだ言葉は「ドン引き」です。では、ドン引きさせたら面白い場面は何か。そう考えて浮かんだのが愛の告白でした。こうして、告白を邪魔して失敗させるゲームという大枠を決めました。
-          </p>
-          <h4 class="work-item__sub-heading">プレイヤーが何をしたいのかを探す</h4>
-          <p class="work-item__detail-text">告白を邪魔して失敗させるという大枠が決まったところで、プレイヤーは具体的に何をしたくなるのかを考えました。
-            ただ考えるだけではアイデアが広がらなかったため、恋愛ゲームなどの告白シーンを改めて観察しました。すると、告白のセリフに対して思わずヤジを飛ばしたくなる自分に気づきました。
-            フィクションの告白なので当然ではありますが、セリフが詩的で大げさに見える瞬間があります。くだけた言い方をすれば<span data-play-hide>「痛い」</span>、あるいは<span
-              data-play-hide>「臭い」</span>と感じる瞬間です。
-            その告白シーンにヤジを飛ばしたい衝動こそ、プレイヤーが求める体験なのではないか。そう考え、告白にヤジを入れて失敗させるという具体的なルールに落とし込みました。
-          </p>
-          <!-- 一旦使う画像が思いつかないからコメントアウト
-          <figure class="work-item__figure">
-            <div class="work-item__sub-gallery">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像1" class="work-item__sub-image">
+          <div class="work-slides" data-work-slider aria-label="ブレイブオブワライの紹介スライド">
+            <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="work-slides__viewport">
+              <div class="work-slides__track">
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/boke1.PNG"
+                data-lightbox-caption="ブレイブオブワライの紹介スライド1">
+                <img src="Mygame_slide_ALL/boke1.PNG" alt="ブレイブオブワライの紹介スライド1" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド1</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/boke2.PNG"
+                data-lightbox-caption="ブレイブオブワライの紹介スライド2">
+                <img src="Mygame_slide_ALL/boke2.PNG" alt="ブレイブオブワライの紹介スライド2" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド2</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/boke3.PNG"
+                data-lightbox-caption="ブレイブオブワライの紹介スライド3">
+                <img src="Mygame_slide_ALL/boke3.PNG" alt="ブレイブオブワライの紹介スライド3" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド3</figcaption>
+            </figure>
               </div>
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/temporary.png" alt="サブ画像2" class="work-item__sub-image">
-              </div>
             </div>
-            <figcaption class="work-item__caption">画像キャプション</figcaption>
-          </figure>
-        -->
-          <h4 class="work-item__sub-heading">ヤジにゲーム性を見出す</h4>
-          <p class="work-item__detail-text">次に、ヤジを飛ばす行為にどのようにゲーム性を持たせるかを考えました。ヤジを連打するだけでは駆け引きがなく、ゲームとしての面白さが弱いと感じたからです。
-            そこで、ヤジとはそもそも何かを振り返りました。聞いている側が恥ずかしくなるようなセリフに対して、「何を言っているんだ」と思わず反応したくなること。それがヤジの正体だと考えました。つまり、ヤジとは<span data-play-hide>ツッコミ</span>です。
-            その解釈をもとに、告白の文に対して正しいツッコミとしてのヤジを選び、スコアを伸ばすゲームに設計しました。
-            この設計であれば、面白さを<span
-              data-play-hide>クイズ</span>という形式で担保できます。また、ヤジを選ぶだけでは操作量が少なく退屈に感じられるため、告白の隙間時間に卵を投げる妨害要素も加えました。正しいヤジを考えながら卵も投げることで適度な忙しさを生み、クリア時に強い達成感を得られるようにしました。
-          </p>
+            <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>3</span></p>
+          </div>
+          <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
-        <!-- 作品C -->
-        <article class="work-item animate-on-scroll" style="--work-bg: #9ff4b93b;">
-          <h3 class="work-item__title">恋するインサイト</h3>
-          <p class="work-item__meta">制作期間2025/12/21~2025/12/28, 使用ツール Unity,C# 個人制作</p>
-          <p class="work-item__summary">
-            作品概要：女の子とデートしながら、「インサイト」という特殊能力で心の中を覗き、本音を探るゲームです。本音を隠していそうな場面を察し、覗いた情報をもとに適切な言動を選ぶことで、女の子との距離を縮めていきます。
+        <article class="work-detail" id="work-panel-doughnut" role="tabpanel" aria-labelledby="work-tab-doughnut" hidden>
+          <h3 class="work-detail__title">ミスった、ドーナツ</h3>
+          <p class="work-detail__meta">制作時期 2024.12頃 / 使用ツール Unity / 団体制作 / 担当 企画・作画</p>
+          <p class="work-detail__summary">
+            客の面倒な注文に合わせて正しい商品を渡し、該当する商品がない場合は客を追い出すドーナツ販売ゲームです。
+            プレイヤーは注文文を瞬時に読み取り、タグや条件に合う商品を判断して売上を伸ばします。
+            直感的に理解できるルールにしつつ、慣れるほど処理を最適化できる遊びを狙いました。
           </p>
-          <figure class="work-item__figure">
-            <div class="work-item__sub-gallery">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/insightB.png" alt="サブ画像1" class="work-item__sub-image" style="width: 450px;">
-              </div>
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/insightD.png" alt="サブ画像2" class="work-item__sub-image" style="width: 450px;">
+          <div class="work-slides" data-work-slider aria-label="ミスった、ドーナツの紹介スライド">
+            <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="work-slides__viewport">
+              <div class="work-slides__track">
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donut1.PNG"
+                data-lightbox-caption="ミスった、ドーナツの紹介スライド1">
+                <img src="Mygame_slide_ALL/donut1.PNG" alt="ミスった、ドーナツの紹介スライド1" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド1</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donut2.PNG"
+                data-lightbox-caption="ミスった、ドーナツの紹介スライド2">
+                <img src="Mygame_slide_ALL/donut2.PNG" alt="ミスった、ドーナツの紹介スライド2" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド2</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donut3.PNG"
+                data-lightbox-caption="ミスった、ドーナツの紹介スライド3">
+                <img src="Mygame_slide_ALL/donut3.PNG" alt="ミスった、ドーナツの紹介スライド3" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド3</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donut4.PNG"
+                data-lightbox-caption="ミスった、ドーナツの紹介スライド4">
+                <img src="Mygame_slide_ALL/donut4.PNG" alt="ミスった、ドーナツの紹介スライド4" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド4</figcaption>
+            </figure>
               </div>
             </div>
-            <figcaption class="work-item__caption">ゲーム画面（左：能力を使用し女の子の本音を見ている場面　右：覗いた情報から選択肢を選ぶ場面）</figcaption>
-          </figure>
-          <h4 class="work-item__section-heading"><span data-play-hide>邪魔しない</span>デザイン</h4>
-          <p class="work-item__detail-text">これまで手掛けてきたゲームはギャグ調のミニゲームが多く、雑味のあるイラストもギャグテイストと相性がよいものでした。
-            しかし、真剣な恋愛ゲームを作るにあたり、これまでのようなふざけた印象や不調和なデザインではプレイヤーが感情移入しにくいと考えたため、プレイヤーを<span
-              data-play-hide>邪魔しないデザイン</span>になるよう注力しました。<br>
+            <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>4</span></p>
+          </div>
+          <button class="works-back" type="button">他の作品を見る</button>
+        </article>
 
-            当時の自分には十分なイラスト制作技術がなかったため、ビジュアル制作にはAIを活用しました。ただし、プレイヤーがAIイラストだと強く認識すると違和感が残り、物語への没入を妨げると考えました。そこで課題を<span
-              data-play-hide>「AIっぽさからどう脱するか」</span>と設定しました。AIっぽさとは<span
-              data-play-hide>画一的で見たことがあるもの</span>だと考えました。そこで、世に多くあるイラストの平均から大きく離れたビット風の画風にし、
-            キャラクターには片側の髪だけが極端に長いという大きな個性を持たせました。これらの工夫はAIっぽさを薄めるだけでなく、ビット風の画風はノスタルジックな演出の補助に、キャラクターの個性はプレイヤーを惹きつける要素になると考えました。<br>
-
-            また、背景やキャラクターに原色を多く用いると、それぞれが独立して見えてしまったため、背景の彩度を抑え、キャラクターの色味とぶつからないように調整しました。UIもわずかに透過させることで、ゲーム画面から浮かないようにしています。
-            反対に、能力使用時にはプレイヤーにインパクトを与えたかったため、あえて彩度の強いエフェクトを使い、画面から浮かせる演出にしました。キャラクター・UI・背景の各要素でバランスを取り、<span
-              data-play-hide>ゲーム画面で浮かない・紛れない</span>デザインになるよう調整しました。これらはAIが自動で整えてくれるものではないため、自分で色調補正を学び、既存のゲームも参考にしながら仕上げました。
+        <article class="work-detail" id="work-panel-donbike" role="tabpanel" aria-labelledby="work-tab-donbike" hidden>
+          <h3 class="work-detail__title">ドン引け！告白大失敗大作戦</h3>
+          <p class="work-detail__meta">制作期間 2025/08/03~2025/08/10 / 使用ツール Unity, C# / 個人制作</p>
+          <p class="work-detail__summary">
+            告白のセリフに合わせて適切なヤジを選び、生卵をぶつけながら告白シーンを台無しにするツッコミ選択ゲームです。
+            プレイヤーは大げさな告白を見抜いて茶化し、神聖な場面を崩していく背徳感と爽快感を楽しめます。
+            ヤジを「ツッコミ」と捉えることで、笑いだけでなく判断する面白さも持たせました。
           </p>
-          <figure class="work-item__figure">
-            <div class="work-item__sub-gallery">
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/insightG.png" alt="サブ画像1" class="work-item__sub-image" style="width: 450px;">
-              </div>
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/insightE.png" alt="サブ画像2" class="work-item__sub-image" style="width: 450px;">
-              </div>
-              <div class="work-item__sub-image-wrapper">
-                <img src="image/insightF.png" alt="サブ画像3" class="work-item__sub-image" style="width: 450px;">
+          <div class="work-slides" data-work-slider aria-label="ドン引け！告白大失敗大作戦の紹介スライド">
+            <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="work-slides__viewport">
+              <div class="work-slides__track">
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donbike1.PNG"
+                data-lightbox-caption="ドン引け！告白大失敗大作戦の紹介スライド1">
+                <img src="Mygame_slide_ALL/donbike1.PNG" alt="ドン引け！告白大失敗大作戦の紹介スライド1" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド1</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donbike2.PNG"
+                data-lightbox-caption="ドン引け！告白大失敗大作戦の紹介スライド2">
+                <img src="Mygame_slide_ALL/donbike2.PNG" alt="ドン引け！告白大失敗大作戦の紹介スライド2" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド2</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/donbike3.PNG"
+                data-lightbox-caption="ドン引け！告白大失敗大作戦の紹介スライド3">
+                <img src="Mygame_slide_ALL/donbike3.PNG" alt="ドン引け！告白大失敗大作戦の紹介スライド3" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド3</figcaption>
+            </figure>
               </div>
             </div>
-            <figcaption class="work-item__caption">プレイ画面 </figcaption>
-          </figure>
-          <h4 class="work-item__section-heading">シナリオに必要なのは<span data-play-hide>関心</span>・<span
-              data-play-hide>納得感</span>・<span data-play-hide>驚き</span></h4>
-          <p class="work-item__detail-text">
-            この作品も一週間で制作する必要があったため、まず題材を「能力を使って女の子の心の中を覗く恋愛ゲーム」と決めました。制作期間が短い以上、長いシナリオは作れません。だからこそ、5分程度でもプレイヤーを惹きつけるシナリオが必要でした。そこで課題を「短い物語でどう関心を持たせるか」「短い物語で恋愛成就に納得してもらえるか」「短い物語でどう驚かせるか」の3点に整理しました。
-            一つ目の課題に対しては、物語の導入を<span
-              data-play-hide>コメディチックにしてプレイヤーの関心を引き</span>、途中からシリアスにすることで緩急をつけました。次に、「短時間で恋愛が成就する展開にどう納得してもらうか」については、プレイヤーから積極的にアプローチする展開にすることで解決を図りました。さらに、女の子の心の中を能力で覗き、望まれる言動を選ぶゲームシステムがあるため、短時間で恋愛が進展しても納得感を持たせられると考えました。
-            そして、実は<span data-play-hide>「プレイヤーの心の中は女の子に覗かれていた」</span>というエンドにしました。<span
-              data-play-hide>「自分の真剣な気持ちが初めから伝わっていた」</span>という要素が、短いアプローチで付き合える納得感の補強にも、プレイヤーを驚かせる要素にもなると考え、シナリオに組み込みました。
-          </p>
+            <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>3</span></p>
+          </div>
+          <button class="works-back" type="button">他の作品を見る</button>
+        </article>
 
+        <article class="work-detail" id="work-panel-insight" role="tabpanel" aria-labelledby="work-tab-insight" hidden>
+          <h3 class="work-detail__title">恋するインサイト</h3>
+          <p class="work-detail__meta">制作期間 2025/12/21~2025/12/28 / 使用ツール Unity, C# / 個人制作</p>
+          <p class="work-detail__summary">
+            女の子とデートしながら、「インサイト」という特殊能力で心の中を覗き、本音に合わせて言動を選ぶ恋愛アドベンチャーです。
+            プレイヤーは相手の隠れた気持ちを読み解き、少しずつ距離が縮まっていく納得感と、物語の最後に明かされる驚きを楽しめます。
+            心を覗く能力を会話選択に直結させ、短時間でも恋愛が進展する理由が伝わるようにしました。
+          </p>
+          <div class="work-slides" data-work-slider aria-label="恋するインサイトの紹介スライド">
+            <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="work-slides__viewport">
+              <div class="work-slides__track">
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/insight1.PNG"
+                data-lightbox-caption="恋するインサイトの紹介スライド1">
+                <img src="Mygame_slide_ALL/insight1.PNG" alt="恋するインサイトの紹介スライド1" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド1</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/insight2.PNG"
+                data-lightbox-caption="恋するインサイトの紹介スライド2">
+                <img src="Mygame_slide_ALL/insight2.PNG" alt="恋するインサイトの紹介スライド2" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド2</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/insight3.PNG"
+                data-lightbox-caption="恋するインサイトの紹介スライド3">
+                <img src="Mygame_slide_ALL/insight3.PNG" alt="恋するインサイトの紹介スライド3" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド3</figcaption>
+            </figure>
+            <figure class="work-slide">
+              <button class="ability-zoom work-slide__zoom" type="button" data-lightbox-src="Mygame_slide_ALL/insight4.PNG"
+                data-lightbox-caption="恋するインサイトの紹介スライド4">
+                <img src="Mygame_slide_ALL/insight4.PNG" alt="恋するインサイトの紹介スライド4" class="work-slide__image">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>紹介スライド4</figcaption>
+            </figure>
+              </div>
+            </div>
+            <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>4</span></p>
+          </div>
+          <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
       </div>
@@ -546,10 +646,17 @@
     </div>
   </footer>
 
+  <div class="image-lightbox" id="image-lightbox" hidden>
+    <button class="image-lightbox__backdrop" type="button" aria-label="拡大画像を閉じる"></button>
+    <figure class="image-lightbox__figure" role="dialog" aria-modal="true" aria-labelledby="image-lightbox-caption">
+      <button class="image-lightbox__close" type="button" aria-label="拡大画像を閉じる">×</button>
+      <img src="" alt="" class="image-lightbox__img" id="image-lightbox-img">
+      <figcaption class="image-lightbox__caption" id="image-lightbox-caption"></figcaption>
+    </figure>
+  </div>
 
 
-  <script src="js/main.js"></script>
-  <script src="js/game.js"></script>
+  <script src="js/main.js?v=works-slides-1"></script>
 </body>
 
 </html>
