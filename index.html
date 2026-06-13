@@ -54,11 +54,16 @@
     </ul>
     <div class="hero__content">
       <p class="hero__greeting"></p>
-      <h1 class="hero__name" id="hero-name" data-font-step="0">黒沼 慎太郎</h1>
+      <h1 class="hero__name" id="hero-name" data-font-step="0">黒沼慎太郎</h1>
       <p class="hero__tagline"></p>
       <a href="#about" class="hero__cta">もっと知る ↓</a>
     </div>
   </section>
+
+  <div class="journey-rails" data-journey-rails aria-hidden="true">
+    <span class="journey-rail journey-rail--left"></span>
+    <span class="journey-rail journey-rail--right"></span>
+  </div>
 
   <!-- ========== 自己紹介 ========== -->
   <section class="about section" id="about">
@@ -71,10 +76,10 @@
           </div>
         </div>
         <div class="about__text animate-on-scroll">
-          <h3 class="about__name">黒沼　慎太郎</h3>
+          <h3 class="about__name">黒沼慎太郎</h3>
           <p class="about__role"></p>
           <p class="about__description">
-            大阪大学大学院 基礎工学研究科 システム創成専攻に所属しています。
+            大阪大学大学院基礎工学研究科システム創成専攻に所属しています。
 大学でゲーム制作を始め、ルール設計によってプレイヤーの体験や感情が変化する点に魅力を感じ、ゲームプランナーを志望するようになりました。
 
 企画だけでなく、UI制作やプログラミングにも取り組み、考えた体験を自分の手で形にする力を磨いています。
@@ -82,7 +87,7 @@
 
           </p>
           <div class="about__skills">
-            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">HTML/CSS</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Unity</span>
@@ -95,11 +100,6 @@
   <!-- ========== My Ability ========== -->
   <section class="visual-ability section" id="visual-ability">
     <div class="ability" data-ability-sequence>
-      <div class="ability__track" aria-hidden="true">
-        <span class="ability__rail ability__rail--left"></span>
-        <span class="ability__rail ability__rail--right"></span>
-      </div>
-
       <header class="ability__banner">
         <h2 class="ability__title">My Ability</h2>
       </header>
@@ -227,7 +227,7 @@
   </section>
 
   <!-- ========== 作品紹介 ========== -->
-  <!-- 右のようにspanで囲えば文字を隠せる<span data-play-hide>そもそも面白いのか</span>　-->
+  <!-- 右のようにspanで囲えば文字を隠せる<span data-play-hide>そもそも面白いのか</span>-->
   <section class="works section" id="works">
     <div class="container">
       <h2 class="section__title">Works</h2>
@@ -305,7 +305,7 @@
       <div class="works-details animate-on-scroll">
         <article class="work-detail is-active" id="work-panel-hamham" role="tabpanel" aria-labelledby="work-tab-hamham">
           <h3 class="work-detail__title">ハムハム絵合わせ</h3>
-          <p class="work-detail__meta">制作期間 2022/02/10~2022/04/15 / 使用ツール Python / 個人制作</p>
+          <p class="work-detail__meta">制作期間2022/02/10~2022/04/15/使用ツールPython/個人制作</p>
           <p class="work-detail__summary">
             上から落ちてくるハムスターを避けながら、同じ絵柄のカードを探すアクション神経衰弱です。
             プレイヤーはカードの位置を覚えつつハムスターをかわし、かわいらしい見た目とは裏腹の緊張感と、そろえた瞬間の達成感を楽しめます。
@@ -354,19 +354,21 @@
             <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
               <span aria-hidden="true">→</span>
             </button>
-            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>4</span></p>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span>/<span data-slide-total>4</span></p>
           </div>
           <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
         <article class="work-detail" id="work-panel-warai" role="tabpanel" aria-labelledby="work-tab-warai" hidden>
           <h3 class="work-detail__title">ブレイブオブワライ</h3>
-          <p class="work-detail__meta">制作時期 2024.03頃 / 使用ツール Unity / 団体制作 / 担当 一部作画・一部脚本</p>
+          <p class="work-detail__meta">制作時期2024.03頃/使用ツールUnity/団体制作/担当一部作画・一部脚本</p>
           <p class="work-detail__summary">
             日常生活のあらゆる場面で、勇気を出してボケるリアルコミュニケーションゲームです。
             プレイヤーはボケるタイミングと内容を選び、ウケるかすべるか分からない緊張感の中で笑いを取りにいきます。
             真剣な場面に不条理な選択肢を混ぜ、失敗してもどこか笑える体験を目指しました。
           </p>
+          <a class="work-detail__play-link" href="https://unityroom.com/games/legend_of_sugiru" target="_blank"
+            rel="noopener noreferrer" aria-label="ブレイブオブワライをUnityroomで開く">プレイページを見る</a>
           <div class="work-slides" data-work-slider aria-label="ブレイブオブワライの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -402,19 +404,21 @@
             <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
               <span aria-hidden="true">→</span>
             </button>
-            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>3</span></p>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span>/<span data-slide-total>3</span></p>
           </div>
           <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
         <article class="work-detail" id="work-panel-doughnut" role="tabpanel" aria-labelledby="work-tab-doughnut" hidden>
           <h3 class="work-detail__title">ミスった、ドーナツ</h3>
-          <p class="work-detail__meta">制作時期 2024.12頃 / 使用ツール Unity / 団体制作 / 担当 企画・作画</p>
+          <p class="work-detail__meta">制作時期2024.12頃/使用ツールUnity/団体制作/担当企画・作画</p>
           <p class="work-detail__summary">
             客の面倒な注文に合わせて正しい商品を渡し、該当する商品がない場合は客を追い出すドーナツ販売ゲームです。
             プレイヤーは注文文を瞬時に読み取り、タグや条件に合う商品を判断して売上を伸ばします。
             直感的に理解できるルールにしつつ、慣れるほど処理を最適化できる遊びを狙いました。
           </p>
+          <a class="work-detail__play-link" href="https://unityroom.com/games/miss_donut" target="_blank"
+            rel="noopener noreferrer" aria-label="ミスった、ドーナツをUnityroomで開く">プレイページを見る</a>
           <div class="work-slides" data-work-slider aria-label="ミスった、ドーナツの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -458,19 +462,21 @@
             <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
               <span aria-hidden="true">→</span>
             </button>
-            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>4</span></p>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span>/<span data-slide-total>4</span></p>
           </div>
           <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
         <article class="work-detail" id="work-panel-donbike" role="tabpanel" aria-labelledby="work-tab-donbike" hidden>
           <h3 class="work-detail__title">ドン引け！告白大失敗大作戦</h3>
-          <p class="work-detail__meta">制作期間 2025/08/03~2025/08/10 / 使用ツール Unity, C# / 個人制作</p>
+          <p class="work-detail__meta">制作期間2025/08/03~2025/08/10/使用ツールUnity, C#/個人制作</p>
           <p class="work-detail__summary">
             告白のセリフに合わせて適切なヤジを選び、生卵をぶつけながら告白シーンを台無しにするツッコミ選択ゲームです。
             プレイヤーは大げさな告白を見抜いて茶化し、神聖な場面を崩していく背徳感と爽快感を楽しめます。
             ヤジを「ツッコミ」と捉えることで、笑いだけでなく判断する面白さも持たせました。
           </p>
+          <a class="work-detail__play-link" href="https://unityroom.com/games/donbikiproject" target="_blank"
+            rel="noopener noreferrer" aria-label="ドン引け！告白大失敗大作戦をUnityroomで開く">プレイページを見る</a>
           <div class="work-slides" data-work-slider aria-label="ドン引け！告白大失敗大作戦の紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -506,19 +512,21 @@
             <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
               <span aria-hidden="true">→</span>
             </button>
-            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>3</span></p>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span>/<span data-slide-total>3</span></p>
           </div>
           <button class="works-back" type="button">他の作品を見る</button>
         </article>
 
         <article class="work-detail" id="work-panel-insight" role="tabpanel" aria-labelledby="work-tab-insight" hidden>
           <h3 class="work-detail__title">恋するインサイト</h3>
-          <p class="work-detail__meta">制作期間 2025/12/21~2025/12/28 / 使用ツール Unity, C# / 個人制作</p>
+          <p class="work-detail__meta">制作期間2025/12/21~2025/12/28/使用ツールUnity, C#/個人制作</p>
           <p class="work-detail__summary">
             女の子とデートしながら、「インサイト」という特殊能力で心の中を覗き、本音に合わせて言動を選ぶ恋愛アドベンチャーです。
             プレイヤーは相手の隠れた気持ちを読み解き、少しずつ距離が縮まっていく納得感と、物語の最後に明かされる驚きを楽しめます。
             心を覗く能力を会話選択に直結させ、短時間でも恋愛が進展する理由が伝わるようにしました。
           </p>
+          <a class="work-detail__play-link" href="https://unityroom.com/games/love_insight" target="_blank"
+            rel="noopener noreferrer" aria-label="恋するインサイトをUnityroomで開く">プレイページを見る</a>
           <div class="work-slides" data-work-slider aria-label="恋するインサイトの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -562,7 +570,7 @@
             <button class="work-slides__nav work-slides__nav--next" type="button" aria-label="次のスライド">
               <span aria-hidden="true">→</span>
             </button>
-            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span> / <span data-slide-total>4</span></p>
+            <p class="work-slides__status" aria-live="polite"><span data-slide-current>1</span>/<span data-slide-total>4</span></p>
           </div>
           <button class="works-back" type="button">他の作品を見る</button>
         </article>
@@ -582,7 +590,7 @@
           <div class="timeline-item__dot"></div>
           <div class="timeline-item__card">
             <span class="timeline-item__date">2025.12</span>
-            <h3 class="timeline-item__title">イベント / 活動タイトル 1</h3>
+            <h3 class="timeline-item__title">イベント/活動タイトル1</h3>
             <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
           </div>
         </div>
@@ -591,7 +599,7 @@
           <div class="timeline-item__dot"></div>
           <div class="timeline-item__card">
             <span class="timeline-item__date">2025.08</span>
-            <h3 class="timeline-item__title">イベント / 活動タイトル 2</h3>
+            <h3 class="timeline-item__title">イベント/活動タイトル2</h3>
             <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
           </div>
         </div>
@@ -600,7 +608,7 @@
           <div class="timeline-item__dot"></div>
           <div class="timeline-item__card">
             <span class="timeline-item__date">2025.04</span>
-            <h3 class="timeline-item__title">イベント / 活動タイトル 3</h3>
+            <h3 class="timeline-item__title">イベント/活動タイトル3</h3>
             <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
           </div>
         </div>
@@ -609,7 +617,7 @@
           <div class="timeline-item__dot"></div>
           <div class="timeline-item__card">
             <span class="timeline-item__date">2024.11</span>
-            <h3 class="timeline-item__title">イベント / 活動タイトル 4</h3>
+            <h3 class="timeline-item__title">イベント/活動タイトル4</h3>
             <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
           </div>
         </div>
@@ -621,27 +629,6 @@
   <!-- ========== フッター ========== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__links">
-        <a href="#" class="footer__social" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-          </svg>
-        </a>
-        <a href="#" class="footer__social" aria-label="Twitter">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-        <a href="#" class="footer__social" aria-label="Mail">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-        </a>
-      </div>
       <p class="footer__copy">&copy; 2026 Shintaro Kuronuma. All rights reserved.</p>
     </div>
   </footer>

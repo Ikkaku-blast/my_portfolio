@@ -16,16 +16,24 @@ const loadPortfolioContent = async () => {
 const applyPortfolioContent = (content) => {
   if (!content) return;
 
+  const cleanDisplayText = (value) => String(value)
+    .replace(/\u3000/g, '')
+    .replace(/[ \t]*\r?\n+[ \t]*/g, '')
+    .replace(/([\u3040-\u30ff\u3400-\u9fff々〆〤]) +(?=[\u3040-\u30ff\u3400-\u9fff々〆〤])/g, '$1')
+    .replace(/([。！？、]) +(?=[\u3040-\u30ff\u3400-\u9fff々〆〤「『])/g, '$1')
+    .replace(/([\u3040-\u30ff\u3400-\u9fff々〆〤]) +(?=[。！？、])/g, '$1')
+    .replace(/\s*\/\s*/g, '/');
+
   const setText = (selector, value, root = document) => {
     const element = root.querySelector(selector);
     if (!element || value === undefined || value === null) return;
-    element.textContent = value;
+    element.textContent = cleanDisplayText(value);
   };
 
   const setAttr = (selector, name, value, root = document) => {
     const element = root.querySelector(selector);
     if (!element || value === undefined || value === null) return;
-    element.setAttribute(name, value);
+    element.setAttribute(name, cleanDisplayText(value));
   };
 
   const setLines = (element, lines) => {
@@ -33,7 +41,7 @@ const applyPortfolioContent = (content) => {
     element.replaceChildren();
     lines.forEach((line, index) => {
       if (index > 0) element.appendChild(document.createElement('br'));
-      element.appendChild(document.createTextNode(line));
+      element.appendChild(document.createTextNode(cleanDisplayText(line)));
     });
   };
 
@@ -46,7 +54,7 @@ const applyPortfolioContent = (content) => {
     paragraphs.forEach(paragraph => {
       const element = document.createElement('p');
       element.className = className;
-      element.textContent = paragraph;
+      element.textContent = cleanDisplayText(paragraph);
       if (insertAfter) {
         insertAfter.insertAdjacentElement('afterend', element);
         insertAfter = element;
@@ -64,11 +72,11 @@ const applyPortfolioContent = (content) => {
     button.className = 'ability-zoom work-slide__zoom';
     button.type = 'button';
     button.dataset.lightboxSrc = slide.image || '';
-    button.dataset.lightboxCaption = slide.lightboxCaption || slide.caption || '';
+    button.dataset.lightboxCaption = cleanDisplayText(slide.lightboxCaption || slide.caption || '');
 
     const image = document.createElement('img');
     image.src = slide.image || '';
-    image.alt = slide.alt || slide.lightboxCaption || slide.caption || '';
+    image.alt = cleanDisplayText(slide.alt || slide.lightboxCaption || slide.caption || '');
     image.className = 'work-slide__image';
 
     const icon = document.createElement('span');
@@ -76,11 +84,35 @@ const applyPortfolioContent = (content) => {
     icon.setAttribute('aria-hidden', 'true');
 
     const caption = document.createElement('figcaption');
-    caption.textContent = slide.caption || '';
+    caption.textContent = cleanDisplayText(slide.caption || '');
 
     button.append(image, icon);
     figure.append(button, caption);
     return figure;
+  };
+
+  const syncWorkPlayLink = (panel, item) => {
+    const summary = panel.querySelector('.work-detail__summary');
+    let link = panel.querySelector('.work-detail__play-link');
+    if (!link && summary) {
+      link = document.createElement('a');
+      link.className = 'work-detail__play-link';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      summary.insertAdjacentElement('afterend', link);
+    }
+    if (!link) return;
+
+    link.textContent = cleanDisplayText(item.playLabel || content.works?.playLinkLabel || 'プレイページを見る');
+    if (item.playUrl) {
+      link.href = item.playUrl;
+      link.hidden = false;
+      link.setAttribute('aria-label', `${cleanDisplayText(item.detailTitle || '作品')}をUnityroomで開く`);
+    } else {
+      link.hidden = true;
+      link.removeAttribute('href');
+      link.removeAttribute('aria-label');
+    }
   };
 
   if (content.meta) {
@@ -152,11 +184,11 @@ const applyPortfolioContent = (content) => {
         const image = figure.querySelector('img');
         if (button) {
           button.dataset.lightboxSrc = figureData.image || '';
-          button.dataset.lightboxCaption = figureData.lightboxCaption || figureData.caption || '';
+          button.dataset.lightboxCaption = cleanDisplayText(figureData.lightboxCaption || figureData.caption || '');
         }
         if (image) {
           image.src = figureData.image || '';
-          image.alt = figureData.alt || figureData.lightboxCaption || figureData.caption || '';
+          image.alt = cleanDisplayText(figureData.alt || figureData.lightboxCaption || figureData.caption || '');
         }
         setText('figcaption', figureData.caption, figure);
       });
@@ -205,6 +237,7 @@ const applyPortfolioContent = (content) => {
         setText('.work-detail__title', item.detailTitle, panel);
         setText('.work-detail__meta', item.meta, panel);
         setText('.work-detail__summary', item.summary, panel);
+        syncWorkPlayLink(panel, item);
         const slider = panel.querySelector('[data-work-slider]');
         if (slider && item.sliderLabel) slider.setAttribute('aria-label', item.sliderLabel);
         const track = panel.querySelector('.work-slides__track');
@@ -351,6 +384,99 @@ document.addEventListener('DOMContentLoaded', async () => {
   }, observerOptions);
 
   animTargets.forEach(el => observer.observe(el));
+
+  const journeyRails = document.querySelector('[data-journey-rails]');
+  const journeyStart = document.getElementById('about');
+  const journeyAbility = document.getElementById('visual-ability');
+  const journeyWorks = document.getElementById('works');
+  if (journeyRails && journeyStart && journeyAbility && journeyWorks) {
+    let journeyStage = 0;
+    let journeyProgress = 0;
+    const journeyStops = [0, 0, 0, 0];
+    const baseJourneyDuration = 780;
+
+    const measureJourneyRails = () => {
+      const start = journeyStart.getBoundingClientRect().top + window.scrollY;
+      const abilityTop = journeyAbility.getBoundingClientRect().top + window.scrollY;
+      const worksTop = journeyWorks.getBoundingClientRect().top + window.scrollY;
+      const worksBottom = journeyWorks.getBoundingClientRect().bottom + window.scrollY;
+      const height = Math.max(worksBottom - start, 0);
+
+      journeyStops[0] = 0;
+      journeyStops[1] = Math.max(abilityTop - start, 0);
+      journeyStops[2] = Math.max(worksTop - start, 0);
+      journeyStops[3] = height;
+
+      journeyRails.style.setProperty('--journey-start', `${start}px`);
+      journeyRails.style.setProperty('--journey-height', `${height}px`);
+    };
+
+    const applyJourneyStage = (animate = false) => {
+      const progress = journeyStops[journeyStage] || 0;
+      const baseDistance = Math.max(journeyStops[1], 1);
+      const distance = Math.abs(progress - journeyProgress);
+      const duration = animate
+        ? Math.max(baseJourneyDuration, Math.min(5200, (distance / baseDistance) * baseJourneyDuration))
+        : 0;
+
+      journeyRails.style.setProperty('--journey-duration', `${duration}ms`);
+      journeyRails.style.setProperty('--journey-progress', `${progress}px`);
+      journeyRails.classList.toggle('is-active', journeyStage > 0);
+      journeyProgress = progress;
+    };
+
+    const setJourneyStage = (stage) => {
+      const nextStage = Math.max(journeyStage, stage);
+      if (nextStage === journeyStage) return;
+      journeyStage = nextStage;
+      applyJourneyStage(true);
+    };
+
+    const syncJourneyRails = () => {
+      measureJourneyRails();
+      applyJourneyStage();
+    };
+
+    const setInitialJourneyStage = () => {
+      const anchor = window.scrollY + window.innerHeight * 0.5;
+      const worksTop = journeyWorks.getBoundingClientRect().top + window.scrollY;
+      const abilityTop = journeyAbility.getBoundingClientRect().top + window.scrollY;
+      const aboutTop = journeyStart.getBoundingClientRect().top + window.scrollY;
+      if (anchor >= worksTop) {
+        journeyStage = 3;
+      } else if (anchor >= abilityTop) {
+        journeyStage = 2;
+      } else if (anchor >= aboutTop) {
+        journeyStage = 1;
+      }
+      applyJourneyStage();
+    };
+
+    const journeyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        if (entry.target === journeyStart) setJourneyStage(1);
+        if (entry.target === journeyAbility) setJourneyStage(2);
+        if (entry.target === journeyWorks) setJourneyStage(3);
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -42% 0px',
+      threshold: 0.08,
+    });
+
+    window.addEventListener('resize', syncJourneyRails);
+    window.addEventListener('load', syncJourneyRails);
+    journeyObserver.observe(journeyStart);
+    journeyObserver.observe(journeyAbility);
+    journeyObserver.observe(journeyWorks);
+    syncJourneyRails();
+    setInitialJourneyStage();
+    window.setTimeout(() => {
+      syncJourneyRails();
+      setInitialJourneyStage();
+    }, 300);
+  }
 
   const abilitySequence = document.querySelector('[data-ability-sequence]');
   const abilityPanels = Array.from(document.querySelectorAll('.ability-panel'));
