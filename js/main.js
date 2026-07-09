@@ -93,17 +93,53 @@ const applyPortfolioContent = (content) => {
 
   const syncWorkPlayLink = (panel, item) => {
     const summary = panel.querySelector('.work-detail__summary');
+    let actions = panel.querySelector('.work-detail__actions');
     let link = panel.querySelector('.work-detail__play-link');
-    if (!link && summary) {
+    if (!actions && summary) {
+      actions = document.createElement('div');
+      actions.className = 'work-detail__actions';
+      summary.insertAdjacentElement('afterend', actions);
+    }
+    if (link && actions && link.parentElement !== actions) {
+      actions.appendChild(link);
+    }
+    if (!link && actions) {
       link = document.createElement('a');
       link.className = 'work-detail__play-link';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      summary.insertAdjacentElement('afterend', link);
+      actions.appendChild(link);
+    }
+    if (!actions || !link) return;
+
+    link.textContent = cleanDisplayText(item.playLabel || content.works?.playLinkLabel || 'プレイページを見る');
+    if (item.playUrl) {
+      link.href = item.playUrl;
+      link.hidden = false;
+      actions.hidden = false;
+      link.setAttribute('aria-label', `${cleanDisplayText(item.detailTitle || '作品')}をUnityroomで開く`);
+    } else {
+      link.hidden = true;
+      actions.hidden = true;
+      link.removeAttribute('href');
+      link.removeAttribute('aria-label');
+    }
+  };
+
+  const syncWorksCardPlayLink = (tab, item) => {
+    const card = tab.closest('.works-card');
+    if (!card) return;
+    let link = card.querySelector('.works-card__play');
+    if (!link && item.playUrl) {
+      link = document.createElement('a');
+      link.className = 'works-card__play';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      tab.insertAdjacentElement('afterend', link);
     }
     if (!link) return;
 
-    link.textContent = cleanDisplayText(item.playLabel || content.works?.playLinkLabel || 'プレイページを見る');
+    link.textContent = cleanDisplayText(item.previewPlayLabel || content.works?.previewPlayLabel || 'Play');
     if (item.playUrl) {
       link.href = item.playUrl;
       link.hidden = false;
@@ -223,7 +259,9 @@ const applyPortfolioContent = (content) => {
       if (tab) {
         setText('.works-node__date', item.date, tab);
         setLines(tab.querySelector('.works-node__title'), item.previewTitleLines);
+        setLines(tab.querySelector('.works-node__meta'), item.previewMeta);
         setText('.works-node__hint', item.previewHint, tab);
+        syncWorksCardPlayLink(tab, item);
         const video = tab.querySelector('.works-node__video');
         const source = tab.querySelector('.works-node__video source');
         if (video && item.poster) video.setAttribute('poster', item.poster);
@@ -307,6 +345,46 @@ document.addEventListener('DOMContentLoaded', async () => {
   const heroName = document.getElementById('hero-name');
   const heroInterests = Array.from(document.querySelectorAll('[data-hero-interest]'));
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const abilityHeadings = Array.from(document.querySelectorAll('.ability__content-title'));
+
+  const fitAbilityHeadings = () => {
+    abilityHeadings.forEach(heading => {
+      const container = heading.parentElement;
+      if (!container) return;
+
+      heading.style.fontSize = '';
+      heading.style.maxWidth = 'none';
+      const styles = window.getComputedStyle(heading);
+      const minSize = Number.parseFloat(styles.getPropertyValue('--ability-title-min-size')) || 22;
+      let size = Number.parseFloat(styles.fontSize);
+      const containerRect = container.getBoundingClientRect();
+      const safeInset = 24;
+      const availableLeft = Math.max(containerRect.left, safeInset);
+      const availableRight = Math.min(containerRect.right, document.documentElement.clientWidth - safeInset);
+      const maxWidth = Math.max(0, availableRight - availableLeft);
+
+      if (heading.scrollWidth > maxWidth && maxWidth > 0) {
+        size = Math.max(minSize, Math.floor((size * maxWidth) / heading.scrollWidth) - 2);
+        heading.style.fontSize = `${size}px`;
+      }
+
+      while (heading.getBoundingClientRect().width > maxWidth && size > minSize) {
+        size -= 1;
+        heading.style.fontSize = `${size}px`;
+      }
+    });
+  };
+
+  let abilityHeadingFrame = null;
+  const scheduleFitAbilityHeadings = () => {
+    if (abilityHeadingFrame) cancelAnimationFrame(abilityHeadingFrame);
+    abilityHeadingFrame = requestAnimationFrame(fitAbilityHeadings);
+  };
+
+  scheduleFitAbilityHeadings();
+  window.addEventListener('resize', scheduleFitAbilityHeadings);
+  window.addEventListener('load', scheduleFitAbilityHeadings);
+  document.fonts?.ready?.then(scheduleFitAbilityHeadings);
 
   /* ==========================================================
      0. Hero — staggered interests & name font cycling
