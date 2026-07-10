@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ポートフォリオサイト — 自己紹介・作品紹介・活動紹介">
+  <meta name="description" content="ゲームプランナー志望のポートフォリオサイト — ゲーム作品紹介・制作で意識したこと・自己紹介">
   <title>Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +21,9 @@
       <a href="#hero" class="header__logo">Portfolio</a>
       <nav class="header__nav" id="nav">
         <ul class="header__nav-list">
-          <li><a href="#about" class="header__nav-link">About</a></li>
           <li><a href="#works" class="header__nav-link">Works</a></li>
-          <li><a href="#activities" class="header__nav-link">Activities</a></li>
+          <li><a href="#about" class="header__nav-link">About</a></li>
+          <li><a href="#visual-ability" class="header__nav-link">Strengths</a></li>
         </ul>
       </nav>
       <button class="header__hamburger" id="hamburger" aria-label="メニューを開く">
@@ -56,7 +56,7 @@
       <p class="hero__greeting"></p>
       <h1 class="hero__name" id="hero-name" data-font-step="0">黒沼慎太郎</h1>
       <p class="hero__tagline"></p>
-      <a href="#about" class="hero__cta">もっと知る ↓</a>
+      <a href="#works" class="hero__cta">作品を見る ↓</a>
     </div>
   </section>
 
@@ -65,173 +65,13 @@
     <span class="journey-rail journey-rail--right"></span>
   </div>
 
-  <!-- ========== 自己紹介 ========== -->
-  <section class="about section" id="about">
-    <div class="container">
-      <h2 class="section__title animate-on-scroll">About Me</h2>
-      <div class="about__grid">
-        <div class="about__photo-wrapper animate-on-scroll">
-          <div class="about__photo-placeholder">
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="about__text animate-on-scroll">
-          <h3 class="about__name">黒沼慎太郎</h3>
-          <p class="about__role"></p>
-          <p class="about__description">
-            大阪大学大学院基礎工学研究科システム創成専攻に所属しています。
-大学でゲーム制作を始め、ルール設計によってプレイヤーの体験や感情が変化する点に魅力を感じ、ゲームプランナーを志望するようになりました。
-
-企画だけでなく、UI制作やプログラミングにも取り組み、考えた体験を自分の手で形にする力を磨いています。
-また、新聞を通じて政治経済・教育・テクノロジー・スポーツなど幅広い分野の情報に触れ、企画の引き出しを増やすことを意識しています。
-
-          </p>
-          <div class="about__skills">
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Unity</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== My Ability ========== -->
-  <section class="visual-ability section" id="visual-ability">
-    <div class="ability" data-ability-sequence>
-      <header class="ability__banner">
-        <h2 class="ability__title">My Ability</h2>
-      </header>
-
-      <div class="ability__panels" aria-label="My Ability">
-        <article class="ability__content ability__content--article ability-panel">
-          <div class="ability-article__text">
-            <h3 class="ability__content-title">体験を設計する</h3>
-            <p class="ability__content-text">
-              ゲーム制作では、まず「プレイヤーにどんな体験を届けるか」「どこに面白さを感じてもらうか」を定義します。
-              その体験が成立するように、ルール・UI・演出を設計し、制作全体の軸がぶれないようにしています。
-            </p>
-            <p class="ability__content-text">
-              図は、実際に作成したゲームの仕様書です。
-              このゲームでは「直感的に理解できること」と「ギリギリ感を楽しめること」を方針に設定しました。
-              この方針に基づき、客の注文に対して正しいドーナツを渡すというルールを設計しました。
-              たとえば、注文内容は吹き出しUIで表示し、制限時間が近づくにつれ赤くなるようデザインしました。
-              プレイヤーが状況を瞬時に理解し、短時間で判断を迫られる状態を作りました。
-              これにより、分かりやすさを保ちながら、短時間で判断する緊張感を視覚的に演出しました。
-            </p>
-          </div>
-          <div class="ability-article__figures" aria-label="体験設計の仕様書">
-            <figure class="ability-doc-image ability-doc-image--policy">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image1.png"
-                data-lightbox-caption="体験設計の方針をまとめた仕様書(抜粋)">
-                <img src="image/experiment_image1.png" alt="体験設計の方針をまとめた仕様書(抜粋)" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>体験設計の方針をまとめた仕様書(抜粋)</figcaption>
-            </figure>
-
-            <figure class="ability-doc-image ability-doc-image--policy">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image4.png"
-                data-lightbox-caption="体験設計のルールとUIをまとめた仕様書(抜粋)">
-                <img src="image/experiment_image4.png" alt="体験設計のルールとUIをまとめた仕様書(抜粋)" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>ルールとUIをまとめた仕様書</figcaption>
-            </figure>
-          </div>
-        </article>
-
-        <article class="ability__content ability__content--article ability__content--teamwork ability-panel">
-          <div class="ability-article__text">
-            <h3 class="ability__content-title">システムでチームワークを強める</h3>
-            <p class="ability__content-text">
-              チーム開発では、各メンバーが自分の役割とチーム全体のゴールを把握できる状態を重視しました。
-              タスクの担当者・進行状況・優先度をタスク管理サイトNotionを用いて可視化することで、各メンバーが次に取り組むべき作業を判断しやすくしました。
-              また、遅れている作業を早期に把握できたため、手の空いたメンバーが支援に回りやすくなり、チーム全体の作業停滞を防ぐことにつながりました。
-            </p>
-            <p class="ability__content-text">
-              チーム制作では、アイデアの量を増やすだけでなく、作品の方向性から外れないことも重視しました。
-              仕様書で世界観・ルール・面白さの認識を共有したうえで、Notion上に匿名のアイデア掲示板を用意し、会議中に出しにくい案や後から思いついたネタも投稿できるようにしました。
-              その結果、作品の方向性を保ちながら多くの案を集めることができ、ゲーム内の称号は100個以上考案されました。
-            </p>
-          </div>
-          <div class="ability-article__figures ability-article__figures--three" aria-label="チームワークの資料">
-            <figure class="ability-doc-image ability-doc-image--compact">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/teamwork_image1.png"
-                data-lightbox-caption="役割と進行状況を共有したNotionタスクボード">
-                <img src="image/teamwork_image1.png" alt="Notionで役割と進行状況を共有したタスクボード" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>役割と進行状況を共有したNotionタスクボード</figcaption>
-            </figure>
-            <figure class="ability-doc-image ability-doc-image--compact">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/teamwork_image2.png"
-                data-lightbox-caption="匿名で案を追加できるアイデア掲示板">
-                <img src="image/teamwork_image2.png" alt="匿名でアイデアやネタを追加するためのNotion掲示板" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>匿名で案を追加できるアイデア掲示板</figcaption>
-            </figure>
-            <figure class="ability-doc-image ability-doc-image--policy">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image1.png"
-                data-lightbox-caption="ゴール共有に使用した仕様書">
-                <img src="image/experiment_image1.png" alt="チームのゴール共有に使用したゲーム仕様書" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>ゴール共有に使用した仕様書</figcaption>
-            </figure>
-          </div>
-        </article>
-
-        <article class="ability__content ability__content--article ability-panel">
-          <div class="ability-article__text">
-            <h3 class="ability__content-title">課題の分解、体験の調整</h3>
-            <p class="ability__content-text">
-              基本ルールを実装した後でも、テストプレイを通じて面白さや遊びやすさに不足がないかを確認します。
-              「なんとなく物足りない」という感覚をそのままにせず、プレイ中の違和感を言語化し、具体的な改善に落とし込むことを重視しています。
-            </p>
-            <p class="ability__content-text">
-              「ハムハム絵合わせ」という上から落ちてくるハムスターを避けながら神経衰弱を行うゲームをテストプレイした際、達成感の薄さという課題を発見しました。
-              単純に難易度を上げれば緊張感は増しますが、それではゲームに不慣れなプレイヤーがついていけない可能性があります。
-              そこで、達成感の薄さを複数の観点から分析しました。その結果、「達成感の薄さ」からより具体的に「視覚的な迫力不足」と「ゲーム後半の失速」という課題に分解できました。
-              視覚的な迫力不足に対しては、落下するハムスターの密度を上げ、特大サイズのハムスターを追加しました。
-              一方で、難易度が上がりすぎないよう全体の落下速度を下げ、見た目の緊迫感と遊びやすさを両立させました。
-            </p>
-            <p class="ability__content-text">
-              もう一つの課題として、後半にカードが減って簡単になりゲームが盛り下がる問題がありました。
-              後半でも緊張感が続くよう、カードが減るほどハムスターが加速するようにしました。カードが減り、プレイヤーは残りの配置を覚えやすくなる一方で、ハムスターを避けることに集中しなければならない最後まで油断できない展開にしました。
-            </p>
-          </div>
-          <div class="ability-article__figures" aria-label="課題発見の資料">
-            <figure class="ability-doc-image">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/hamhamD.png"
-                data-lightbox-caption="カード枚数が多い場面">
-                <img src="image/hamhamD.png" alt="カード枚数が多い場面" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>カード枚数が多い場面</figcaption>
-            </figure>
-            <figure class="ability-doc-image">
-              <button class="ability-zoom" type="button" data-lightbox-src="image/hamhamE.png"
-                data-lightbox-caption="カード枚数が少ない後半の場面">
-                <img src="image/hamhamE.png" alt="カード枚数が少ない後半の場面" class="ability-doc-image__img">
-                <span class="ability-zoom__icon" aria-hidden="true"></span>
-              </button>
-              <figcaption>カード枚数が少ない後半の場面</figcaption>
-            </figure>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== 作品紹介 ========== -->
   <!-- 右のようにspanで囲えば文字を隠せる<span data-play-hide>そもそも面白いのか</span>-->
   <section class="works section" id="works">
     <div class="container">
       <h2 class="section__title">Works</h2>
       <p class="section__subtitle">制作順にたどる作品紹介</p>
+      <p class="works__guide">作品をクリックすることで紹介スライドをご覧いただけます。<br>また、Playをクリックして実際に遊ぶことができます。</p>
 
       <div class="works-toolbar">
         <button class="works-preview-toggle" type="button" id="works-preview-toggle" aria-pressed="false">
@@ -610,49 +450,149 @@
     </div>
   </section>
 
-  <!-- ========== その他活動紹介 ========== -->
-  <section class="activities section" id="activities">
+  <!-- ========== 自己紹介 ========== -->
+  <section class="about section" id="about">
     <div class="container">
-      <h2 class="section__title animate-on-scroll">Activities</h2>
-      <p class="section__subtitle animate-on-scroll">その他の活動</p>
-      <div class="activities__timeline">
-
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-item__dot"></div>
-          <div class="timeline-item__card">
-            <span class="timeline-item__date">2025.12</span>
-            <h3 class="timeline-item__title">イベント/活動タイトル1</h3>
-            <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
+      <h2 class="section__title animate-on-scroll">About Me</h2>
+      <div class="about__overview animate-on-scroll">
+        <div class="about__photo-wrapper">
+          <div class="about__photo-placeholder">
+            <span>写真</span>
           </div>
         </div>
-
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-item__dot"></div>
-          <div class="timeline-item__card">
-            <span class="timeline-item__date">2025.08</span>
-            <h3 class="timeline-item__title">イベント/活動タイトル2</h3>
-            <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
-          </div>
+        <div class="about-radar" data-radar>
+          <svg class="about-radar__chart" viewBox="0 0 720 520" role="img" aria-labelledby="about-radar-title about-radar-desc">
+            <title id="about-radar-title">能力バランス</title>
+            <desc id="about-radar-desc">企画力、楽しむ心、チームワーク、腕力、課題発見を五角形で示したチャートです。</desc>
+            <g class="about-radar__grid" aria-hidden="true"></g>
+            <g class="about-radar__score" aria-hidden="true"></g>
+            <g class="about-radar__labels" aria-hidden="true"></g>
+          </svg>
+          <ul class="about-radar__list"></ul>
         </div>
-
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-item__dot"></div>
-          <div class="timeline-item__card">
-            <span class="timeline-item__date">2025.04</span>
-            <h3 class="timeline-item__title">イベント/活動タイトル3</h3>
-            <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
-          </div>
+      </div>
+      <div class="about__text about__description-panel animate-on-scroll">
+        <h3 class="about__name">黒沼慎太郎</h3>
+        <p class="about__role"></p>
+        <p class="about__description">
+          大阪大学大学院基礎工学研究科システム創成専攻に所属しています。大学でゲーム制作を始め、ルール設計によってプレイヤーの体験や感情が変化する点に魅力を感じ、ゲームプランナーを志望するようになりました。企画・UI制作・実装に取り組み、考えた体験を自分の手で形にする力を磨いています。チーム制作では役割分担や情報共有の仕組みづくりも行い、新聞や教育・お笑いなど幅広い関心領域から企画の引き出しを増やすことを意識しています。
+        </p>
+        <div class="about__skills">
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Unity</span>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-item__dot"></div>
-          <div class="timeline-item__card">
-            <span class="timeline-item__date">2024.11</span>
-            <h3 class="timeline-item__title">イベント/活動タイトル4</h3>
-            <p class="timeline-item__desc">活動の内容を記載します。参加したイベント、発表、ボランティアなど。</p>
+  <!-- ========== Strengths ========== -->
+  <section class="visual-ability section" id="visual-ability">
+    <div class="ability" data-ability-sequence>
+      <header class="ability__banner">
+        <h2 class="ability__title">Strengths</h2>
+      </header>
+
+      <div class="ability__panels" aria-label="制作で意識したこと">
+        <article class="ability__content ability__content--article ability-panel">
+          <div class="ability-article__text">
+            <h3 class="ability__content-title">体験を設計する</h3>
+            <p class="ability__content-text">
+              作品ごとに、まずプレイヤーへ届けたい体験と面白さの条件を言語化します。そのうえで、ルール・UI・演出が同じ方向を向くように設計し、制作全体の判断基準を明確にしています。
+            </p>
+            <p class="ability__content-text">
+              「ミスった、ドーナツ」では、「直感的に理解できること」と「短時間で判断する緊張感」を方針に設定しました。注文UI、制限時間の色変化、商品選択ルールをその方針に合わせ、プレイヤーが状況を瞬時に読み取り判断できる体験を狙いました。
+            </p>
           </div>
-        </div>
+          <div class="ability-article__figures" aria-label="体験設計の仕様書">
+            <figure class="ability-doc-image ability-doc-image--policy">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image1.png"
+                data-lightbox-caption="体験設計の方針をまとめた仕様書(抜粋)">
+                <img src="image/experiment_image1.png" alt="体験設計の方針をまとめた仕様書(抜粋)" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>体験設計の方針をまとめた仕様書(抜粋)</figcaption>
+            </figure>
 
+            <figure class="ability-doc-image ability-doc-image--policy">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image4.png"
+                data-lightbox-caption="体験設計のルールとUIをまとめた仕様書(抜粋)">
+                <img src="image/experiment_image4.png" alt="体験設計のルールとUIをまとめた仕様書(抜粋)" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>ルールとUIをまとめた仕様書</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="ability__content ability__content--article ability__content--teamwork ability-panel">
+          <div class="ability-article__text">
+            <h3 class="ability__content-title">チーム制作を進める仕組みづくり</h3>
+            <p class="ability__content-text">
+              チーム制作では、役割や進行状況が曖昧なままだと判断が遅れるため、Notionで担当・優先度・進捗を共有しました。各メンバーが次に取り組む作業を判断しやすくし、遅れている作業にも早めに支援を回せる状態を作りました。
+            </p>
+            <p class="ability__content-text">
+              また、仕様書で世界観・ルール・面白さの方向性を共有したうえで、匿名のアイデア掲示板を用意しました。会議中に出しにくい案や後から思いついたネタも集められるようにし、方向性を保ちながら案の量を増やしました。
+            </p>
+          </div>
+          <div class="ability-article__figures ability-article__figures--three" aria-label="チームワークの資料">
+            <figure class="ability-doc-image ability-doc-image--compact">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/teamwork_image1.png"
+                data-lightbox-caption="役割と進行状況を共有したNotionタスクボード">
+                <img src="image/teamwork_image1.png" alt="Notionで役割と進行状況を共有したタスクボード" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>役割と進行状況を共有したNotionタスクボード</figcaption>
+            </figure>
+            <figure class="ability-doc-image ability-doc-image--compact">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/teamwork_image2.png"
+                data-lightbox-caption="匿名で案を追加できるアイデア掲示板">
+                <img src="image/teamwork_image2.png" alt="匿名でアイデアやネタを追加するためのNotion掲示板" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>匿名で案を追加できるアイデア掲示板</figcaption>
+            </figure>
+            <figure class="ability-doc-image ability-doc-image--policy">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/experiment_image1.png"
+                data-lightbox-caption="ゴール共有に使用した仕様書">
+                <img src="image/experiment_image1.png" alt="チームのゴール共有に使用したゲーム仕様書" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>ゴール共有に使用した仕様書</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="ability__content ability__content--article ability-panel">
+          <div class="ability-article__text">
+            <h3 class="ability__content-title">課題を分解し、体験を調整する</h3>
+            <p class="ability__content-text">
+              テストプレイでは、感想をそのまま受け取るのではなく、何が体験を弱めているかに分解して改善します。違和感を言語化し、見た目・難易度・テンポなど、調整できる要素へ落とし込むことを重視しています。
+            </p>
+            <p class="ability__content-text">
+              「ハムハム絵合わせ」では、達成感の薄さを「視覚的な迫力不足」と「後半の失速」に分解しました。ハムスターの密度・サイズ・速度変化を調整し、見た目の緊迫感を上げつつ、操作難度が急に跳ねないよう全体の速度も調整しました。
+            </p>
+          </div>
+          <div class="ability-article__figures" aria-label="課題発見の資料">
+            <figure class="ability-doc-image">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/hamhamD.png"
+                data-lightbox-caption="カード枚数が多い場面">
+                <img src="image/hamhamD.png" alt="カード枚数が多い場面" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>カード枚数が多い場面</figcaption>
+            </figure>
+            <figure class="ability-doc-image">
+              <button class="ability-zoom" type="button" data-lightbox-src="image/hamhamE.png"
+                data-lightbox-caption="カード枚数が少ない後半の場面">
+                <img src="image/hamhamE.png" alt="カード枚数が少ない後半の場面" class="ability-doc-image__img">
+                <span class="ability-zoom__icon" aria-hidden="true"></span>
+              </button>
+              <figcaption>カード枚数が少ない後半の場面</figcaption>
+            </figure>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -673,8 +613,7 @@
     </figure>
   </div>
 
-
-  <script src="js/main.js?v=works-slides-1"></script>
+  <script src="js/main.js?v=structure-1"></script>
 </body>
 
 </html>

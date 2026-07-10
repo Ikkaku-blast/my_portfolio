@@ -64,6 +64,106 @@ const applyPortfolioContent = (content) => {
     });
   };
 
+  const renderRadarChart = (radar) => {
+    const root = document.querySelector('[data-radar]');
+    const grid = root?.querySelector('.about-radar__grid');
+    const score = root?.querySelector('.about-radar__score');
+    const labels = root?.querySelector('.about-radar__labels');
+    const list = root?.querySelector('.about-radar__list');
+    if (!root || !grid || !score || !labels || !list || !Array.isArray(radar?.items)) return;
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const createSvg = (tag) => document.createElementNS(svgNS, tag);
+    const center = { x: 360, y: 260 };
+    const radius = 158;
+    const scoreRadius = radius * 1;
+    const labelRadius = 180;
+    const max = Math.max(Number(radar.max) || 75, 1);
+    const items = radar.items.slice(0, 5);
+    const total = items.length;
+    if (total < 3) return;
+
+    const pointAt = (index, pointRadius) => {
+      const angle = -Math.PI / 2 + (Math.PI * 2 * index) / total;
+      return {
+        x: center.x + Math.cos(angle) * pointRadius,
+        y: center.y + Math.sin(angle) * pointRadius,
+      };
+    };
+
+    const pointString = (points) => points
+      .map(point => `${point.x.toFixed(1)},${point.y.toFixed(1)}`)
+      .join(' ');
+
+    const gridLevels = 5;
+    grid.replaceChildren();
+    score.replaceChildren();
+    labels.replaceChildren();
+    list.replaceChildren();
+
+    for (let level = 1; level <= gridLevels; level += 1) {
+      const polygon = createSvg('polygon');
+      polygon.classList.add('about-radar__grid-line');
+      if (level === gridLevels) polygon.classList.add('about-radar__grid-line--outer');
+      polygon.setAttribute('points', pointString(items.map((_, index) => pointAt(index, radius * (level / gridLevels)))));
+      grid.appendChild(polygon);
+    }
+
+    items.forEach((item, index) => {
+      const axis = createSvg('line');
+      const edge = pointAt(index, radius);
+      axis.classList.add('about-radar__axis');
+      axis.setAttribute('x1', center.x);
+      axis.setAttribute('y1', center.y);
+      axis.setAttribute('x2', edge.x);
+      axis.setAttribute('y2', edge.y);
+      grid.appendChild(axis);
+
+      const labelPoint = pointAt(index, labelRadius);
+      const label = createSvg('text');
+      label.classList.add('about-radar__label');
+      label.setAttribute('x', labelPoint.x);
+      label.setAttribute('y', labelPoint.y);
+      label.setAttribute('text-anchor', Math.abs(labelPoint.x - center.x) < 16 ? 'middle' : labelPoint.x > center.x ? 'start' : 'end');
+      label.textContent = cleanDisplayText(item.label || '');
+      labels.appendChild(label);
+
+      const li = document.createElement('li');
+      li.textContent = `${cleanDisplayText(item.label || '')}: ${Math.max(Number(item.value) || 0, 0)}/${max}`;
+      list.appendChild(li);
+    });
+
+    const scorePoints = items.map((item, index) => {
+      const value = Math.max(Number(item.value) || 0, 0);
+      return pointAt(index, scoreRadius * (value / max));
+    });
+
+    const shapeGroup = createSvg('g');
+    shapeGroup.classList.add('about-radar__score-shape');
+
+    const fill = createSvg('polygon');
+    fill.classList.add('about-radar__score-fill');
+    fill.setAttribute('points', pointString(scorePoints));
+
+    const outline = createSvg('polygon');
+    outline.classList.add('about-radar__score-line');
+    outline.setAttribute('points', pointString(scorePoints));
+
+    shapeGroup.append(fill, outline);
+    score.appendChild(shapeGroup);
+
+    root.style.setProperty('--radar-center-x', `${center.x}px`);
+    root.style.setProperty('--radar-center-y', `${center.y}px`);
+    const title = root.querySelector('#about-radar-title');
+    const desc = root.querySelector('#about-radar-desc');
+    if (title) title.textContent = cleanDisplayText(radar.title || '能力バランス');
+    if (desc) {
+      desc.textContent = items
+        .map(item => `${cleanDisplayText(item.label || '')}${Math.max(Number(item.value) || 0, 0)}点`)
+        .join('、');
+    }
+  };
+
   const makeSlideFigure = (slide) => {
     const figure = document.createElement('figure');
     figure.className = 'work-slide';
@@ -112,17 +212,28 @@ const applyPortfolioContent = (content) => {
     }
     if (!actions || !link) return;
 
-    link.textContent = cleanDisplayText(item.playLabel || content.works?.playLinkLabel || 'プレイページを見る');
     if (item.playUrl) {
+      link.textContent = cleanDisplayText(item.playLabel || content.works?.playLinkLabel || 'プレイページを見る');
       link.href = item.playUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
       link.hidden = false;
       actions.hidden = false;
+      link.classList.remove('is-disabled');
+      link.removeAttribute('aria-disabled');
+      link.removeAttribute('role');
       link.setAttribute('aria-label', `${cleanDisplayText(item.detailTitle || '作品')}をUnityroomで開く`);
     } else {
-      link.hidden = true;
-      actions.hidden = true;
+      link.textContent = cleanDisplayText(item.playUnavailableLabel || content.works?.playUnavailableLabel || '非公開');
+      link.hidden = false;
+      actions.hidden = false;
       link.removeAttribute('href');
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
       link.removeAttribute('aria-label');
+      link.setAttribute('aria-disabled', 'true');
+      link.setAttribute('role', 'button');
+      link.classList.add('is-disabled');
     }
   };
 
@@ -130,24 +241,33 @@ const applyPortfolioContent = (content) => {
     const card = tab.closest('.works-card');
     if (!card) return;
     let link = card.querySelector('.works-card__play');
-    if (!link && item.playUrl) {
+    if (!link) {
       link = document.createElement('a');
       link.className = 'works-card__play';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
       tab.insertAdjacentElement('afterend', link);
     }
     if (!link) return;
 
-    link.textContent = cleanDisplayText(item.previewPlayLabel || content.works?.previewPlayLabel || 'Play');
     if (item.playUrl) {
+      link.textContent = cleanDisplayText(item.previewPlayLabel || content.works?.previewPlayLabel || 'Play');
       link.href = item.playUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
       link.hidden = false;
+      link.classList.remove('is-disabled');
+      link.removeAttribute('aria-disabled');
+      link.removeAttribute('role');
       link.setAttribute('aria-label', `${cleanDisplayText(item.detailTitle || '作品')}をUnityroomで開く`);
     } else {
-      link.hidden = true;
+      link.textContent = cleanDisplayText(item.previewPlayUnavailableLabel || item.playUnavailableLabel || content.works?.playUnavailableLabel || '非公開');
+      link.hidden = false;
       link.removeAttribute('href');
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
       link.removeAttribute('aria-label');
+      link.setAttribute('aria-disabled', 'true');
+      link.setAttribute('role', 'button');
+      link.classList.add('is-disabled');
     }
   };
 
@@ -202,6 +322,7 @@ const applyPortfolioContent = (content) => {
         skills.appendChild(skill);
       });
     }
+    renderRadarChart(content.about.radar);
   }
 
   if (content.ability) {
@@ -234,6 +355,11 @@ const applyPortfolioContent = (content) => {
   if (content.works) {
     setText('#works .section__title', content.works.title);
     setText('#works .section__subtitle', content.works.subtitle);
+    if (Array.isArray(content.works.guide)) {
+      setLines(document.querySelector('#works .works__guide'), content.works.guide);
+    } else {
+      setText('#works .works__guide', content.works.guide);
+    }
 
     const toggle = document.getElementById('works-preview-toggle');
     if (toggle && content.works.previewToggle) {
@@ -284,41 +410,6 @@ const applyPortfolioContent = (content) => {
         }
       }
     });
-  }
-
-  if (content.activities) {
-    setText('#activities .section__title', content.activities.title);
-    setText('#activities .section__subtitle', content.activities.subtitle);
-    const timeline = document.querySelector('.activities__timeline');
-    if (timeline && Array.isArray(content.activities.items)) {
-      timeline.replaceChildren();
-      content.activities.items.forEach(activity => {
-        const item = document.createElement('div');
-        item.className = 'timeline-item animate-on-scroll';
-
-        const dot = document.createElement('div');
-        dot.className = 'timeline-item__dot';
-
-        const card = document.createElement('div');
-        card.className = 'timeline-item__card';
-
-        const date = document.createElement('span');
-        date.className = 'timeline-item__date';
-        date.textContent = activity.date || '';
-
-        const title = document.createElement('h3');
-        title.className = 'timeline-item__title';
-        title.textContent = activity.title || '';
-
-        const description = document.createElement('p');
-        description.className = 'timeline-item__desc';
-        description.textContent = activity.description || '';
-
-        card.append(date, title, description);
-        item.append(dot, card);
-        timeline.appendChild(item);
-      });
-    }
   }
 
   if (content.footer) {
@@ -427,10 +518,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     /* active section highlight */
     let current = '';
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
-      if (window.scrollY >= top) current = sec.getAttribute('id');
-    });
+    Array.from(sections)
+      .sort((a, b) => a.offsetTop - b.offsetTop)
+      .forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) current = sec.getAttribute('id');
+      });
 
     navLinks.forEach(link => {
       link.classList.toggle(
@@ -464,25 +557,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   animTargets.forEach(el => observer.observe(el));
 
   const journeyRails = document.querySelector('[data-journey-rails]');
-  const journeyStart = document.getElementById('about');
+  const journeyStart = document.getElementById('works');
+  const journeyAbout = document.getElementById('about');
   const journeyAbility = document.getElementById('visual-ability');
-  const journeyWorks = document.getElementById('works');
-  if (journeyRails && journeyStart && journeyAbility && journeyWorks) {
+  if (journeyRails && journeyStart && journeyAbility && journeyAbout) {
     let journeyStage = 0;
     let journeyProgress = 0;
+    let journeySyncLocked = false;
+    let journeySyncTimer = 0;
     const journeyStops = [0, 0, 0, 0];
-    const baseJourneyDuration = 780;
+    const baseJourneyDuration = 1800;
 
     const measureJourneyRails = () => {
       const start = journeyStart.getBoundingClientRect().top + window.scrollY;
+      const aboutTop = journeyAbout.getBoundingClientRect().top + window.scrollY;
       const abilityTop = journeyAbility.getBoundingClientRect().top + window.scrollY;
-      const worksTop = journeyWorks.getBoundingClientRect().top + window.scrollY;
-      const worksBottom = journeyWorks.getBoundingClientRect().bottom + window.scrollY;
-      const height = Math.max(worksBottom - start, 0);
+      const abilityBottom = journeyAbility.getBoundingClientRect().bottom + window.scrollY;
+      const height = Math.max(abilityBottom - start, 0);
 
       journeyStops[0] = 0;
-      journeyStops[1] = Math.max(abilityTop - start, 0);
-      journeyStops[2] = Math.max(worksTop - start, 0);
+      journeyStops[1] = Math.max(aboutTop - start, 0);
+      journeyStops[2] = Math.max(abilityTop - start, 0);
       journeyStops[3] = height;
 
       journeyRails.style.setProperty('--journey-start', `${start}px`);
@@ -501,41 +596,72 @@ document.addEventListener('DOMContentLoaded', async () => {
       journeyRails.style.setProperty('--journey-progress', `${progress}px`);
       journeyRails.classList.toggle('is-active', journeyStage > 0);
       journeyProgress = progress;
+      return duration;
+    };
+
+    const unlockJourneySyncAfter = (duration) => {
+      window.clearTimeout(journeySyncTimer);
+      journeySyncTimer = window.setTimeout(() => {
+        journeySyncLocked = false;
+        syncJourneyRails();
+      }, duration + 120);
     };
 
     const setJourneyStage = (stage) => {
       const nextStage = Math.max(journeyStage, stage);
       if (nextStage === journeyStage) return;
+      const isFirstActivation = journeyStage === 0 && nextStage > 0;
       journeyStage = nextStage;
+
+      if (isFirstActivation) {
+        journeySyncLocked = true;
+        journeyRails.style.setProperty('--journey-duration', '0ms');
+        journeyRails.style.setProperty('--journey-progress', '0px');
+        journeyRails.classList.add('is-active');
+        journeyProgress = 0;
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const duration = applyJourneyStage(true);
+            unlockJourneySyncAfter(duration);
+          });
+        });
+        return;
+      }
+
       applyJourneyStage(true);
     };
 
     const syncJourneyRails = () => {
       measureJourneyRails();
+      if (journeySyncLocked && journeyStage > 0) return;
       applyJourneyStage();
     };
 
     const setInitialJourneyStage = () => {
       const anchor = window.scrollY + window.innerHeight * 0.5;
-      const worksTop = journeyWorks.getBoundingClientRect().top + window.scrollY;
+      const worksTop = journeyStart.getBoundingClientRect().top + window.scrollY;
+      const aboutTop = journeyAbout.getBoundingClientRect().top + window.scrollY;
       const abilityTop = journeyAbility.getBoundingClientRect().top + window.scrollY;
-      const aboutTop = journeyStart.getBoundingClientRect().top + window.scrollY;
-      if (anchor >= worksTop) {
-        journeyStage = 3;
-      } else if (anchor >= abilityTop) {
-        journeyStage = 2;
+      let initialStage = 0;
+      if (anchor >= abilityTop) {
+        initialStage = 3;
       } else if (anchor >= aboutTop) {
-        journeyStage = 1;
+        initialStage = 2;
+      } else if (anchor >= worksTop) {
+        initialStage = 1;
       }
-      applyJourneyStage();
+      if (initialStage > 0) {
+        setJourneyStage(initialStage);
+      }
     };
 
     const journeyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         if (entry.target === journeyStart) setJourneyStage(1);
-        if (entry.target === journeyAbility) setJourneyStage(2);
-        if (entry.target === journeyWorks) setJourneyStage(3);
+        if (entry.target === journeyAbout) setJourneyStage(2);
+        if (entry.target === journeyAbility) setJourneyStage(3);
       });
     }, {
       root: null,
@@ -546,8 +672,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.addEventListener('resize', syncJourneyRails);
     window.addEventListener('load', syncJourneyRails);
     journeyObserver.observe(journeyStart);
+    journeyObserver.observe(journeyAbout);
     journeyObserver.observe(journeyAbility);
-    journeyObserver.observe(journeyWorks);
     syncJourneyRails();
     setInitialJourneyStage();
     window.setTimeout(() => {
