@@ -42,7 +42,8 @@
                                ],
                  "greeting":  "",
                  "name":  "黒沼慎太郎",
-                 "tagline":  "",
+                 "tagline":  "世界にあふれた「面白い」を遊びに",
+                 "taglineHighlight":  "面白い",
                  "cta":  "作品を見る ↓"
              },
     "works":  {
@@ -374,16 +375,8 @@
                                                   "value":  5
                                               },
                                               {
-                                                  "label":  "遊び心",
-                                                  "value":  15
-                                              },
-                                              {
                                                   "label":  "チームワーク",
                                                   "value":  5
-                                              },
-                                              {
-                                                  "label":  "腕力",
-                                                  "value":  2
                                               },
                                               {
                                                   "label":  "課題発見",

@@ -541,6 +541,11 @@ ul {
   margin-bottom: 40px;
 }
 
+.hero__tagline-accent {
+  color: #ff5a5f;
+  font-weight: 700;
+}
+
 .hero__cta {
   display: inline-block;
   padding: 14px 36px;
@@ -768,6 +773,18 @@ ul {
 .about__overview.is-visible .about-radar__score-shape {
   opacity: 1;
   transform: scale(1);
+  animation: radar-score-pulse 2.2s ease-in-out 1.35s infinite;
+}
+
+@keyframes radar-score-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.035);
+  }
 }
 
 .about-radar__score-fill {
@@ -2012,6 +2029,7 @@ ul {
   .ability__content-title,
   .ability-doc-image,
   .about-radar__score-shape {
+    animation: none;
     transition: none;
     transform: none;
     clip-path: none;

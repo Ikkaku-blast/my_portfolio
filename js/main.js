@@ -45,6 +45,31 @@ const applyPortfolioContent = (content) => {
     });
   };
 
+  const setHighlightedText = (selector, value, highlight, className, root = document) => {
+    const element = root.querySelector(selector);
+    if (!element || value === undefined || value === null) return;
+
+    const text = cleanDisplayText(value);
+    const target = cleanDisplayText(highlight || '');
+    const start = target ? text.indexOf(target) : -1;
+
+    element.replaceChildren();
+    if (start < 0) {
+      element.textContent = text;
+      return;
+    }
+
+    const accent = document.createElement('span');
+    accent.className = className;
+    accent.textContent = target;
+
+    element.append(
+      document.createTextNode(text.slice(0, start)),
+      accent,
+      document.createTextNode(text.slice(start + target.length))
+    );
+  };
+
   const setParagraphs = (container, selector, paragraphs, className) => {
     if (!container || !Array.isArray(paragraphs)) return;
     const existing = Array.from(container.querySelectorAll(selector));
@@ -77,7 +102,12 @@ const applyPortfolioContent = (content) => {
     const center = { x: 360, y: 260 };
     const radius = 158;
     const scoreRadius = radius * 1;
-    const labelRadius = 180;
+    const labelRadius = 150;
+    const labelOffsets = [
+      { x: 0, y: -34 },
+      { x: 6, y: 28 },
+      { x: -6, y: 28 },
+    ];
     const max = Math.max(Number(radar.max) || 75, 1);
     const items = radar.items.slice(0, 5);
     const total = items.length;
@@ -120,10 +150,11 @@ const applyPortfolioContent = (content) => {
       grid.appendChild(axis);
 
       const labelPoint = pointAt(index, labelRadius);
+      const labelOffset = labelOffsets[index] || { x: 0, y: 0 };
       const label = createSvg('text');
       label.classList.add('about-radar__label');
-      label.setAttribute('x', labelPoint.x);
-      label.setAttribute('y', labelPoint.y);
+      label.setAttribute('x', labelPoint.x + labelOffset.x);
+      label.setAttribute('y', labelPoint.y + labelOffset.y);
       label.setAttribute('text-anchor', Math.abs(labelPoint.x - center.x) < 16 ? 'middle' : labelPoint.x > center.x ? 'start' : 'end');
       label.textContent = cleanDisplayText(item.label || '');
       labels.appendChild(label);
@@ -302,7 +333,7 @@ const applyPortfolioContent = (content) => {
     }
     setText('.hero__greeting', content.hero.greeting);
     setText('.hero__name', content.hero.name);
-    setText('.hero__tagline', content.hero.tagline);
+    setHighlightedText('.hero__tagline', content.hero.tagline, content.hero.taglineHighlight, 'hero__tagline-accent');
     setText('.hero__cta', content.hero.cta);
   }
 
