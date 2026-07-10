@@ -1,0 +1,275 @@
+/* ============================================================
+   Hero
+   黒背景に興味語を散らすトップビュー。
+   語句の震えは hero-jitter、出現タイミングはJSのHeroブロックを調整。
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18%),
+    #252525;
+  overflow: hidden;
+}
+
+.hero__interests {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__interest {
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 1.6vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+  /* 興味語のフェードイン速度。震えの速さは次行の 0.95s を調整。 */
+  transition: opacity 0.28s ease;
+  animation: hero-jitter 0.95s steps(2, end) infinite;
+  animation-delay: var(--jitter-delay, 0s);
+  animation-play-state: paused;
+}
+
+.hero__interest.is-visible {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.hero__interest--01 {
+  --top: 18%;
+  --left: 50%;
+  --jitter-delay: -0.2s;
+}
+
+.hero__interest--02 {
+  --top: 27%;
+  --left: 31%;
+  --jitter-delay: -0.5s;
+}
+
+.hero__interest--03 {
+  --top: 27%;
+  --left: 70%;
+  --jitter-delay: -0.8s;
+}
+
+.hero__interest--04 {
+  --top: 39%;
+  --left: 15%;
+  --jitter-delay: -0.3s;
+}
+
+.hero__interest--05 {
+  --top: 39%;
+  --left: 80%;
+  --jitter-delay: -0.9s;
+}
+
+.hero__interest--06 {
+  --top: 53%;
+  --left: 22%;
+  --jitter-delay: -0.1s;
+}
+
+.hero__interest--07 {
+  --top: 53%;
+  --left: 83%;
+  --jitter-delay: -0.7s;
+}
+
+.hero__interest--08 {
+  --top: 63%;
+  --left: 67%;
+  --jitter-delay: -0.45s;
+}
+
+.hero__interest--09 {
+  --top: 67%;
+  --left: 86%;
+  --jitter-delay: -0.25s;
+}
+
+.hero__interest--10 {
+  --top: 70%;
+  --left: 29%;
+  --jitter-delay: -0.65s;
+}
+
+.hero__interest--11 {
+  --top: 75%;
+  --left: 52%;
+  --jitter-delay: -0.35s;
+}
+
+.hero__interest--12 {
+  --top: 78%;
+  --left: 73%;
+  --jitter-delay: -0.75s;
+}
+
+.hero__interest--13 {
+  --top: 83%;
+  --left: 18%;
+  --jitter-delay: -0.15s;
+}
+
+.hero__interest--14 {
+  --top: 17%;
+  --left: 72%;
+  --jitter-delay: -0.55s;
+}
+
+.hero__interest--15 {
+  --top: 84%;
+  --left: 82%;
+  --jitter-delay: -0.4s;
+}
+
+/* 興味語の小刻みな震え。数値を大きくすると揺れ幅が強くなる。 */
+@keyframes hero-jitter {
+  0% {
+    transform: translate(calc(-50% - 1px), calc(-50% + 1px));
+  }
+
+  25% {
+    transform: translate(calc(-50% + 2px), calc(-50% - 1px));
+  }
+
+  50% {
+    transform: translate(calc(-50% - 2px), calc(-50% - 2px));
+  }
+
+  75% {
+    transform: translate(calc(-50% + 1px), calc(-50% + 2px));
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+
+.hero__greeting {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero__name {
+  font-family: var(--hero-name-font, 'Noto Sans JP', sans-serif);
+  font-size: clamp(3.2rem, 7vw, 6.4rem);
+  font-weight: var(--hero-name-weight, 800);
+  color: #f8f8f3;
+  letter-spacing: var(--hero-name-spacing, 0.02em);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2),
+    0 18px 44px rgba(0, 0, 0, 0.36);
+}
+
+.hero__name[data-font-step='0'] {
+  --hero-name-font: 'Noto Sans JP', sans-serif;
+  --hero-name-weight: 800;
+  --hero-name-spacing: 0.02em;
+}
+
+.hero__name[data-font-step='1'] {
+  --hero-name-font: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS Mincho', serif;
+  --hero-name-weight: 700;
+  --hero-name-spacing: 0.04em;
+}
+
+.hero__name[data-font-step='2'] {
+  --hero-name-font: 'Yu Gothic', 'Meiryo', 'Noto Sans JP', sans-serif;
+  --hero-name-weight: 800;
+  --hero-name-spacing: 0;
+}
+
+.hero__name[data-font-step='3'] {
+  --hero-name-font: 'Courier New', 'Noto Sans JP', monospace;
+  --hero-name-weight: 700;
+  --hero-name-spacing: 0.01em;
+}
+
+.hero__name[data-font-step='4'] {
+  --hero-name-font: Georgia, 'Yu Mincho', serif;
+  --hero-name-weight: 700;
+  --hero-name-spacing: 0.06em;
+}
+
+.hero__name[data-font-step='5'] {
+  --hero-name-font: 'LINE Seed JP ExtraBold', 'Noto Sans JP', sans-serif;
+  --hero-name-weight: 800;
+  --hero-name-spacing: 0.01em;
+}
+
+.hero__name[data-font-step='6'] {
+  --hero-name-font: 'LINE Seed JP Thin', 'Noto Sans JP', sans-serif;
+  --hero-name-weight: 100;
+  --hero-name-spacing: 0.08em;
+}
+
+.hero__name[data-font-step='7'] {
+  --hero-name-font: 'JF Dot Elisa', 'Noto Sans JP', monospace;
+  --hero-name-weight: 400;
+  --hero-name-spacing: 0.06em;
+}
+
+.hero__tagline {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.hero__tagline-accent {
+  color: #ff5a5f;
+  font-weight: 700;
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.hero__cta:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.78);
+  transform: translateY(-3px);
+}
+
+.hero__cta:focus-visible {
+  outline: 3px solid #ffce56;
+  outline-offset: 4px;
+}

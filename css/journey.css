@@ -1,0 +1,86 @@
+/* ============================================================
+   共通の縦線アニメーション
+   Hero下からWorks/About/Strengthsへ伸びる左右の矢印線。
+   伸びる速度は下の初速度・加速度を調整。
+   ============================================================ */
+.journey-rails {
+  --ability-side-rail: clamp(34px, 9.2vw, 146px);
+  --ability-rail-half: 4px;
+  --ability-arrow-width: 30px;
+  --ability-arrow-height: 30px;
+  --ability-arrow-offset: 11px;
+  --journey-initial-velocity: 5;  /* 矢印の初速度: px/s */
+  --journey-acceleration: 1200;     /* 矢印の加速度: px/s^2 */
+  position: absolute;
+  top: var(--journey-start, 0px);
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: var(--journey-height, 0px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+}
+
+.journey-rails.is-active {
+  opacity: 1;
+}
+
+.journey-rail {
+  position: absolute;
+  top: 0;
+  width: var(--ability-arrow-width);
+  height: var(--journey-progress, 0px);
+  min-height: var(--ability-arrow-height);
+  background: #1f1f1f;
+  clip-path: polygon(
+    calc(50% - var(--ability-rail-half)) 0,
+    calc(50% + var(--ability-rail-half)) 0,
+    calc(50% + var(--ability-rail-half)) calc(100% - var(--ability-arrow-height)),
+    100% calc(100% - var(--ability-arrow-height)),
+    50% 100%,
+    0 calc(100% - var(--ability-arrow-height)),
+    calc(50% - var(--ability-rail-half)) calc(100% - var(--ability-arrow-height))
+  );
+  transform-origin: top;
+  transition: height var(--journey-duration, 0ms) linear;
+}
+
+.journey-rails.is-physics-moving .journey-rail {
+  transition: none;
+}
+
+.journey-rail--left {
+  left: calc(var(--ability-side-rail) - var(--ability-arrow-offset));
+}
+
+.journey-rail--right {
+  right: calc(var(--ability-side-rail) - var(--ability-arrow-offset));
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 汎用フェードイン：並んだ要素を少しずつ遅らせる */
+.animate-on-scroll:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.animate-on-scroll:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.animate-on-scroll:nth-child(4) {
+  transition-delay: 0.3s;
+}

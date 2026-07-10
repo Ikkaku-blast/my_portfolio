@@ -1,0 +1,116 @@
+/* ============================================================
+   基本設定・共通トークン
+   色、余白、フォント、アニメーション速度など全体に効く値。
+   速度を全体的に変える場合は --transition 系を調整する。
+   ============================================================ */
+@font-face {
+  font-family: 'LINE Seed JP ExtraBold';
+  src: url('../fonts/LINESeedJP_OTF_Eb.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed JP Thin';
+  src: url('../fonts/LINESeedJP_OTF_Th.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JF Dot Elisa';
+  src: url('../fonts/JF-Dot-Elisa8.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* 色：サイト全体の基本色 */
+  --color-bg: #fefefe;
+  --color-bg-alt: #f8f6ff;
+  --color-text: #2d2d3a;
+  --color-text-muted: #6b6b80;
+  --color-primary: #ff6b6b;
+  --color-primary-light: #ffb3b3;
+  --color-secondary: #ffa751;
+  --color-accent: #845ec2;
+  --color-white: #ffffff;
+
+  /* グラデーション：Heroや強調色で使用 */
+  --gradient-main: linear-gradient(135deg, #ff6b6b 0%, #ffa751 50%, #ffce56 100%);
+  --gradient-1: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  --gradient-2: linear-gradient(135deg, #ffa751, #ff6b6b);
+  --gradient-3: linear-gradient(135deg, #845ec2, #be93fd);
+  --gradient-hero: linear-gradient(160deg, #fff5f5 0%, #fff0e6 30%, #f5f0ff 70%, #eef5ff 100%);
+
+  /* 余白：各セクションの上下幅とコンテナ幅 */
+  --section-padding: 100px 0;
+  --container-width: 1100px;
+  --gap: 24px;
+
+  /* 文字：基本フォントと基準サイズ */
+  --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+  --font-size-base: 16px;
+
+  /* 角丸・影：カードやボタンの質感 */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-header: 0 2px 20px rgba(0, 0, 0, 0.06);
+
+  /* アニメーション速度：ホバーやメニューなど汎用的な動き */
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: #f8f7f2;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--section-padding);
+}

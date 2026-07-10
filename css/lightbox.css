@@ -1,0 +1,122 @@
+/* ============================================================
+   画像拡大ライトボックス
+   StrengthsとWorksスライドの画像クリック拡大UI。
+   ============================================================ */
+.image-lightbox[hidden] {
+  display: none;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.image-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.72);
+  cursor: zoom-out;
+}
+
+.image-lightbox__figure {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 94vw);
+  max-height: 90vh;
+  margin: 0;
+  padding: 18px;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+}
+
+.image-lightbox__img {
+  display: block;
+  width: 100%;
+  max-height: calc(90vh - 82px);
+  object-fit: contain;
+}
+
+.image-lightbox__caption {
+  padding-top: 12px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.image-lightbox__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: var(--color-white);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .image-lightbox {
+    padding: 16px;
+  }
+
+  .image-lightbox__figure {
+    width: 96vw;
+    padding: 12px;
+  }
+
+  .image-lightbox__close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__interest {
+    opacity: 1;
+    animation: none;
+    transition: none;
+  }
+
+  .works .section__title,
+  .works-node,
+  .ability__banner,
+  .ability-panel,
+  .ability__content-title,
+  .ability-doc-image,
+  .about-radar__score-shape {
+    animation: none;
+    transition: none;
+    transform: none;
+    clip-path: none;
+    opacity: 1;
+  }
+
+  .journey-rails,
+  .journey-rail {
+    transition: none;
+  }
+
+  .visual-ability .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  .works .section__title::after,
+  .ability__banner::after,
+  .ability-panel::after {
+    transition: none;
+    transform: translateX(-50%) scaleX(1);
+  }
+}

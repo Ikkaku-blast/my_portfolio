@@ -1,0 +1,13 @@
+/* ============================================================
+   フッター
+   ============================================================ */
+.footer {
+  padding: 48px 0;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.footer__copy {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
