@@ -70,8 +70,8 @@
                                                               "ハムハム絵合わせ"
                                                           ],
                                     "previewMeta":  [
-                                                        "個人制作",
-                                                        "担当：企画・実装"
+                                                        "個人制作"
+
                                                     ],
                                     "previewHint":  "詳細を見る",
                                     "video":  "videos/humhum_kirinuki.mp4",
@@ -116,7 +116,7 @@
                                                           ],
                                     "previewMeta":  [
                                                         "チーム制作",
-                                                        "担当：一部作画・一部脚本"
+                                                        "担当：作画・脚本・演出"
                                                     ],
                                     "previewHint":  "詳細を見る",
                                     "video":  "videos/omoro_kirinuki.mp4",
@@ -156,7 +156,7 @@
                                                           ],
                                     "previewMeta":  [
                                                         "チーム制作",
-                                                        "担当：企画・作画"
+                                                        "担当：企画・作画・演出・実装"
                                                     ],
                                     "previewHint":  "詳細を見る",
                                     "video":  "videos/miss_dounut_kirinuki.mp4",
@@ -201,8 +201,9 @@
                                                               "大失敗大作戦"
                                                           ],
                                     "previewMeta":  [
-                                                        "個人制作",
-                                                        "担当：企画・実装"
+                                                        "個人制作"
+
+
                                                     ],
                                     "previewHint":  "詳細を見る",
                                     "video":  "videos/donbike_kirinuki.mp4",
@@ -240,8 +241,7 @@
                                                               "恋するインサイト"
                                                           ],
                                     "previewMeta":  [
-                                                        "個人制作",
-                                                        "担当：企画・実装"
+                                                        "個人制作"
                                                     ],
                                     "previewHint":  "詳細を見る",
                                     "video":  "videos/Insight_kirinuki.mp4",

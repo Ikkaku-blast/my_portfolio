@@ -869,6 +869,69 @@ document.addEventListener('DOMContentLoaded', async () => {
   const worksBackButtons = document.querySelectorAll('.works-back');
   const worksPreviewToggle = document.getElementById('works-preview-toggle');
   const worksPreviewVideos = Array.from(document.querySelectorAll('.works-node__video'));
+  const worksPreviewDesktopQuery = window.matchMedia('(min-width: 769px)');
+
+  const resetWorksPreviewFrame = (video) => {
+    const frame = video.closest('.works-node__image-wrap');
+    if (!frame) return;
+    frame.classList.remove('is-aspect-ready');
+    frame.style.removeProperty('--work-preview-frame-width');
+    frame.style.removeProperty('--work-preview-frame-height');
+    frame.style.removeProperty('--work-preview-object-fit');
+  };
+
+  const syncWorksPreviewFrame = (video) => {
+    const frame = video.closest('.works-node__image-wrap');
+    if (!frame) return;
+
+    resetWorksPreviewFrame(video);
+    if (!worksPreviewDesktopQuery.matches || !video.videoWidth || !video.videoHeight) return;
+
+    const defaultRect = frame.getBoundingClientRect();
+    const defaultHeight = defaultRect.height;
+    const maxWidth = defaultRect.width;
+    const videoRatio = video.videoWidth / video.videoHeight;
+    const targetRatio = videoRatio;
+    if (!defaultHeight || !maxWidth || !Number.isFinite(videoRatio)) return;
+
+    const targetWidth = Math.min(maxWidth, defaultHeight * targetRatio);
+    frame.style.setProperty('--work-preview-frame-height', `${defaultHeight}px`);
+    frame.style.setProperty('--work-preview-frame-width', `${targetWidth}px`);
+    frame.style.setProperty('--work-preview-object-fit', 'fill');
+    frame.classList.add('is-aspect-ready');
+  };
+
+  const syncAllWorksPreviewFrames = () => {
+    worksPreviewVideos.forEach(video => syncWorksPreviewFrame(video));
+  };
+
+  worksPreviewVideos.forEach(video => {
+    if (video.readyState >= 1) {
+      syncWorksPreviewFrame(video);
+    } else {
+      video.addEventListener('loadedmetadata', () => syncWorksPreviewFrame(video), { once: true });
+    }
+    if (video.readyState >= 2) {
+      syncWorksPreviewFrame(video);
+    } else {
+      video.addEventListener('loadeddata', () => syncWorksPreviewFrame(video), { once: true });
+    }
+    video.addEventListener('playing', () => {
+      window.setTimeout(() => syncWorksPreviewFrame(video), 240);
+    }, { once: true });
+  });
+
+  let worksPreviewResizeFrame = null;
+  window.addEventListener('resize', () => {
+    if (worksPreviewResizeFrame) cancelAnimationFrame(worksPreviewResizeFrame);
+    worksPreviewResizeFrame = requestAnimationFrame(syncAllWorksPreviewFrames);
+  });
+
+  if (typeof worksPreviewDesktopQuery.addEventListener === 'function') {
+    worksPreviewDesktopQuery.addEventListener('change', syncAllWorksPreviewFrames);
+  } else if (typeof worksPreviewDesktopQuery.addListener === 'function') {
+    worksPreviewDesktopQuery.addListener(syncAllWorksPreviewFrames);
+  }
 
   const getSliderPositions = (viewport, track, slides) => {
     const maxScroll = viewport.scrollWidth - viewport.clientWidth;
