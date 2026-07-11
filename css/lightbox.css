@@ -94,12 +94,19 @@
   .ability__banner,
   .ability-panel,
   .ability__content-title,
-  .ability-doc-image,
-  .about-radar__score-shape {
+  .ability-doc-image {
     animation: none;
     transition: none;
     transform: none;
     clip-path: none;
+    opacity: 1;
+  }
+
+  .about-copy__shape,
+  .about-copy__text {
+    animation: none;
+    transition: none;
+    transform: none;
     opacity: 1;
   }
 

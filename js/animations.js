@@ -69,81 +69,10 @@ window.PortfolioAnimations = {
     
     animTargets.forEach(el => observer.observe(el));
 
-    const parseCssTime = (value, fallback) => {
-      const raw = String(value || '').trim();
-      if (!raw) return fallback;
-      const number = Number.parseFloat(raw);
-      if (!Number.isFinite(number)) return fallback;
-      return raw.endsWith('ms') ? number : number * 1000;
-    };
-
     const parseCssNumber = (value, fallback) => {
       const number = Number.parseFloat(String(value || '').trim());
       return Number.isFinite(number) ? number : fallback;
     };
-
-    const radarRoot = document.querySelector('[data-radar]');
-    const radarScoreShape = radarRoot?.querySelector('.about-radar__score-shape');
-    if (radarRoot && radarScoreShape && !reducedMotionQuery.matches) {
-      let radarPulseTimer = 0;
-      let radarPulseStarted = false;
-
-      const getRadarPulseTiming = () => {
-        const styles = window.getComputedStyle(radarRoot);
-        return {
-          grow: parseCssTime(styles.getPropertyValue('--radar-pulse-grow-duration'), 450),
-          shrink: parseCssTime(styles.getPropertyValue('--radar-pulse-shrink-duration'), 550),
-          rest: parseCssTime(styles.getPropertyValue('--radar-pulse-rest-duration'), 2350),
-        };
-      };
-
-      const setRadarPulseTimer = (callback, duration) => {
-        window.clearTimeout(radarPulseTimer);
-        radarPulseTimer = window.setTimeout(callback, duration);
-      };
-
-      const runRadarPulse = () => {
-        const timing = getRadarPulseTiming();
-        radarScoreShape.classList.remove('is-pulse-small');
-        radarScoreShape.classList.add('is-pulse-large');
-
-        setRadarPulseTimer(() => {
-          const nextTiming = getRadarPulseTiming();
-          radarScoreShape.classList.remove('is-pulse-large');
-          radarScoreShape.classList.add('is-pulse-small');
-
-          setRadarPulseTimer(() => {
-            const restTiming = getRadarPulseTiming();
-            setRadarPulseTimer(runRadarPulse, restTiming.rest);
-          }, nextTiming.shrink);
-        }, timing.grow);
-      };
-
-      const startRadarPulse = () => {
-        if (radarPulseStarted) return;
-        radarPulseStarted = true;
-        const timing = getRadarPulseTiming();
-        setRadarPulseTimer(runRadarPulse, Math.max(1350, timing.rest));
-      };
-
-      const radarPulseObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          startRadarPulse();
-          radarPulseObserver.unobserve(entry.target);
-        });
-      }, {
-        root: null,
-        rootMargin: '0px 0px -35% 0px',
-        threshold: 0.12,
-      });
-
-      radarPulseObserver.observe(radarRoot);
-      const radarRect = radarRoot.getBoundingClientRect();
-      if (radarRect.top < window.innerHeight && radarRect.bottom > 0) {
-        startRadarPulse();
-      }
-    }
     
     const journeyRails = document.querySelector('[data-journey-rails]');
     const journeyStart = document.getElementById('works');

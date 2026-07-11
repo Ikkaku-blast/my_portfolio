@@ -93,112 +93,6 @@ const applyPortfolioContent = (content) => {
     });
   };
 
-  const renderRadarChart = (radar) => {
-    const root = document.querySelector('[data-radar]');
-    const grid = root?.querySelector('.about-radar__grid');
-    const score = root?.querySelector('.about-radar__score');
-    const labels = root?.querySelector('.about-radar__labels');
-    const list = root?.querySelector('.about-radar__list');
-    if (!root || !grid || !score || !labels || !list || !Array.isArray(radar?.items)) return;
-
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const createSvg = (tag) => document.createElementNS(svgNS, tag);
-    const center = { x: 360, y: 260 };
-    const radius = 158;
-    const scoreRadius = radius * 1;
-    const labelRadius = 150;
-    const labelOffsets = [
-      { x: 0, y: -34 },
-      { x: 6, y: 28 },
-      { x: -6, y: 28 },
-    ];
-    const max = Math.max(Number(radar.max) || 75, 1);
-    const items = radar.items.slice(0, 5);
-    const total = items.length;
-    if (total < 3) return;
-
-    const pointAt = (index, pointRadius) => {
-      const angle = -Math.PI / 2 + (Math.PI * 2 * index) / total;
-      return {
-        x: center.x + Math.cos(angle) * pointRadius,
-        y: center.y + Math.sin(angle) * pointRadius,
-      };
-    };
-
-    const pointString = (points) => points
-      .map(point => `${point.x.toFixed(1)},${point.y.toFixed(1)}`)
-      .join(' ');
-
-    const gridLevels = 5;
-    grid.replaceChildren();
-    score.replaceChildren();
-    labels.replaceChildren();
-    list.replaceChildren();
-
-    for (let level = 1; level <= gridLevels; level += 1) {
-      const polygon = createSvg('polygon');
-      polygon.classList.add('about-radar__grid-line');
-      if (level === gridLevels) polygon.classList.add('about-radar__grid-line--outer');
-      polygon.setAttribute('points', pointString(items.map((_, index) => pointAt(index, radius * (level / gridLevels)))));
-      grid.appendChild(polygon);
-    }
-
-    items.forEach((item, index) => {
-      const axis = createSvg('line');
-      const edge = pointAt(index, radius);
-      axis.classList.add('about-radar__axis');
-      axis.setAttribute('x1', center.x);
-      axis.setAttribute('y1', center.y);
-      axis.setAttribute('x2', edge.x);
-      axis.setAttribute('y2', edge.y);
-      grid.appendChild(axis);
-
-      const labelPoint = pointAt(index, labelRadius);
-      const labelOffset = labelOffsets[index] || { x: 0, y: 0 };
-      const label = createSvg('text');
-      label.classList.add('about-radar__label');
-      label.setAttribute('x', labelPoint.x + labelOffset.x);
-      label.setAttribute('y', labelPoint.y + labelOffset.y);
-      label.setAttribute('text-anchor', Math.abs(labelPoint.x - center.x) < 16 ? 'middle' : labelPoint.x > center.x ? 'start' : 'end');
-      label.textContent = cleanDisplayText(item.label || '');
-      labels.appendChild(label);
-
-      const li = document.createElement('li');
-      li.textContent = `${cleanDisplayText(item.label || '')}: ${Math.max(Number(item.value) || 0, 0)}/${max}`;
-      list.appendChild(li);
-    });
-
-    const scorePoints = items.map((item, index) => {
-      const value = Math.max(Number(item.value) || 0, 0);
-      return pointAt(index, scoreRadius * (value / max));
-    });
-
-    const shapeGroup = createSvg('g');
-    shapeGroup.classList.add('about-radar__score-shape');
-
-    const fill = createSvg('polygon');
-    fill.classList.add('about-radar__score-fill');
-    fill.setAttribute('points', pointString(scorePoints));
-
-    const outline = createSvg('polygon');
-    outline.classList.add('about-radar__score-line');
-    outline.setAttribute('points', pointString(scorePoints));
-
-    shapeGroup.append(fill, outline);
-    score.appendChild(shapeGroup);
-
-    root.style.setProperty('--radar-center-x', `${center.x}px`);
-    root.style.setProperty('--radar-center-y', `${center.y}px`);
-    const title = root.querySelector('#about-radar-title');
-    const desc = root.querySelector('#about-radar-desc');
-    if (title) title.textContent = cleanDisplayText(radar.title || '能力バランス');
-    if (desc) {
-      desc.textContent = items
-        .map(item => `${cleanDisplayText(item.label || '')}${Math.max(Number(item.value) || 0, 0)}点`)
-        .join('、');
-    }
-  };
-
   const makeSlideFigure = (slide) => {
     const figure = document.createElement('figure');
     figure.className = 'work-slide';
@@ -357,7 +251,6 @@ const applyPortfolioContent = (content) => {
         skills.appendChild(skill);
       });
     }
-    renderRadarChart(content.about.radar);
   }
 
   if (content.ability) {

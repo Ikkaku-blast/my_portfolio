@@ -55,7 +55,6 @@
   }
 
   .about__overview {
-    grid-template-columns: 1fr;
     text-align: center;
     gap: 32px;
     width: 100%;
@@ -70,30 +69,41 @@
     justify-content: center;
   }
 
-  .about-radar {
-    width: min(340px, calc(100% - 8px));
-    margin: 0 auto;
-    padding: 0;
-    border-width: 0;
-    perspective: none;
+  .about__overview.about-copy {
+    --about-copy-line-gap: 8px;
+    --about-copy-line-height: 74px;
+    --about-copy-text-left: 24px;
+    --about-copy-text-right: 18px;
+    --about-copy-shape-overhang: 0px;
+    min-height: auto;
+    margin-top: 34px;
   }
 
-  .about-radar__chart {
-    width: 100%;
-    margin: 0;
+  .about-copy__photo {
+    position: relative;
+    left: auto;
+    top: auto;
     transform: none;
+    margin: 0 auto 18px;
   }
 
-  .about-radar__label {
-    font-size: 22px;
+  .about-copy .about__photo-placeholder {
+    width: min(300px, 72vw);
+    height: min(230px, 56vw);
   }
 
-  .about-radar__grid-line {
-    stroke-width: 2;
+  .about-copy__lines {
+    position: relative;
+    inset: auto;
+    gap: 14px;
   }
 
-  .about-radar__score-line {
-    stroke-width: 2.6;
+  .about-copy__line {
+    justify-content: flex-end;
+  }
+
+  .about-copy__text {
+    font-size: clamp(1.35rem, 6.5vw, 2rem);
   }
 
   .works {
