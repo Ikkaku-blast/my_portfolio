@@ -116,7 +116,7 @@
 }
 
 .about-radar {
-  --radar-pulse-grow-duration: 0.80s;   /* 大きくなる時間 */
+  --radar-pulse-grow-duration: 5.80s;   /* 大きくなる時間 */
   --radar-pulse-shrink-duration: 0.25s; /* 小さく戻る時間 */
   --radar-pulse-rest-duration: 2.35s;   /* 次に大きくなるまでの待機時間 */
   --radar-pulse-scale: 1.035;           /* 大きくなる倍率 */
