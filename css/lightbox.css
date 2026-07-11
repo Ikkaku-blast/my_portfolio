@@ -102,14 +102,6 @@
     opacity: 1;
   }
 
-  .about-copy__shape,
-  .about-copy__text {
-    animation: none;
-    transition: none;
-    transform: none;
-    opacity: 1;
-  }
-
   .journey-rails,
   .journey-rail {
     transition: none;

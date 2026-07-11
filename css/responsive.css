@@ -54,56 +54,8 @@
     --ability-arrow-offset: 8.5px;
   }
 
-  .about__overview {
-    text-align: center;
-    gap: 32px;
-    width: 100%;
-  }
-
-  .about__photo-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
   .about__skills {
     justify-content: center;
-  }
-
-  .about__overview.about-copy {
-    --about-copy-line-gap: 8px;
-    --about-copy-line-height: 74px;
-    --about-copy-text-left: 24px;
-    --about-copy-text-right: 18px;
-    --about-copy-shape-overhang: 0px;
-    min-height: auto;
-    margin-top: 34px;
-  }
-
-  .about-copy__photo {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin: 0 auto 18px;
-  }
-
-  .about-copy .about__photo-placeholder {
-    width: min(300px, 72vw);
-    height: min(230px, 56vw);
-  }
-
-  .about-copy__lines {
-    position: relative;
-    inset: auto;
-    gap: 14px;
-  }
-
-  .about-copy__line {
-    justify-content: flex-end;
-  }
-
-  .about-copy__text {
-    font-size: clamp(1.35rem, 6.5vw, 2rem);
   }
 
   .works {
@@ -338,10 +290,5 @@
 @media (max-width: 480px) {
   .works-map {
     grid-template-columns: 1fr;
-  }
-
-  .about__photo-placeholder {
-    width: min(250px, 100%);
-    height: 190px;
   }
 }

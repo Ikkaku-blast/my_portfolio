@@ -1,7 +1,6 @@
 /* ============================================================
    About Me
-   写真枠、キャッチコピー帯、自己紹介文を制御。
-   コピー帯は左から黒い図形が入り、到着後に文字が表示される。
+   自己紹介文とスキルタグを制御。
    ============================================================ */
 .about {
   --ability-side-rail: clamp(34px, 9.2vw, 146px);
@@ -22,167 +21,8 @@
   background: #111111;
 }
 
-.about__overview {
-  width: min(1120px, 100%);
-  margin: 48px auto 0;
-}
-
-.about__photo-wrapper,
 .about__text {
   min-width: 0;
-}
-
-.about__photo-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.about__photo-placeholder {
-  width: clamp(280px, 30vw, 420px);
-  height: clamp(220px, 24vw, 340px);
-  border-radius: 50%;
-  background: #176985;
-  border: 3px solid #0b2c3a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-weight: 500;
-  font-size: 1.35rem;
-  box-shadow: none;
-}
-
-.about-copy {
-  /* キャッチコピーの座標調整。ここを触ると3行まとめて動く。 */
-  --about-copy-photo-left: clamp(18px, 7vw, 108px);
-  --about-copy-photo-top: 50%;
-  --about-copy-line-gap: clamp(10px, 1.2vw, 18px);
-  --about-copy-line-height: clamp(72px, 7.5vw, 108px);
-  --about-copy-text-left: clamp(260px, 31vw, 470px);
-  --about-copy-text-right: clamp(18px, 3vw, 44px);
-  --about-copy-shape-overhang: clamp(160px, 5vw, 78px);
-  --about-copy-shape-duration: 0.78s;
-  --about-copy-text-outline-width: 2px;
-  --about-copy-text-outline-color: #101010;
-  position: relative;
-  min-height: clamp(320px, 34vw, 430px);
-  isolation: isolate;
-}
-
-.about-copy__photo {
-  position: absolute;
-  z-index: 3;
-  left: var(--about-copy-photo-left);
-  top: var(--about-copy-photo-top);
-  transform: translateY(-50%);
-}
-
-.about-copy .about__photo-placeholder {
-  width: clamp(240px, 28vw, 390px);
-  height: clamp(190px, 22vw, 310px);
-  background: #176985;
-}
-
-.about-copy__lines {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  align-content: center;
-  gap: var(--about-copy-line-gap);
-}
-
-.about-copy__line {
-  --about-copy-text-x: 0px;
-  --about-copy-text-y: 0px;
-  position: relative;
-  min-height: var(--about-copy-line-height);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0 var(--about-copy-text-right) 0 var(--about-copy-text-left);
-  overflow: visible;
-}
-
-/* 行ごとのキャッチコピー位置。微調整は x/y のpx値を変更。 */
-.about-copy__line--top {
-  --about-copy-text-x: 0px;
-  --about-copy-text-y: -30px;
-}
-
-.about-copy__line--middle {
-  --about-copy-text-x: 0px;
-  --about-copy-text-y: -20px;
-}
-
-.about-copy__line--bottom {
-  --about-copy-text-x: 0px;
-  --about-copy-text-y: -10px;
-}
-
-.about-copy__shape {
-  position: absolute;
-  inset: 0 calc(var(--about-copy-shape-overhang) * -1);
-  z-index: 0;
-  background: #050505;
-  border: 2px solid #0b2c3a;
-  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
-  transform: translateX(-108%);
-  transition: transform var(--about-copy-shape-duration) cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.about-copy__line--top .about-copy__shape,
-.about-copy__line--bottom .about-copy__shape {
-  transform: translateX(108%);
-}
-
-.about-copy__line--middle .about-copy__shape {
-  clip-path: polygon(0 0, 100% 28%, 100% 72%, 0 100%);
-  transition-delay: 0.16s;
-}
-
-.about-copy__line--bottom .about-copy__shape {
-  clip-path: polygon(0 24%, 100% 0, 100% 100%, 0 76%);
-  transition-delay: 0.32s;
-}
-
-.about-copy__text {
-  position: relative;
-  z-index: 1;
-  color: #ffffff;
-  font-family: 'LINE Seed JP', 'Noto Sans JP', var(--font-main);
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 800;
-  line-height: 1.12;
-  text-align: right;
-  letter-spacing: 0;
-  -webkit-text-stroke: var(--about-copy-text-outline-width) var(--about-copy-text-outline-color);
-  paint-order: stroke fill;
-  text-shadow: none;
-  opacity: 0;
-  transform: translate(calc(18px + var(--about-copy-text-x)), var(--about-copy-text-y));
-  transition: opacity 0.34s ease, transform 0.34s ease;
-}
-
-.about__overview.is-visible .about-copy__shape {
-  transform: translateX(0);
-}
-
-.about__overview.is-visible .about-copy__line--top .about-copy__text {
-  transition-delay: 0.86s;
-}
-
-.about__overview.is-visible .about-copy__line--middle .about-copy__text {
-  transition-delay: 1.02s;
-}
-
-.about__overview.is-visible .about-copy__line--bottom .about-copy__text {
-  transition-delay: 1.18s;
-}
-
-.about__overview.is-visible .about-copy__text {
-  opacity: 1;
-  transform: translate(var(--about-copy-text-x), var(--about-copy-text-y));
 }
 
 .about__description-panel {
@@ -190,7 +30,6 @@
   min-height: 160px;
   margin: clamp(34px, 4vw, 54px) auto 0;
   padding: clamp(22px, 3vw, 34px);
-  border: 1.5px solid #101010;
   background: #f8f7f2;
 }
 
@@ -212,11 +51,17 @@
 }
 
 .about__description {
-  color: var(--color-text-muted);
+  font-family: var(--font-main);
+  color: var(--color-text);
   line-height: 1.9;
   max-width: 48em;
   margin-bottom: 24px;
   overflow-wrap: break-word;
+}
+
+.about__description-highlight {
+  color: #c92f2f;
+  font-weight: 700;
 }
 
 .about__skills {

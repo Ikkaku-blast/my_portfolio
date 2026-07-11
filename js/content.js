@@ -74,6 +74,54 @@ const applyPortfolioContent = (content) => {
     );
   };
 
+  const setHighlightedSegments = (selector, value, highlights, className, root = document) => {
+    const element = root.querySelector(selector);
+    if (!element || value === undefined || value === null) return;
+
+    const text = cleanDisplayText(value);
+    const targets = (Array.isArray(highlights) ? highlights : [highlights])
+      .map(item => cleanDisplayText(item || ''))
+      .filter(Boolean);
+
+    if (!targets.length) {
+      element.textContent = text;
+      return;
+    }
+
+    const ranges = [];
+    targets.forEach(target => {
+      let start = text.indexOf(target);
+      while (start >= 0) {
+        ranges.push({ start, end: start + target.length });
+        start = text.indexOf(target, start + target.length);
+      }
+    });
+    ranges.sort((a, b) => a.start - b.start);
+
+    const merged = [];
+    ranges.forEach(range => {
+      const previous = merged[merged.length - 1];
+      if (previous && range.start < previous.end) return;
+      merged.push(range);
+    });
+
+    element.replaceChildren();
+    let cursor = 0;
+    merged.forEach(range => {
+      if (range.start > cursor) {
+        element.appendChild(document.createTextNode(text.slice(cursor, range.start)));
+      }
+      const accent = document.createElement('span');
+      accent.className = className;
+      accent.textContent = text.slice(range.start, range.end);
+      element.appendChild(accent);
+      cursor = range.end;
+    });
+    if (cursor < text.length) {
+      element.appendChild(document.createTextNode(text.slice(cursor)));
+    }
+  };
+
   const setParagraphs = (container, selector, paragraphs, className) => {
     if (!container || !Array.isArray(paragraphs)) return;
     const existing = Array.from(container.querySelectorAll(selector));
@@ -237,10 +285,14 @@ const applyPortfolioContent = (content) => {
 
   if (content.about) {
     setText('#about .section__title', content.about.title);
-    setText('.about__photo-placeholder span', content.about.photoLabel);
     setText('.about__name', content.about.name);
     setText('.about__role', content.about.role);
-    setText('.about__description', content.about.description);
+    setHighlightedSegments(
+      '.about__description',
+      content.about.description,
+      content.about.descriptionHighlights,
+      'about__description-highlight'
+    );
     const skills = document.querySelector('.about__skills');
     if (skills && Array.isArray(content.about.skills)) {
       skills.replaceChildren();
