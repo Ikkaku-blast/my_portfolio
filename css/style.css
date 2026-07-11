@@ -2,14 +2,14 @@
    CSS読み込み順
    個別調整は各ファイルで行う。responsive.css は上書き用なので最後。
    ============================================================ */
-@import url('./base.css');
-@import url('./journey.css');
-@import url('./header.css');
-@import url('./hero.css');
-@import url('./section-title.css');
-@import url('./about.css');
-@import url('./strengths.css');
-@import url('./works.css');
-@import url('./footer.css');
-@import url('./lightbox.css');
-@import url('./responsive.css');
+@import url('./base.css?v=mobile-layout-1');
+@import url('./journey.css?v=mobile-layout-1');
+@import url('./header.css?v=mobile-layout-1');
+@import url('./hero.css?v=mobile-layout-1');
+@import url('./section-title.css?v=mobile-layout-1');
+@import url('./about.css?v=mobile-layout-1');
+@import url('./strengths.css?v=mobile-layout-1');
+@import url('./works.css?v=mobile-layout-1');
+@import url('./footer.css?v=mobile-layout-1');
+@import url('./lightbox.css?v=mobile-layout-1');
+@import url('./responsive.css?v=mobile-layout-1');
