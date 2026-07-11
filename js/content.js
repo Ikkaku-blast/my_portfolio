@@ -7,7 +7,7 @@
 
 const loadPortfolioContent = async () => {
   try {
-    const response = await fetch('content/portfolio.json', { cache: 'no-cache' });
+    const response = await fetch('content/portfolio.json?v=cache-20260711-works-play-restore-1', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`Failed to load content: ${response.status}`);
     return await response.json();
   } catch (error) {
@@ -168,86 +168,6 @@ const applyPortfolioContent = (content) => {
     return figure;
   };
 
-  const syncWorkPlayLink = (panel, item) => {
-    const summary = panel.querySelector('.work-detail__summary');
-    let actions = panel.querySelector('.work-detail__actions');
-    let link = panel.querySelector('.work-detail__play-link');
-    if (!actions && summary) {
-      actions = document.createElement('div');
-      actions.className = 'work-detail__actions';
-      summary.insertAdjacentElement('afterend', actions);
-    }
-    if (link && actions && link.parentElement !== actions) {
-      actions.appendChild(link);
-    }
-    if (!link && actions) {
-      link = document.createElement('a');
-      link.className = 'work-detail__play-link';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      actions.appendChild(link);
-    }
-    if (!actions || !link) return;
-
-    if (item.playUrl) {
-      link.textContent = cleanDisplayText(item.playLabel || content.works?.playLinkLabel || 'プレイページを見る');
-      link.href = item.playUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.hidden = false;
-      actions.hidden = false;
-      link.classList.remove('is-disabled');
-      link.removeAttribute('aria-disabled');
-      link.removeAttribute('role');
-      link.setAttribute('aria-label', `${cleanDisplayText(item.detailTitle || '作品')}をUnityroomで開く`);
-    } else {
-      link.textContent = cleanDisplayText(item.playUnavailableLabel || content.works?.playUnavailableLabel || '非公開');
-      link.hidden = false;
-      actions.hidden = false;
-      link.removeAttribute('href');
-      link.removeAttribute('target');
-      link.removeAttribute('rel');
-      link.removeAttribute('aria-label');
-      link.setAttribute('aria-disabled', 'true');
-      link.setAttribute('role', 'button');
-      link.classList.add('is-disabled');
-    }
-  };
-
-  const syncWorksCardPlayLink = (tab, item) => {
-    const card = tab.closest('.works-card');
-    if (!card) return;
-    let link = card.querySelector('.works-card__play');
-    if (!link) {
-      link = document.createElement('a');
-      link.className = 'works-card__play';
-      tab.insertAdjacentElement('afterend', link);
-    }
-    if (!link) return;
-
-    if (item.playUrl) {
-      link.textContent = cleanDisplayText(item.previewPlayLabel || content.works?.previewPlayLabel || 'Play');
-      link.href = item.playUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.hidden = false;
-      link.classList.remove('is-disabled');
-      link.removeAttribute('aria-disabled');
-      link.removeAttribute('role');
-      link.setAttribute('aria-label', `${cleanDisplayText(item.detailTitle || '作品')}をUnityroomで開く`);
-    } else {
-      link.textContent = cleanDisplayText(item.previewPlayUnavailableLabel || item.playUnavailableLabel || content.works?.playUnavailableLabel || '非公開');
-      link.hidden = false;
-      link.removeAttribute('href');
-      link.removeAttribute('target');
-      link.removeAttribute('rel');
-      link.removeAttribute('aria-label');
-      link.setAttribute('aria-disabled', 'true');
-      link.setAttribute('role', 'button');
-      link.classList.add('is-disabled');
-    }
-  };
-
   if (content.meta) {
     if (content.meta.title) document.title = content.meta.title;
     setAttr('meta[name="description"]', 'content', content.meta.description);
@@ -363,11 +283,8 @@ const applyPortfolioContent = (content) => {
       const panel = document.getElementById(`work-panel-${item.id}`);
 
       if (tab) {
-        setText('.works-node__date', item.date, tab);
         setLines(tab.querySelector('.works-node__title'), item.previewTitleLines);
-        setLines(tab.querySelector('.works-node__meta'), item.previewMeta);
         setText('.works-node__hint', item.previewHint, tab);
-        syncWorksCardPlayLink(tab, item);
         const video = tab.querySelector('.works-node__video');
         const source = tab.querySelector('.works-node__video source');
         if (video && item.poster) video.setAttribute('poster', item.poster);
@@ -379,9 +296,6 @@ const applyPortfolioContent = (content) => {
 
       if (panel) {
         setText('.work-detail__title', item.detailTitle, panel);
-        setText('.work-detail__meta', item.meta, panel);
-        setText('.work-detail__summary', item.summary, panel);
-        syncWorkPlayLink(panel, item);
         const slider = panel.querySelector('[data-work-slider]');
         if (slider && item.sliderLabel) slider.setAttribute('aria-label', item.sliderLabel);
         const track = panel.querySelector('.work-slides__track');

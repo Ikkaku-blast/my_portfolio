@@ -1,398 +1,356 @@
 {
-    "meta":  {
-                 "title":  "Portfolio",
-                 "description":  "ゲームプランナー志望のポートフォリオサイト — ゲーム作品紹介・自己紹介・制作で意識したこと"
-             },
-    "header":  {
-                   "logo":  "Portfolio",
-                   "nav":  [
-                               {
-                                   "label":  "Works",
-                                   "href":  "#works"
-                               },
-                               {
-                                   "label":  "About",
-                                   "href":  "#about"
-                               },
-                               {
-                                   "label":  "Strengths",
-                                   "href":  "#visual-ability"
-                               }
-                           ],
-                   "menuLabel":  "メニューを開く"
-               },
-    "hero":  {
-                 "interests":  [
-                                   "ミステリー",
-                                   "タロット",
-                                   "麻雀",
-                                   "2.5次元ミュージカル",
-                                   "ハムスター",
-                                   "レーザー",
-                                   "仕掛学",
-                                   "コーヒー",
-                                   "教育",
-                                   "バレーボール",
-                                   "登山",
-                                   "ヘルスケア",
-                                   "少年漫画",
-                                   "時事ニュース",
-                                   "地政学",
-                                   "お笑い"
-                               ],
-                 "greeting":  "",
-                 "name":  "黒沼慎太郎",
-                 "tagline":  "世界にあふれた「面白い」をゲームに",
-                 "taglineHighlight":  "面白い",
-                 "cta":  "作品を見る ↓"
-             },
-    "works":  {
-                  "title":  "Works",
-                  "subtitle":  "制作順に見るゲーム作品",
-                  "guide":  [
-                                "作品をクリックすることで紹介スライドをご覧いただけます。",
-                                "また、Playをクリックして実際に遊ぶことができます。"
-                            ],
-                  "previewToggle":  {
-                                        "pauseLabel":  "動画プレビュー停止",
-                                        "playLabel":  "動画プレビュー再開"
-                                    },
-                  "slidePrevLabel":  "前のスライド",
-                  "slideNextLabel":  "次のスライド",
-                  "backLabel":  "他の作品を見る",
-                  "playLinkLabel":  "プレイページを見る",
-                  "previewPlayLabel":  "Play",
-                  "items":  [
-                                {
-                                    "id":  "hamham",
-                                    "date":  "2022.02",
-                                    "previewTitleLines":  [
-                                                              "ハムハム絵合わせ"
-                                                          ],
-                                    "previewMeta":  [
-                                                        "個人制作"
-
-                                                    ],
-                                    "previewHint":  "詳細を見る",
-                                    "video":  "videos/humhum_kirinuki.mp4",
-                                    "poster":  "image/hamhamA.png",
-                                    "detailTitle":  "ハムハム絵合わせ",
-                                    "meta":  "制作期間：2022/02/10〜2022/04/15/使用ツール：Python/制作形式：個人制作",
-                                    "summary":  "上から落ちてくるハムスターを避けながら、同じ絵柄のカードを探すアクション神経衰弱です。カードの位置を覚える記憶要素に、ハムスターを避ける回避アクションを組み合わせました。記憶だけで完結させず、避ける緊張感を重ねることで、最後まで油断できない展開を設計しました。",
-                                    "sliderLabel":  "ハムハム絵合わせの紹介スライド",
-                                    "slides":  [
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/humhum1.PNG?v=slide-20260711",
-                                                       "alt":  "ハムハム絵合わせの紹介スライド1",
-                                                       "lightboxCaption":  "ハムハム絵合わせの紹介スライド1",
-                                                       "caption":  "紹介スライド1"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/humhum2.PNG?v=slide-20260711",
-                                                       "alt":  "ハムハム絵合わせの紹介スライド2",
-                                                       "lightboxCaption":  "ハムハム絵合わせの紹介スライド2",
-                                                       "caption":  "紹介スライド2"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/humhum3.PNG?v=slide-20260711",
-                                                       "alt":  "ハムハム絵合わせの紹介スライド3",
-                                                       "lightboxCaption":  "ハムハム絵合わせの紹介スライド3",
-                                                       "caption":  "紹介スライド3"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/humhum4.PNG?v=slide-20260711",
-                                                       "alt":  "ハムハム絵合わせの紹介スライド4",
-                                                       "lightboxCaption":  "ハムハム絵合わせの紹介スライド4",
-                                                       "caption":  "紹介スライド4"
-                                                   }
-                                               ]
-                                },
-                                {
-                                    "id":  "warai",
-                                    "date":  "2024.03",
-                                    "previewTitleLines":  [
-                                                              "ブレイブ",
-                                                              "オブワライ"
-                                                          ],
-                                    "previewMeta":  [
-                                                        "チーム制作",
-                                                        "担当：作画・脚本・演出"
-                                                    ],
-                                    "previewHint":  "詳細を見る",
-                                    "video":  "videos/omoro_kirinuki.mp4",
-                                    "poster":  "image/burewara_image1.png",
-                                    "detailTitle":  "ブレイブオブワライ",
-                                    "meta":  "制作時期：2024年3月/使用ツール：Unity/制作形式：チーム制作/担当範囲：一部作画・一部脚本",
-                                    "summary":  "日常生活のさまざまな場面で、勇気を出してボケるコミュニケーションゲームです。プレイヤーはボケるタイミングと内容を選び、ウケるかすべるか分からない緊張感の中で笑いを取りにいきます。ボケる行為を選択肢化し、成功しても失敗しても笑える構造にすることで、コミュニケーションの気まずさまで遊びに変えることを狙いました。",
-                                    "playUrl":  "https://unityroom.com/games/legend_of_sugiru",
-                                    "sliderLabel":  "ブレイブオブワライの紹介スライド",
-                                    "slides":  [
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/boke1.PNG?v=slide-20260711",
-                                                       "alt":  "ブレイブオブワライの紹介スライド1",
-                                                       "lightboxCaption":  "ブレイブオブワライの紹介スライド1",
-                                                       "caption":  "紹介スライド1"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/boke2.PNG?v=slide-20260711",
-                                                       "alt":  "ブレイブオブワライの紹介スライド2",
-                                                       "lightboxCaption":  "ブレイブオブワライの紹介スライド2",
-                                                       "caption":  "紹介スライド2"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/boke3.PNG?v=slide-20260711",
-                                                       "alt":  "ブレイブオブワライの紹介スライド3",
-                                                       "lightboxCaption":  "ブレイブオブワライの紹介スライド3",
-                                                       "caption":  "紹介スライド3"
-                                                   }
-                                               ]
-                                },
-                                {
-                                    "id":  "doughnut",
-                                    "date":  "2024.12",
-                                    "previewTitleLines":  [
-                                                              "ミスった、",
-                                                              "ドーナツ"
-                                                          ],
-                                    "previewMeta":  [
-                                                        "チーム制作",
-                                                        "担当：企画・作画・演出・実装"
-                                                    ],
-                                    "previewHint":  "詳細を見る",
-                                    "video":  "videos/miss_dounut_kirinuki.mp4",
-                                    "poster":  "image/miss_image1.png",
-                                    "detailTitle":  "ミスった、ドーナツ",
-                                    "meta":  "制作時期：2024年12月/使用ツール：Unity/制作形式：チーム制作/担当範囲：企画・作画",
-                                    "summary":  "客の面倒な注文に合わせて正しい商品を渡し、該当商品がない場合は退店させるドーナツ販売ゲームです。プレイヤーは注文文を瞬時に読み取り、タグや条件に合う商品を判断して売上を伸ばします。短時間で注文を読み取り、正しい判断を返す気持ちよさを軸に、分かりやすいルールと判断の迷いが両立するよう設計しました。",
-                                    "playUrl":  "https://unityroom.com/games/miss_donut",
-                                    "sliderLabel":  "ミスった、ドーナツの紹介スライド",
-                                    "slides":  [
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donut1.PNG?v=slide-20260711",
-                                                       "alt":  "ミスった、ドーナツの紹介スライド1",
-                                                       "lightboxCaption":  "ミスった、ドーナツの紹介スライド1",
-                                                       "caption":  "紹介スライド1"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donut2.PNG?v=slide-20260711",
-                                                       "alt":  "ミスった、ドーナツの紹介スライド2",
-                                                       "lightboxCaption":  "ミスった、ドーナツの紹介スライド2",
-                                                       "caption":  "紹介スライド2"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donut3.PNG?v=slide-20260711",
-                                                       "alt":  "ミスった、ドーナツの紹介スライド3",
-                                                       "lightboxCaption":  "ミスった、ドーナツの紹介スライド3",
-                                                       "caption":  "紹介スライド3"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donut4.PNG?v=slide-20260711",
-                                                       "alt":  "ミスった、ドーナツの紹介スライド4",
-                                                       "lightboxCaption":  "ミスった、ドーナツの紹介スライド4",
-                                                       "caption":  "紹介スライド4"
-                                                   }
-                                               ]
-                                },
-                                {
-                                    "id":  "donbike",
-                                    "date":  "2025.08",
-                                    "previewTitleLines":  [
-                                                              "ドン引け！告白",
-                                                              "大失敗大作戦"
-                                                          ],
-                                    "previewMeta":  [
-                                                        "個人制作"
-
-
-                                                    ],
-                                    "previewHint":  "詳細を見る",
-                                    "video":  "videos/donbike_kirinuki.mp4",
-                                    "poster":  "image/donbike_gamescene.png",
-                                    "detailTitle":  "ドン引け！告白大失敗大作戦",
-                                    "meta":  "制作期間：2025/08/03〜2025/08/10/使用ツール：Unity/C#/制作形式：個人制作",
-                                    "summary":  "告白のセリフに合わせて適切な野次を選び、生卵をぶつけながら告白シーンを台無しにするツッコミ選択ゲームです。プレイヤーは大げさな告白を見抜いて茶化し、神聖な場面を崩していく背徳感と爽快感を味わいます。単なる妨害ではなく、告白文へのツッコミとして成立する選択肢にすることで、笑いと判断の納得感を両立させました。",
-                                    "playUrl":  "https://unityroom.com/games/donbikiproject",
-                                    "sliderLabel":  "ドン引け！告白大失敗大作戦の紹介スライド",
-                                    "slides":  [
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donbike1.PNG?v=slide-20260711",
-                                                       "alt":  "ドン引け！告白大失敗大作戦の紹介スライド1",
-                                                       "lightboxCaption":  "ドン引け！告白大失敗大作戦の紹介スライド1",
-                                                       "caption":  "紹介スライド1"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donbike2.PNG?v=slide-20260711",
-                                                       "alt":  "ドン引け！告白大失敗大作戦の紹介スライド2",
-                                                       "lightboxCaption":  "ドン引け！告白大失敗大作戦の紹介スライド2",
-                                                       "caption":  "紹介スライド2"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/donbike3.PNG?v=slide-20260711",
-                                                       "alt":  "ドン引け！告白大失敗大作戦の紹介スライド3",
-                                                       "lightboxCaption":  "ドン引け！告白大失敗大作戦の紹介スライド3",
-                                                       "caption":  "紹介スライド3"
-                                                   }
-                                               ]
-                                },
-                                {
-                                    "id":  "insight",
-                                    "date":  "2025.12",
-                                    "previewTitleLines":  [
-                                                              "恋するインサイト"
-                                                          ],
-                                    "previewMeta":  [
-                                                        "個人制作"
-                                                    ],
-                                    "previewHint":  "詳細を見る",
-                                    "video":  "videos/Insight_kirinuki.mp4",
-                                    "poster":  "image/insightB.png",
-                                    "detailTitle":  "恋するインサイト",
-                                    "meta":  "制作期間：2025/12/21〜2025/12/28/使用ツール：Unity/C#/制作形式：個人制作",
-                                    "summary":  "ヒロインとデートしながら、特殊能力「インサイト」で心の中を覗き、本音に合わせて言動を選ぶ恋愛アドベンチャーです。プレイヤーは相手の隠れた気持ちを読み解き、少しずつ距離が縮まっていく実感と、物語の最後に明かされる驚きを味わいます。心を覗く能力を会話選択に直結させることで、選択の根拠を明確にし、短時間でも関係が進展する納得感を持たせました。",
-                                    "playUrl":  "https://unityroom.com/games/love_insight",
-                                    "sliderLabel":  "恋するインサイトの紹介スライド",
-                                    "slides":  [
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/insight1.PNG?v=slide-20260711",
-                                                       "alt":  "恋するインサイトの紹介スライド1",
-                                                       "lightboxCaption":  "恋するインサイトの紹介スライド1",
-                                                       "caption":  "紹介スライド1"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/insight2.PNG?v=slide-20260711",
-                                                       "alt":  "恋するインサイトの紹介スライド2",
-                                                       "lightboxCaption":  "恋するインサイトの紹介スライド2",
-                                                       "caption":  "紹介スライド2"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/insight3.PNG?v=slide-20260711",
-                                                       "alt":  "恋するインサイトの紹介スライド3",
-                                                       "lightboxCaption":  "恋するインサイトの紹介スライド3",
-                                                       "caption":  "紹介スライド3"
-                                                   },
-                                                   {
-                                                       "image":  "Mygame_slide_ALL/insight4.PNG?v=slide-20260711",
-                                                       "alt":  "恋するインサイトの紹介スライド4",
-                                                       "lightboxCaption":  "恋するインサイトの紹介スライド4",
-                                                       "caption":  "紹介スライド4"
-                                                   }
-                                               ]
-                                }
-                            ]
-              },
-    "ability":  {
-                    "title":  "Strengths",
-                    "panels":  [
-                                   {
-                                       "title":  "体験を設計する",
-                                       "paragraphs":  [
-                                                          "作品ごとに、まずプレイヤーへ届けたい体験と面白さの条件を言語化します。そのうえで、ルール・UI・演出が同じ方向を向くように設計し、制作全体の判断基準を明確にしています。",
-                                                          "「ミスった、ドーナツ」では、「直感的に理解できること」と「短時間で判断する緊張感」を方針に設定しました。注文UI、制限時間の色変化、商品選択ルールをその方針に合わせ、プレイヤーが状況を瞬時に読み取り判断できる体験を狙いました。"
-                                                      ],
-                                       "figures":  [
-                                                       {
-                                                           "image":  "image/experiment_image1.png",
-                                                           "alt":  "体験設計の方針をまとめた仕様書（抜粋）",
-                                                           "lightboxCaption":  "体験設計の方針をまとめた仕様書（抜粋）",
-                                                           "caption":  "体験設計の方針をまとめた仕様書（抜粋）"
-                                                       },
-                                                       {
-                                                           "image":  "image/experiment_image4.png",
-                                                           "alt":  "体験設計のルールとUIをまとめた仕様書（抜粋）",
-                                                           "lightboxCaption":  "体験設計のルールとUIをまとめた仕様書（抜粋）",
-                                                           "caption":  "ルールとUIをまとめた仕様書（抜粋）"
-                                                       }
-                                                   ]
-                                   },
-                                   {
-                                       "title":  "チーム制作を進める仕組みづくり",
-                                       "paragraphs":  [
-                                                          "チーム制作では、役割や進行状況が曖昧なままだと判断が遅れるため、Notionで担当・優先度・進捗を共有しました。各メンバーが次に取り組む作業を判断しやすくし、遅れている作業にも早めに支援を回せる状態を作りました。",
-                                                          "また、仕様書で世界観・ルール・面白さの方向性を共有したうえで、匿名のアイデア掲示板を用意しました。会議中に出しにくい案や後から思いついたネタも集められるようにし、方向性を保ちながら案の量を増やしました。"
-                                                      ],
-                                       "figures":  [
-                                                       {
-                                                           "image":  "image/teamwork_image1.png",
-                                                           "alt":  "Notionで役割と進行状況を共有したタスクボード",
-                                                           "lightboxCaption":  "役割と進行状況を共有したNotionタスクボード",
-                                                           "caption":  "役割と進行状況を共有したNotionタスクボード"
-                                                       },
-                                                       {
-                                                           "image":  "image/teamwork_image2new.png",
-                                                           "alt":  "匿名でアイデアやネタを追加するためのNotion掲示板",
-                                                           "lightboxCaption":  "匿名で案を追加できるアイデア掲示板",
-                                                           "caption":  "匿名で案を追加できるアイデア掲示板"
-                                                       },
-                                                       {
-                                                           "image":  "image/experiment_image1.png",
-                                                           "alt":  "チームの方向性共有に使用したゲーム仕様書",
-                                                           "lightboxCaption":  "方向性共有に使用した仕様書",
-                                                           "caption":  "方向性共有に使用した仕様書"
-                                                       }
-                                                   ]
-                                   },
-                                   {
-                                       "title":  "課題を分解し、体験を調整する",
-                                       "paragraphs":  [
-                                                          "テストプレイでは、感想をそのまま受け取るのではなく、何が体験を弱めているかに分解して改善します。違和感を言語化し、見た目・難易度・テンポなど、調整できる要素へ落とし込むことを重視しています。",
-                                                          "「ハムハム絵合わせ」では、達成感の薄さを「視覚的な迫力不足」と「後半の失速」に分解しました。ハムスターの密度・サイズ・速度変化を調整し、見た目の緊迫感を上げつつ、操作難度が急に跳ねないよう全体の速度も調整しました。"
-                                                      ],
-                                       "figures":  [
-                                                       {
-                                                           "image":  "image/hamhamD.png",
-                                                           "alt":  "カード枚数が多い場面",
-                                                           "lightboxCaption":  "カード枚数が多い場面",
-                                                           "caption":  "カード枚数が多い場面"
-                                                       },
-                                                       {
-                                                           "image":  "image/hamhamE.png",
-                                                           "alt":  "カード枚数が少ない後半の場面",
-                                                           "lightboxCaption":  "カード枚数が少ない後半の場面",
-                                                           "caption":  "カード枚数が少ない後半の場面"
-                                                       }
-                                                   ]
-                                   }
-                               ]
-                },
-    "about":  {
-                  "title":  "About Me",
-                  "name":  "黒沼慎太郎",
-                  "role":  "所属：大阪大学大学院基礎工学研究科　システム創成専攻",
-                  "description":  "自作したゲームでプレイヤーが自分の想定した通りのリアクションで楽しんでくれたことに遊びを設計する面白さを感じました。その経験から、プレイヤーの感情や行動を考えながらゲームの面白さを形にするプランナーを志望するようになりました。私が企画で重視しているのは、まずプレイヤーにどのような感情や体験を届けたいかを明確にし、そこから必要なルール、UI、演出、テンポを考えることです。単に要素を増やすのではなく、「面白さにつながる仕組みは何か」を意識して制作してきました。また、ニュースや漫画、お笑い、エンタメ、研究分野など幅広い物事に触れることで、企画の引き出しを増やすことも大切にしています。日常の中で感じた面白さや得た知識を、プレイヤーが実際に遊んで感じられる体験へ変換できるプランナーを目指しています。",
-                  "descriptionHighlights":  [
-                                               "遊びを設計する面白さ",
-                                               "面白さにつながる仕組みは何か"
-                                           ],
-                  "skills":  [
-                                 "HTML/CSS",
-                                 "JavaScript",
-                                 "Python",
-                                 "Unity"
-                             ],
-                  "radar":  {
-                                "title":  "",
-                                "max":  5,
-                                "items":  [
-                                              {
-                                                  "label":  "企画力",
-                                                  "value":  5
-                                              },
-                                              {
-                                                  "label":  "チームワーク",
-                                                  "value":  5
-                                              },
-                                              {
-                                                  "label":  "課題発見",
-                                                  "value":  5
-                                              }
-                                          ]
-                            }
-              },
-    "footer":  {
-                   "copy":  "© 2026 Shintaro Kuronuma. All rights reserved."
-               },
-    "lightbox":  {
-                     "closeLabel":  "拡大画像を閉じる",
-                     "backdropLabel":  "拡大画像を閉じる"
-                 }
+  "meta": {
+    "title": "Portfolio",
+    "description": "ゲームプランナー志望のポートフォリオサイト — ゲーム作品紹介・自己紹介・制作で意識したこと"
+  },
+  "header": {
+    "logo": "Portfolio",
+    "nav": [
+      {
+        "label": "Works",
+        "href": "#works"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Strengths",
+        "href": "#visual-ability"
+      }
+    ],
+    "menuLabel": "メニューを開く"
+  },
+  "hero": {
+    "interests": [
+      "ミステリー",
+      "タロット",
+      "麻雀",
+      "2.5次元ミュージカル",
+      "ハムスター",
+      "レーザー",
+      "仕掛学",
+      "コーヒー",
+      "教育",
+      "バレーボール",
+      "登山",
+      "ヘルスケア",
+      "少年漫画",
+      "時事ニュース",
+      "地政学",
+      "お笑い"
+    ],
+    "greeting": "",
+    "name": "黒沼慎太郎",
+    "tagline": "世界にあふれた「面白い」をゲームに",
+    "taglineHighlight": "面白い",
+    "cta": "作品を見る ↓"
+  },
+  "works": {
+    "title": "Works",
+    "subtitle": "制作順に見るゲーム作品",
+    "guide": [
+      "作品をクリックすることで紹介スライドをご覧いただけます。"
+    ],
+    "previewToggle": {
+      "pauseLabel": "動画プレビュー停止",
+      "playLabel": "動画プレビュー再開"
+    },
+    "slidePrevLabel": "前のスライド",
+    "slideNextLabel": "次のスライド",
+    "backLabel": "他の作品を見る",
+    "items": [
+      {
+        "id": "hamham",
+        "previewTitleLines": [
+          "ハムハム絵合わせ"
+        ],
+        "previewHint": "詳細を見る",
+        "video": "videos/humhum_kirinuki.mp4",
+        "poster": "image/hamhamA.png",
+        "detailTitle": "ハムハム絵合わせ",
+        "sliderLabel": "ハムハム絵合わせの紹介スライド",
+        "slides": [
+          {
+            "image": "Mygame_slide_ALL/humhum1.PNG?v=slide-20260711",
+            "alt": "ハムハム絵合わせの紹介スライド1",
+            "lightboxCaption": "ハムハム絵合わせの紹介スライド1",
+            "caption": "紹介スライド1"
+          },
+          {
+            "image": "Mygame_slide_ALL/humhum2.PNG?v=slide-20260711",
+            "alt": "ハムハム絵合わせの紹介スライド2",
+            "lightboxCaption": "ハムハム絵合わせの紹介スライド2",
+            "caption": "紹介スライド2"
+          },
+          {
+            "image": "Mygame_slide_ALL/humhum3.PNG?v=slide-20260711",
+            "alt": "ハムハム絵合わせの紹介スライド3",
+            "lightboxCaption": "ハムハム絵合わせの紹介スライド3",
+            "caption": "紹介スライド3"
+          },
+          {
+            "image": "Mygame_slide_ALL/humhum4.PNG?v=slide-20260711",
+            "alt": "ハムハム絵合わせの紹介スライド4",
+            "lightboxCaption": "ハムハム絵合わせの紹介スライド4",
+            "caption": "紹介スライド4"
+          }
+        ]
+      },
+      {
+        "id": "warai",
+        "previewTitleLines": [
+          "ブレイブ",
+          "オブワライ"
+        ],
+        "previewHint": "詳細を見る",
+        "video": "videos/omoro_kirinuki.mp4",
+        "poster": "image/burewara_image1.png",
+        "detailTitle": "ブレイブオブワライ",
+        "sliderLabel": "ブレイブオブワライの紹介スライド",
+        "slides": [
+          {
+            "image": "Mygame_slide_ALL/boke1.PNG?v=slide-20260711",
+            "alt": "ブレイブオブワライの紹介スライド1",
+            "lightboxCaption": "ブレイブオブワライの紹介スライド1",
+            "caption": "紹介スライド1"
+          },
+          {
+            "image": "Mygame_slide_ALL/boke2.PNG?v=slide-20260711",
+            "alt": "ブレイブオブワライの紹介スライド2",
+            "lightboxCaption": "ブレイブオブワライの紹介スライド2",
+            "caption": "紹介スライド2"
+          },
+          {
+            "image": "Mygame_slide_ALL/boke3.PNG?v=slide-20260711",
+            "alt": "ブレイブオブワライの紹介スライド3",
+            "lightboxCaption": "ブレイブオブワライの紹介スライド3",
+            "caption": "紹介スライド3"
+          }
+        ]
+      },
+      {
+        "id": "doughnut",
+        "previewTitleLines": [
+          "ミスった、",
+          "ドーナツ"
+        ],
+        "previewHint": "詳細を見る",
+        "video": "videos/miss_dounut_kirinuki.mp4",
+        "poster": "image/miss_image1.png",
+        "detailTitle": "ミスった、ドーナツ",
+        "sliderLabel": "ミスった、ドーナツの紹介スライド",
+        "slides": [
+          {
+            "image": "Mygame_slide_ALL/donut1.PNG?v=slide-20260711",
+            "alt": "ミスった、ドーナツの紹介スライド1",
+            "lightboxCaption": "ミスった、ドーナツの紹介スライド1",
+            "caption": "紹介スライド1"
+          },
+          {
+            "image": "Mygame_slide_ALL/donut2.PNG?v=slide-20260711",
+            "alt": "ミスった、ドーナツの紹介スライド2",
+            "lightboxCaption": "ミスった、ドーナツの紹介スライド2",
+            "caption": "紹介スライド2"
+          },
+          {
+            "image": "Mygame_slide_ALL/donut3.PNG?v=slide-20260711",
+            "alt": "ミスった、ドーナツの紹介スライド3",
+            "lightboxCaption": "ミスった、ドーナツの紹介スライド3",
+            "caption": "紹介スライド3"
+          },
+          {
+            "image": "Mygame_slide_ALL/donut4.PNG?v=slide-20260711",
+            "alt": "ミスった、ドーナツの紹介スライド4",
+            "lightboxCaption": "ミスった、ドーナツの紹介スライド4",
+            "caption": "紹介スライド4"
+          }
+        ]
+      },
+      {
+        "id": "donbike",
+        "previewTitleLines": [
+          "ドン引け！告白",
+          "大失敗大作戦"
+        ],
+        "previewHint": "詳細を見る",
+        "video": "videos/donbike_kirinuki.mp4",
+        "poster": "image/donbike_gamescene.png",
+        "detailTitle": "ドン引け！告白大失敗大作戦",
+        "sliderLabel": "ドン引け！告白大失敗大作戦の紹介スライド",
+        "slides": [
+          {
+            "image": "Mygame_slide_ALL/donbike1.PNG?v=slide-20260711",
+            "alt": "ドン引け！告白大失敗大作戦の紹介スライド1",
+            "lightboxCaption": "ドン引け！告白大失敗大作戦の紹介スライド1",
+            "caption": "紹介スライド1"
+          },
+          {
+            "image": "Mygame_slide_ALL/donbike2.PNG?v=slide-20260711",
+            "alt": "ドン引け！告白大失敗大作戦の紹介スライド2",
+            "lightboxCaption": "ドン引け！告白大失敗大作戦の紹介スライド2",
+            "caption": "紹介スライド2"
+          },
+          {
+            "image": "Mygame_slide_ALL/donbike3.PNG?v=slide-20260711",
+            "alt": "ドン引け！告白大失敗大作戦の紹介スライド3",
+            "lightboxCaption": "ドン引け！告白大失敗大作戦の紹介スライド3",
+            "caption": "紹介スライド3"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "previewTitleLines": [
+          "恋するインサイト"
+        ],
+        "previewHint": "詳細を見る",
+        "video": "videos/Insight_kirinuki.mp4",
+        "poster": "image/insightB.png",
+        "detailTitle": "恋するインサイト",
+        "sliderLabel": "恋するインサイトの紹介スライド",
+        "slides": [
+          {
+            "image": "Mygame_slide_ALL/insight1.PNG?v=slide-20260711",
+            "alt": "恋するインサイトの紹介スライド1",
+            "lightboxCaption": "恋するインサイトの紹介スライド1",
+            "caption": "紹介スライド1"
+          },
+          {
+            "image": "Mygame_slide_ALL/insight2.PNG?v=slide-20260711",
+            "alt": "恋するインサイトの紹介スライド2",
+            "lightboxCaption": "恋するインサイトの紹介スライド2",
+            "caption": "紹介スライド2"
+          },
+          {
+            "image": "Mygame_slide_ALL/insight3.PNG?v=slide-20260711",
+            "alt": "恋するインサイトの紹介スライド3",
+            "lightboxCaption": "恋するインサイトの紹介スライド3",
+            "caption": "紹介スライド3"
+          },
+          {
+            "image": "Mygame_slide_ALL/insight4.PNG?v=slide-20260711",
+            "alt": "恋するインサイトの紹介スライド4",
+            "lightboxCaption": "恋するインサイトの紹介スライド4",
+            "caption": "紹介スライド4"
+          }
+        ]
+      }
+    ]
+  },
+  "ability": {
+    "title": "Strengths",
+    "panels": [
+      {
+        "title": "体験を設計する",
+        "paragraphs": [
+          "作品ごとに、まずプレイヤーへ届けたい体験と面白さの条件を言語化します。そのうえで、ルール・UI・演出が同じ方向を向くように設計し、制作全体の判断基準を明確にしています。",
+          "「ミスった、ドーナツ」では、「直感的に理解できること」と「短時間で判断する緊張感」を方針に設定しました。注文UI、制限時間の色変化、商品選択ルールをその方針に合わせ、プレイヤーが状況を瞬時に読み取り判断できる体験を狙いました。"
+        ],
+        "figures": [
+          {
+            "image": "image/experiment_image1.png",
+            "alt": "体験設計の方針をまとめた仕様書（抜粋）",
+            "lightboxCaption": "体験設計の方針をまとめた仕様書（抜粋）",
+            "caption": "体験設計の方針をまとめた仕様書（抜粋）"
+          },
+          {
+            "image": "image/experiment_image4.png",
+            "alt": "体験設計のルールとUIをまとめた仕様書（抜粋）",
+            "lightboxCaption": "体験設計のルールとUIをまとめた仕様書（抜粋）",
+            "caption": "ルールとUIをまとめた仕様書（抜粋）"
+          }
+        ]
+      },
+      {
+        "title": "チーム制作を進める仕組みづくり",
+        "paragraphs": [
+          "チーム制作では、役割や進行状況が曖昧なままだと判断が遅れるため、Notionで担当・優先度・進捗を共有しました。各メンバーが次に取り組む作業を判断しやすくし、遅れている作業にも早めに支援を回せる状態を作りました。",
+          "また、仕様書で世界観・ルール・面白さの方向性を共有したうえで、匿名のアイデア掲示板を用意しました。会議中に出しにくい案や後から思いついたネタも集められるようにし、方向性を保ちながら案の量を増やしました。"
+        ],
+        "figures": [
+          {
+            "image": "image/teamwork_image1.png",
+            "alt": "Notionで役割と進行状況を共有したタスクボード",
+            "lightboxCaption": "役割と進行状況を共有したNotionタスクボード",
+            "caption": "役割と進行状況を共有したNotionタスクボード"
+          },
+          {
+            "image": "image/teamwork_image2new.png",
+            "alt": "匿名でアイデアやネタを追加するためのNotion掲示板",
+            "lightboxCaption": "匿名で案を追加できるアイデア掲示板",
+            "caption": "匿名で案を追加できるアイデア掲示板"
+          },
+          {
+            "image": "image/experiment_image1.png",
+            "alt": "チームの方向性共有に使用したゲーム仕様書",
+            "lightboxCaption": "方向性共有に使用した仕様書",
+            "caption": "方向性共有に使用した仕様書"
+          }
+        ]
+      },
+      {
+        "title": "課題を分解し、体験を調整する",
+        "paragraphs": [
+          "テストプレイでは、感想をそのまま受け取るのではなく、何が体験を弱めているかに分解して改善します。違和感を言語化し、見た目・難易度・テンポなど、調整できる要素へ落とし込むことを重視しています。",
+          "「ハムハム絵合わせ」では、達成感の薄さを「視覚的な迫力不足」と「後半の失速」に分解しました。ハムスターの密度・サイズ・速度変化を調整し、見た目の緊迫感を上げつつ、操作難度が急に跳ねないよう全体の速度も調整しました。"
+        ],
+        "figures": [
+          {
+            "image": "image/hamhamD.png",
+            "alt": "カード枚数が多い場面",
+            "lightboxCaption": "カード枚数が多い場面",
+            "caption": "カード枚数が多い場面"
+          },
+          {
+            "image": "image/hamhamE.png",
+            "alt": "カード枚数が少ない後半の場面",
+            "lightboxCaption": "カード枚数が少ない後半の場面",
+            "caption": "カード枚数が少ない後半の場面"
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "name": "黒沼慎太郎",
+    "role": "所属：大阪大学大学院基礎工学研究科　システム創成専攻",
+    "description": "自作したゲームでプレイヤーが自分の想定した通りのリアクションで楽しんでくれたことに遊びを設計する面白さを感じました。その経験から、プレイヤーの感情や行動を考えながらゲームの面白さを形にするプランナーを志望するようになりました。私が企画で重視しているのは、まずプレイヤーにどのような感情や体験を届けたいかを明確にし、そこから必要なルール、UI、演出、テンポを考えることです。単に要素を増やすのではなく、「面白さにつながる仕組みは何か」を意識して制作してきました。また、ニュースや漫画、お笑い、エンタメ、研究分野など幅広い物事に触れることで、企画の引き出しを増やすことも大切にしています。日常の中で感じた面白さや得た知識を、プレイヤーが実際に遊んで感じられる体験へ変換できるプランナーを目指しています。",
+    "descriptionHighlights": [
+      "遊びを設計する面白さ",
+      "面白さにつながる仕組みは何か"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "JavaScript",
+      "Python",
+      "Unity"
+    ],
+    "radar": {
+      "title": "",
+      "max": 5,
+      "items": [
+        {
+          "label": "企画力",
+          "value": 5
+        },
+        {
+          "label": "チームワーク",
+          "value": 5
+        },
+        {
+          "label": "課題発見",
+          "value": 5
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copy": "© 2026 Shintaro Kuronuma. All rights reserved."
+  },
+  "lightbox": {
+    "closeLabel": "拡大画像を閉じる",
+    "backdropLabel": "拡大画像を閉じる"
+  }
 }

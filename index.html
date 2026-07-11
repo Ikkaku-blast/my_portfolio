@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=mobile-layout-1">
+  <link rel="stylesheet" href="css/style.css?v=cache-20260711-works-play-restore-1">
 </head>
 
 <body>
@@ -70,7 +70,7 @@
     <div class="container">
       <h2 class="section__title">Works</h2>
       <p class="section__subtitle">制作順にたどる作品紹介</p>
-      <p class="works__guide">作品をクリックすることで紹介スライドをご覧いただけます。<br>また、Playをクリックして実際に遊ぶことができます。</p>
+      <p class="works__guide">作品をクリックすることで紹介スライドをご覧いただけます。</p>
 
       <div class="works-toolbar">
         <button class="works-preview-toggle" type="button" id="works-preview-toggle" aria-pressed="false">
@@ -83,96 +83,77 @@
         <div class="works-card works-card--hamham" role="presentation">
           <button class="works-node works-node--hamham is-active" type="button" id="work-tab-hamham"
             role="tab" aria-selected="true" aria-controls="work-panel-hamham" data-work-target="hamham">
-            <span class="works-node__date">2022.02</span>
             <span class="works-node__image-wrap">
               <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/hamhamA.png" aria-hidden="true">
                 <source src="videos/humhum_kirinuki.mp4" type="video/mp4">
               </video>
             </span>
             <span class="works-node__title">ハムハム絵合わせ</span>
-            <span class="works-node__meta">個人制作<br>担当：企画・実装</span>
             <span class="works-node__hint">詳細を見る</span>
           </button>
+          <button class="works-card__play is-disabled" type="button" disabled>非公開</button>
         </div>
 
         <div class="works-card works-card--warai" role="presentation">
           <button class="works-node works-node--warai" type="button" id="work-tab-warai"
             role="tab" aria-selected="false" aria-controls="work-panel-warai" data-work-target="warai">
-            <span class="works-node__date">2024.03</span>
             <span class="works-node__image-wrap">
               <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/burewara_image1.png" aria-hidden="true">
                 <source src="videos/omoro_kirinuki.mp4" type="video/mp4">
               </video>
             </span>
             <span class="works-node__title">ブレイブ<br>オブワライ</span>
-            <span class="works-node__meta">チーム制作<br>担当：一部作画・一部脚本</span>
             <span class="works-node__hint">詳細を見る</span>
           </button>
-          <a class="works-card__play" href="https://unityroom.com/games/legend_of_sugiru" target="_blank"
-            rel="noopener noreferrer" aria-label="ブレイブオブワライをUnityroomで開く">Play</a>
+          <a class="works-card__play" href="https://unityroom.com/games/legend_of_sugiru" target="_blank" rel="noopener">Play</a>
         </div>
 
         <div class="works-card works-card--doughnut" role="presentation">
           <button class="works-node works-node--doughnut" type="button" id="work-tab-doughnut"
             role="tab" aria-selected="false" aria-controls="work-panel-doughnut" data-work-target="doughnut">
-            <span class="works-node__date">2024.12</span>
             <span class="works-node__image-wrap">
               <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/miss_image1.png" aria-hidden="true">
                 <source src="videos/miss_dounut_kirinuki.mp4" type="video/mp4">
               </video>
             </span>
             <span class="works-node__title">ミスった、<br>ドーナツ</span>
-            <span class="works-node__meta">チーム制作<br>担当：企画・作画</span>
             <span class="works-node__hint">詳細を見る</span>
           </button>
-          <a class="works-card__play" href="https://unityroom.com/games/miss_donut" target="_blank"
-            rel="noopener noreferrer" aria-label="ミスった、ドーナツをUnityroomで開く">Play</a>
+          <a class="works-card__play" href="https://unityroom.com/games/miss_donut" target="_blank" rel="noopener">Play</a>
         </div>
 
         <div class="works-card works-card--donbike" role="presentation">
           <button class="works-node works-node--donbike" type="button" id="work-tab-donbike"
             role="tab" aria-selected="false" aria-controls="work-panel-donbike" data-work-target="donbike">
-            <span class="works-node__date">2025.08</span>
             <span class="works-node__image-wrap">
               <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/donbike_gamescene.png" aria-hidden="true">
                 <source src="videos/donbike_kirinuki.mp4" type="video/mp4">
               </video>
             </span>
             <span class="works-node__title">ドン引け！告白<br>大失敗大作戦</span>
-            <span class="works-node__meta">個人制作<br>担当：企画・実装</span>
             <span class="works-node__hint">詳細を見る</span>
           </button>
-          <a class="works-card__play" href="https://unityroom.com/games/donbikiproject" target="_blank"
-            rel="noopener noreferrer" aria-label="ドン引け！告白大失敗大作戦をUnityroomで開く">Play</a>
+          <a class="works-card__play" href="https://unityroom.com/games/donbikiproject" target="_blank" rel="noopener">Play</a>
         </div>
 
         <div class="works-card works-card--insight" role="presentation">
           <button class="works-node works-node--insight" type="button" id="work-tab-insight"
             role="tab" aria-selected="false" aria-controls="work-panel-insight" data-work-target="insight">
-            <span class="works-node__date">2025.12</span>
             <span class="works-node__image-wrap">
               <video class="works-node__video" autoplay muted loop playsinline preload="metadata" poster="image/insightB.png" aria-hidden="true">
                 <source src="videos/Insight_kirinuki.mp4" type="video/mp4">
               </video>
             </span>
             <span class="works-node__title">恋するインサイト</span>
-            <span class="works-node__meta">個人制作<br>担当：企画・実装</span>
             <span class="works-node__hint">詳細を見る</span>
           </button>
-          <a class="works-card__play" href="https://unityroom.com/games/love_insight" target="_blank"
-            rel="noopener noreferrer" aria-label="恋するインサイトをUnityroomで開く">Play</a>
+          <a class="works-card__play" href="https://unityroom.com/games/love_insight" target="_blank" rel="noopener">Play</a>
         </div>
       </div>
 
       <div class="works-details animate-on-scroll">
         <article class="work-detail is-active" id="work-panel-hamham" role="tabpanel" aria-labelledby="work-tab-hamham">
           <h3 class="work-detail__title">ハムハム絵合わせ</h3>
-          <p class="work-detail__meta">制作期間2022/02/10~2022/04/15/使用ツールPython/個人制作</p>
-          <p class="work-detail__summary">
-            上から落ちてくるハムスターを避けながら、同じ絵柄のカードを探すアクション神経衰弱です。
-            カードの位置を覚える記憶要素に、ハムスターを避ける回避アクションを組み合わせました。
-            記憶だけで完結させず、避ける緊張感を重ねることで、最後まで油断できない展開を設計しました。
-          </p>
           <div class="work-slides" data-work-slider aria-label="ハムハム絵合わせの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -223,16 +204,6 @@
 
         <article class="work-detail" id="work-panel-warai" role="tabpanel" aria-labelledby="work-tab-warai" hidden>
           <h3 class="work-detail__title">ブレイブオブワライ</h3>
-          <p class="work-detail__meta">制作時期2024.03頃/使用ツールUnity/団体制作/担当一部作画・一部脚本</p>
-          <p class="work-detail__summary">
-            日常生活のさまざまな場面で、勇気を出してボケるコミュニケーションゲームです。
-            プレイヤーはボケるタイミングと内容を選び、ウケるかすべるか分からない緊張感の中で笑いを取りにいきます。
-            ボケる行為を選択肢化し、成功しても失敗しても笑える構造にすることで、コミュニケーションの気まずさまで遊びに変えることを狙いました。
-          </p>
-          <div class="work-detail__actions">
-            <a class="work-detail__play-link" href="https://unityroom.com/games/legend_of_sugiru" target="_blank"
-              rel="noopener noreferrer" aria-label="ブレイブオブワライをUnityroomで開く">プレイページを見る</a>
-          </div>
           <div class="work-slides" data-work-slider aria-label="ブレイブオブワライの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -275,16 +246,6 @@
 
         <article class="work-detail" id="work-panel-doughnut" role="tabpanel" aria-labelledby="work-tab-doughnut" hidden>
           <h3 class="work-detail__title">ミスった、ドーナツ</h3>
-          <p class="work-detail__meta">制作時期2024.12頃/使用ツールUnity/団体制作/担当企画・作画</p>
-          <p class="work-detail__summary">
-            客の面倒な注文に合わせて正しい商品を渡し、該当する商品がない場合は客を追い出すドーナツ販売ゲームです。
-            プレイヤーは注文文を瞬時に読み取り、タグや条件に合う商品を判断して売上を伸ばします。
-            短時間で注文を読み取り、正しい判断を返す気持ちよさを軸に、分かりやすいルールと判断の迷いが両立するよう設計しました。
-          </p>
-          <div class="work-detail__actions">
-            <a class="work-detail__play-link" href="https://unityroom.com/games/miss_donut" target="_blank"
-              rel="noopener noreferrer" aria-label="ミスった、ドーナツをUnityroomで開く">プレイページを見る</a>
-          </div>
           <div class="work-slides" data-work-slider aria-label="ミスった、ドーナツの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -335,16 +296,6 @@
 
         <article class="work-detail" id="work-panel-donbike" role="tabpanel" aria-labelledby="work-tab-donbike" hidden>
           <h3 class="work-detail__title">ドン引け！告白大失敗大作戦</h3>
-          <p class="work-detail__meta">制作期間2025/08/03~2025/08/10/使用ツールUnity, C#/個人制作</p>
-          <p class="work-detail__summary">
-            告白のセリフに合わせて適切なヤジを選び、生卵をぶつけながら告白シーンを台無しにするツッコミ選択ゲームです。
-            プレイヤーは大げさな告白を見抜いて茶化し、神聖な場面を崩していく背徳感と爽快感を楽しめます。
-            単なる妨害ではなく、告白文へのツッコミとして成立する選択肢にすることで、笑いと判断の納得感を両立させました。
-          </p>
-          <div class="work-detail__actions">
-            <a class="work-detail__play-link" href="https://unityroom.com/games/donbikiproject" target="_blank"
-              rel="noopener noreferrer" aria-label="ドン引け！告白大失敗大作戦をUnityroomで開く">プレイページを見る</a>
-          </div>
           <div class="work-slides" data-work-slider aria-label="ドン引け！告白大失敗大作戦の紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -387,16 +338,6 @@
 
         <article class="work-detail" id="work-panel-insight" role="tabpanel" aria-labelledby="work-tab-insight" hidden>
           <h3 class="work-detail__title">恋するインサイト</h3>
-          <p class="work-detail__meta">制作期間2025/12/21~2025/12/28/使用ツールUnity, C#/個人制作</p>
-          <p class="work-detail__summary">
-            ヒロインとデートしながら、特殊能力「インサイト」で心の中を覗き、本音に合わせて言動を選ぶ恋愛アドベンチャーです。
-            プレイヤーは相手の隠れた気持ちを読み解き、少しずつ距離が縮まっていく実感と、物語の最後に明かされる驚きを味わいます。
-            心を覗く能力を会話選択に直結させることで、選択の根拠を明確にし、短時間でも関係が進展する納得感を持たせました。
-          </p>
-          <div class="work-detail__actions">
-            <a class="work-detail__play-link" href="https://unityroom.com/games/love_insight" target="_blank"
-              rel="noopener noreferrer" aria-label="恋するインサイトをUnityroomで開く">プレイページを見る</a>
-          </div>
           <div class="work-slides" data-work-slider aria-label="恋するインサイトの紹介スライド">
             <button class="work-slides__nav work-slides__nav--prev" type="button" aria-label="前のスライド" disabled>
               <span aria-hidden="true">←</span>
@@ -595,13 +536,13 @@
     </figure>
   </div>
 
-  <script src="js/content.js?v=split-1"></script>
-  <script src="js/hero.js?v=split-1"></script>
-  <script src="js/navigation.js?v=split-1"></script>
-  <script src="js/animations.js?v=split-1"></script>
-  <script src="js/works.js?v=split-1"></script>
-  <script src="js/lightbox.js?v=split-1"></script>
-  <script src="js/main.js?v=split-1"></script>
+  <script src="js/content.js?v=cache-20260711-works-play-restore-1"></script>
+  <script src="js/hero.js?v=cache-20260711-works-play-restore-1"></script>
+  <script src="js/navigation.js?v=cache-20260711-works-play-restore-1"></script>
+  <script src="js/animations.js?v=cache-20260711-works-play-restore-1"></script>
+  <script src="js/works.js?v=cache-20260711-works-play-restore-1"></script>
+  <script src="js/lightbox.js?v=cache-20260711-works-play-restore-1"></script>
+  <script src="js/main.js?v=cache-20260711-works-play-restore-1"></script>
 </body>
 
 </html>

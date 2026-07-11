@@ -1,6 +1,6 @@
 /* ============================================================
    Works
-   作品一覧、動画プレビュー、Playボタン、紹介スライダー。
+   作品一覧、動画プレビュー、Play/非公開ボタン、紹介スライダー。
    プレビュー枠の太さは .works-node__video の border を調整。
    ============================================================ */
 .works {
@@ -271,12 +271,6 @@
   outline-offset: 4px;
 }
 
-.works-node__date {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .works-node__image-wrap {
   position: relative;
   display: flex;
@@ -313,14 +307,6 @@
   line-height: 1.35;
 }
 
-.works-node__meta {
-  min-height: 36px;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.45;
-}
-
 .works-node__hint {
   justify-self: end;
   padding: 4px 8px;
@@ -345,14 +331,17 @@
   justify-content: center;
   justify-self: center;
   min-height: 36px;
+  min-width: 88px;
   padding: 6px 14px;
   border: 2px solid #111111;
   background: #ffffff;
   color: #111111;
+  font: inherit;
   font-size: 0.82rem;
   font-weight: 800;
   line-height: 1.2;
   text-decoration: none;
+  cursor: pointer;
   transition:
     background var(--transition),
     color var(--transition),
@@ -367,7 +356,7 @@
 }
 
 .works-card__play.is-disabled,
-.works-card__play[aria-disabled="true"] {
+.works-card__play:disabled {
   border-color: #4a4a4a;
   background: #4a4a4a;
   color: #ffffff;
@@ -376,8 +365,8 @@
 
 .works-card__play.is-disabled:hover,
 .works-card__play.is-disabled:focus-visible,
-.works-card__play[aria-disabled="true"]:hover,
-.works-card__play[aria-disabled="true"]:focus-visible {
+.works-card__play:disabled:hover,
+.works-card__play:disabled:focus-visible {
   background: #4a4a4a;
   color: #ffffff;
   transform: none;
@@ -386,10 +375,6 @@
 .works-card__play:focus-visible {
   outline: 3px solid #ffce56;
   outline-offset: 3px;
-}
-
-.works-card__play[hidden] {
-  display: none;
 }
 
 @media (min-width: 769px) {
@@ -479,10 +464,6 @@
     transform: translateY(-3px);
   }
 
-  .works-node__date {
-    display: none;
-  }
-
   .works-node__image-wrap {
     width: var(--work-preview-frame-width, 100%);
     max-width: 100%;
@@ -507,13 +488,6 @@
     font-weight: 500;
     line-height: 1.15;
     text-align: center;
-  }
-
-  .works-node__meta {
-    min-height: 40px;
-    color: #343434;
-    font-size: clamp(0.72rem, 0.86vw, 0.9rem);
-    line-height: 1.45;
   }
 
   .works-node__hint {
@@ -552,93 +526,11 @@
 }
 
 .work-detail__title {
+  margin-bottom: clamp(22px, 3vw, 38px);
   text-align: center;
   font-size: clamp(1.9rem, 3.2vw, 2.7rem);
   font-weight: 800;
   line-height: 1.3;
-}
-
-.work-detail__meta {
-  margin-top: 6px;
-  text-align: center;
-  font-size: 0.98rem;
-  color: var(--color-text);
-  font-weight: 700;
-}
-
-.work-detail__summary {
-  max-width: 920px;
-  margin: 16px auto 18px;
-  padding: 0 24px;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: var(--color-text);
-}
-
-.work-detail__actions {
-  display: flex;
-  justify-content: center;
-  max-width: 920px;
-  margin: 0 auto 28px;
-  padding: 0 24px;
-}
-
-.work-detail__actions[hidden] {
-  display: none;
-}
-
-.work-detail__play-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  width: auto;
-  margin: 0;
-  padding: 9px 18px;
-  border: 2px solid #111111;
-  background: #ffffff;
-  color: #111111;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-decoration: none;
-  transition:
-    background var(--transition),
-    color var(--transition),
-    transform var(--transition);
-}
-
-.work-detail__play-link:hover,
-.work-detail__play-link:focus-visible {
-  background: #111111;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.work-detail__play-link.is-disabled,
-.work-detail__play-link[aria-disabled="true"] {
-  border-color: #4a4a4a;
-  background: #4a4a4a;
-  color: #ffffff;
-  cursor: not-allowed;
-}
-
-.work-detail__play-link.is-disabled:hover,
-.work-detail__play-link.is-disabled:focus-visible,
-.work-detail__play-link[aria-disabled="true"]:hover,
-.work-detail__play-link[aria-disabled="true"]:focus-visible {
-  background: #4a4a4a;
-  color: #ffffff;
-  transform: none;
-}
-
-.work-detail__play-link:focus-visible {
-  outline: 3px solid #ffce56;
-  outline-offset: 4px;
-}
-
-.work-detail__play-link[hidden] {
-  display: none;
 }
 
 .work-slides {

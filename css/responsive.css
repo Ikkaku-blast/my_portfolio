@@ -132,24 +132,13 @@
     margin-left: 0;
   }
 
-  .work-detail__title,
-  .work-detail__meta,
-  .work-detail__summary,
-  .work-detail__actions {
+  .work-detail__title {
     box-sizing: border-box;
     width: calc(100% - ((var(--ability-side-rail) + var(--ability-frame-gap)) * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: 0;
     padding-left: 0;
-  }
-
-  .work-detail__meta {
-    font-size: 0.84rem;
-  }
-
-  .work-detail__summary {
-    font-size: 0.96rem;
   }
 
   .work-slides__viewport {
