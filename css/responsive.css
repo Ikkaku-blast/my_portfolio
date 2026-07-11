@@ -71,17 +71,17 @@
   }
 
   .about-radar {
-    width: min(340px, 100%);
+    width: min(340px, calc(100% - 8px));
     margin: 0 auto;
     padding: 0;
     border-width: 0;
-    perspective: 720px;
+    perspective: none;
   }
 
   .about-radar__chart {
-    width: 142%;
-    margin: -8% -28% -4% -10%;
-    transform: rotateX(56deg) rotateY(-14deg) rotateZ(-12deg);
+    width: 100%;
+    margin: 0;
+    transform: none;
   }
 
   .about-radar__label {
@@ -138,6 +138,14 @@
     padding: 0;
   }
 
+  .works__guide {
+    box-sizing: border-box;
+    width: calc(100% - ((var(--ability-side-rail) + var(--ability-frame-gap)) * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+  }
+
   .works-node,
   .works-card,
   .works-card--hamham,
@@ -157,13 +165,28 @@
     padding-top: 22px;
   }
 
+  .works-details {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .work-detail__title,
+  .work-detail__meta,
+  .work-detail__summary,
+  .work-detail__actions {
+    box-sizing: border-box;
+    width: calc(100% - ((var(--ability-side-rail) + var(--ability-frame-gap)) * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .work-detail__meta {
-    padding: 0 16px;
     font-size: 0.84rem;
   }
 
   .work-detail__summary {
-    padding: 0 16px;
     font-size: 0.96rem;
   }
 
