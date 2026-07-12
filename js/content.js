@@ -7,7 +7,7 @@
 
 const loadPortfolioContent = async () => {
   try {
-    const response = await fetch('content/portfolio.json?v=cache-20260711-strength-examples-1', { cache: 'no-cache' });
+    const response = await fetch('content/portfolio.json?v=cache-20260712-hamham-video-1', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`Failed to load content: ${response.status}`);
     return await response.json();
   } catch (error) {
@@ -250,6 +250,8 @@ const applyPortfolioContent = (content) => {
         if (!figure) return;
         const button = figure.querySelector('[data-lightbox-src]');
         const image = figure.querySelector('img');
+        const video = figure.querySelector('video');
+        const source = video?.querySelector('source');
         if (button) {
           button.dataset.lightboxSrc = figureData.image || '';
           button.dataset.lightboxCaption = cleanDisplayText(figureData.lightboxCaption || figureData.caption || '');
@@ -257,6 +259,13 @@ const applyPortfolioContent = (content) => {
         if (image) {
           image.src = figureData.image || '';
           image.alt = cleanDisplayText(figureData.alt || figureData.lightboxCaption || figureData.caption || '');
+        }
+        if (video) {
+          video.setAttribute('aria-label', cleanDisplayText(figureData.alt || figureData.caption || ''));
+          if (source && figureData.video) {
+            source.setAttribute('src', figureData.video);
+            video.load();
+          }
         }
         setText('figcaption', figureData.caption, figure);
       });

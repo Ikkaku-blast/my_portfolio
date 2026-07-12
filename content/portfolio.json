@@ -324,16 +324,14 @@
         ],
         "figures": [
           {
-            "image": "image/hamhamD.png",
-            "alt": "カード枚数が多い場面",
-            "lightboxCaption": "カード枚数が多い場面",
-            "caption": "カード枚数が多い場面"
+            "video": "videos/humhum_slow.mp4",
+            "alt": "落ちてくるハムスターが遅いゲーム序盤",
+            "caption": "落ちてくるハムスターが遅いゲーム序盤"
           },
           {
-            "image": "image/hamhamE.png",
-            "alt": "カード枚数が少ない後半の場面",
-            "lightboxCaption": "カード枚数が少ない後半の場面",
-            "caption": "カード枚数が少ない後半の場面"
+            "video": "videos/humhum_fast.mp4",
+            "alt": "落ちてくるハムスターが速いゲーム後半",
+            "caption": "落ちてくるハムスターが速いゲーム後半"
           }
         ]
       }
