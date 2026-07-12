@@ -7,7 +7,7 @@
 
 const loadPortfolioContent = async () => {
   try {
-    const response = await fetch('content/portfolio.json?v=cache-20260712-hamham-video-1', { cache: 'no-cache' });
+    const response = await fetch('content/portfolio.json?v=cache-20260712-no-image-search-1', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`Failed to load content: ${response.status}`);
     return await response.json();
   } catch (error) {
