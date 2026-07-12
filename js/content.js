@@ -7,7 +7,7 @@
 
 const loadPortfolioContent = async () => {
   try {
-    const response = await fetch('content/portfolio.json?v=cache-20260711-works-play-restore-1', { cache: 'no-cache' });
+    const response = await fetch('content/portfolio.json?v=cache-20260711-strength-examples-1', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`Failed to load content: ${response.status}`);
     return await response.json();
   } catch (error) {
@@ -46,6 +46,16 @@ const applyPortfolioContent = (content) => {
     lines.forEach((line, index) => {
       if (index > 0) element.appendChild(document.createElement('br'));
       element.appendChild(document.createTextNode(cleanDisplayText(line)));
+    });
+  };
+
+  const setBadges = (element, items) => {
+    if (!element || !Array.isArray(items)) return;
+    element.replaceChildren();
+    items.forEach(item => {
+      const badge = document.createElement('span');
+      badge.textContent = cleanDisplayText(item);
+      element.appendChild(badge);
     });
   };
 
@@ -126,7 +136,7 @@ const applyPortfolioContent = (content) => {
     if (!container || !Array.isArray(paragraphs)) return;
     const existing = Array.from(container.querySelectorAll(selector));
     existing.forEach(element => element.remove());
-    const anchor = container.querySelector('.ability__content-title');
+    const anchor = container.querySelector('.ability__work-note') || container.querySelector('.ability__content-title');
     let insertAfter = anchor;
     paragraphs.forEach(paragraph => {
       const element = document.createElement('p');
@@ -232,6 +242,7 @@ const applyPortfolioContent = (content) => {
       const panel = panels[index];
       if (!panel) return;
       setText('.ability__content-title', panelData.title, panel);
+      setText('.ability__work-note', panelData.workNote, panel);
       setParagraphs(panel.querySelector('.ability-article__text'), '.ability__content-text', panelData.paragraphs, 'ability__content-text');
       const figures = Array.from(panel.querySelectorAll('.ability-doc-image'));
       panelData.figures?.forEach((figureData, figureIndex) => {
@@ -285,6 +296,11 @@ const applyPortfolioContent = (content) => {
       if (tab) {
         setLines(tab.querySelector('.works-node__title'), item.previewTitleLines);
         setText('.works-node__hint', item.previewHint, tab);
+        const card = tab.closest('.works-card');
+        if (card) {
+          setBadges(card.querySelector('.works-card__facts'), item.previewFacts);
+          setText('.works-card__intent', item.previewIntent, card);
+        }
         const video = tab.querySelector('.works-node__video');
         const source = tab.querySelector('.works-node__video source');
         if (video && item.poster) video.setAttribute('poster', item.poster);

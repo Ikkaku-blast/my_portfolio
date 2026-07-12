@@ -2,14 +2,14 @@
    CSS読み込み順
    個別調整は各ファイルで行う。responsive.css は上書き用なので最後。
    ============================================================ */
-@import url('./base.css?v=cache-20260711-works-play-restore-1');
-@import url('./journey.css?v=cache-20260711-works-play-restore-1');
-@import url('./header.css?v=cache-20260711-works-play-restore-1');
-@import url('./hero.css?v=cache-20260711-works-play-restore-1');
-@import url('./section-title.css?v=cache-20260711-works-play-restore-1');
-@import url('./about.css?v=cache-20260711-works-play-restore-1');
-@import url('./strengths.css?v=cache-20260711-works-play-restore-1');
-@import url('./works.css?v=cache-20260711-works-play-restore-1');
-@import url('./footer.css?v=cache-20260711-works-play-restore-1');
-@import url('./lightbox.css?v=cache-20260711-works-play-restore-1');
-@import url('./responsive.css?v=cache-20260711-works-play-restore-1');
+@import url('./base.css?v=cache-20260711-strength-examples-1');
+@import url('./journey.css?v=cache-20260711-strength-examples-1');
+@import url('./header.css?v=cache-20260711-strength-examples-1');
+@import url('./hero.css?v=cache-20260711-strength-examples-1');
+@import url('./section-title.css?v=cache-20260711-strength-examples-1');
+@import url('./about.css?v=cache-20260711-strength-examples-1');
+@import url('./strengths.css?v=cache-20260711-strength-examples-1');
+@import url('./works.css?v=cache-20260711-strength-examples-1');
+@import url('./footer.css?v=cache-20260711-strength-examples-1');
+@import url('./lightbox.css?v=cache-20260711-strength-examples-1');
+@import url('./responsive.css?v=cache-20260711-strength-examples-1');

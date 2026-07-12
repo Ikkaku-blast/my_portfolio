@@ -181,6 +181,45 @@
   align-content: start;
 }
 
+.works-card__summary {
+  display: grid;
+  gap: 7px;
+  justify-items: center;
+  color: #171717;
+  text-align: center;
+}
+
+.works-card__facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.works-card__facts span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 7px;
+  border: 1.5px solid #171717;
+  background: #f8f7f2;
+  color: #171717;
+  font-size: clamp(0.68rem, 0.76vw, 0.8rem);
+  font-weight: 800;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.works-card__intent {
+  max-width: 28em;
+  margin: 0;
+  color: #171717;
+  font-size: clamp(0.78rem, 0.88vw, 0.94rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
 .works-node {
   position: relative;
   min-width: 0;
@@ -454,6 +493,10 @@
   .works-card > .works-node {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .works-card__summary {
+    padding: 0 2px;
   }
 
   .works-node:hover,
